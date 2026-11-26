@@ -1,520 +1,520 @@
-# What's new
-
-Newest first. This is Fieldwatch (`app.fieldwatch`). Each build below is what Settings shows as the version.
-
-Fieldwatch continues the Spectre 1.2.14 field build under a new name, application id, and the MIT License. It does not replace Spectre on a phone.
-
-## 1.2.2 — 23 November 2026
-
-- Notifications are asked on Android 13 and newer, and declining them no longer blocks the app. The scanning notification still shows, so the scan can keep running with the screen off. Alert notifications stay off until you allow them.
-- Catalog 118 adds rows for a product name or that company's own Bluetooth id. Air Lift, BlueParrott, Danlaw, Directed, Dreo, GN Hearing, Grundfos, HughesNet, iFIT, Kia, Kuna, Lighthouse, Lippert, Optimum, Otodata, PrepWizard, Procon, Pura, Redtiger, ResMed, Rinnai, Sennheiser, SonicWall, Soundstream, Toast, Turtle Beach, Ubee, Victron, and Vivint. None of these beep. Eddystone store beacons stay unmatched.
-- Catalog 118 adds four setup and serial names on rows that were already there. Tuya matches a setup Wi-Fi name that is SmartLife- or SmartLife_ plus four characters. That name is only on during pairing. UniFi matches a setup Wi-Fi name that starts with UDM Setup, a Dream Machine. Midea matches a setup Wi-Fi name that starts with net_ac_. The word net is still not Midea. Motive matches a Bluetooth name that starts with AABL, a Vehicle Gateway serial, while that name is advertised. None of these beep.
-- Another app can open the Fieldwatch screen with app.fieldwatch.OPEN sent to MainActivity. app.fieldwatch.CLOSE, sent to AutomationService, sends the screen to the background and leaves the scan running. Swiping Fieldwatch out of Recents still stops the scan.
-- Sit export and Log export each open on the format you used last. The first time is still Log file — CSV. GeoJSON and the ATAK data package stay on Sit export.
-- Another app can start and stop the scan, start and stop a sit, and ask whether a scan is running. It can also write the newest saved sit, or the radio log. The result is status.txt under Android/data/app.fieldwatch/files/automation. Export sit writes that saved sit. An open sit and the last 15 minutes stay out.
-- The line under Scanning on the Settings list shows the scan intensity and Battery protection On or Off.
-- Settings → Drone monitoring can alert when a Remote ID on the live list declares an emergency. The switch is off until you turn it on. Beep, voice, and the silent notification are the same switches as the other warnings on that page. The same UAS ID on Bluetooth and Wi-Fi is one warning. It does not need a GPS fix or a bookmark. A drone marked as yours still alerts. The line is Remote ID, the aircraft name or the UAS ID, declared an emergency.
-- Show map with live path draws a Remote ID track as white chevrons, in the direction of travel. An open ring is the first point. The last position stays the class icon. A declared emergency marks that stretch.
-- A sit path draws a Remote ID track with the same chevrons, open ring, and arrow as the aircraft record. The sit and the report show altitude, speed, and course. A declared emergency notes the time and marks that stretch.
-- A Remote ID emergency is kept with the visit. The card notes when it was declared. That stretch of the path is marked, and a diamond shows where it started.
-- A Remote ID path is drawn with chevrons in the direction of travel. An open ring is the first point heard. An arrow is the last. The visit shows the altitude, speed, and course the aircraft sent.
-- A Remote ID visit shows how long it lasted. The record keeps the path the aircraft sent, and one pilot pin for that visit. Visits in the same area share a map, each in its own color. A visit far from the others has its own map. The pilot pin is drawn when it was within 2 km. Privacy mode keeps the map.
-- Reports lists Remote ID aircraft from the last 14 days. One row is one aircraft. A pass is one visit, and the next pass starts after 20 minutes of quiet. The radio page shows how many days it was heard, and when it was heard before this pass. That line opens the same record.
-- Catalog 117 names three radios. iTAG matches the Bluetooth name iTAG exactly. A longer name does not match. VIOFO matches a Wi-Fi name that starts with VIOFO. A toy camera drone matches a Wi-Fi name that starts with WIFI_UFO or FLY-UFO-. The drone beeps. iTAG and VIOFO do not.
-- Known camera voice can share one alert. Cameras within 200 m of the one that speaks stay quiet. The switch is off until you turn it on. The map still shows each camera.
-- A group of one kind says the plural, such as Known Flock cameras ahead. A group of several kinds names each kind, such as Flock and red light cameras ahead. One camera still says when it is looking your way.
-- Porkchop matches the name PORKCHOP exactly, and a name that starts with M5PORKCHOP. A longer name that only contains those letters does not match. The vendor mark 50:52:4B still matches.
-- Mute on a radio stops the beep, the voice, the notification, and the vibrate for that radio. It stays on the list with the same signature name. It is not marked as yours.
-- Catalog 116 names four radios from a recent sit. LEDnetWF matches a Bluetooth name that starts with LEDnetWF. EZ Lynk matches a Wi-Fi name that starts with EZLYNK. Trackunit matches Trackunit's company id. OontZ matches a Bluetooth name that starts with OontZ. None of these beep.
-- A scan that starts with the screen off stays up. Location is added the next time Fieldwatch is on screen.
-- A named radio can alert when it goes quiet. The switch is off until you turn it on. One pip, a vibrate, and a voice line, after it was heard for 2 minutes. Mute stays quiet. Mine can still use this. Stopping the scan does not raise it.
-- Bundled language files are written for this version.
-
-## 1.2.1 — 20 November 2026
-
-- Watchlist voice speaks again after the beep. A long watchlist could beep and then drop the sentence, because the beep ended before the sentence was saved. The sentence is kept. A speech engine that has stopped is started again. Voice that was already on stays on.
-- Bundled language files are written for this version.
-
-## 1.2.0 — 19 November 2026
-
-- Settings → Drone monitoring has Drone perimeter detection. The line under the switch says it detects a drone using Remote ID within the range selected below. The distances under the switch are 100 m, 250 m, 500 m, and 1 km, starting at 250 m. It needs a GPS fix of 50 m or better. Beep, voice, and the silent notification are the same switches as the swarm warning. The live row says within that distance while the latest fresh position is inside. It warns again after the broadcast is past one and a half times the distance, or after that drone has gone. The Remote ID bookmark waits up to 10 seconds so this warning can take that first cue. A named radio with Alert on still alerts on its own.
-- The Settings list calls that section Signature watchlist alerts.
-- The Settings list uses the same On and Off on Appearance, Signature watchlist alerts, Location and Maps, and TAK. Cell connection monitoring says the warning sentence. The note on Signature watchlist alerts names a silent notification for a watched radio.
-- Settings → Tracker monitoring beeps and speaks when a warning first opens. Both are on until you turn one off. System notification is off until you turn it on. That notification is silent, and it can show while the popup is open. The popup still opens if those are off. How a warning reaches you is the same block on GPS interference, Trusted networks, Cell connection monitoring, Drone monitoring, and Tracker monitoring.
-- Drone swarm detection warns when Remote ID detects new drones in the time window below. Settings → Drone monitoring beeps and speaks on its own for the swarm warning and the distance warning. Both are on until you turn one off, and neither follows the watchlist. System notification is off until you turn it on. That notification is silent. The warning still opens if those are off. One How a warning reaches you block covers both.
-- Low battery protection mode is off until chosen. A low battery drops the scan to Battery saver, then can stop it. The Wi-Fi and Bluetooth icons turn yellow while Battery saver is on. The saved intensity stays. Plugging in undoes the slow-down. A stop stays stopped until Fieldwatch is opened.
-- Separated tag with you explains the warning. The paragraph says a tracking tag is away from its owner, then how many minutes this phone has heard it and at how many places.
-- Heard at two places explains the warning. The paragraph says a tracking tag was heard at the places where this phone was.
-- Catalog 113 names two-way radios. A BLE KISS TNC matches the KISS service. Icom IC-705 matches the Bluetooth name ICOM BT(IC-705) and the Wi-Fi name IC-705. Icom ID-5200 matches ICOM BT(ID-5200). Icom UT-137 matches ICOM BT-003. A Blu-PTT button matches its advertised service. TIDRADIO TD-H9 matches a name that starts with TD-H9. An AINA PTT Smart Button matches ASB plus six characters. A handheld with Wireless CPS on matches the exact name walkie-talkie. That name does not say the brand or model. None of these beep.
-- Catalog 112 names radios this phone kept seeing. Samsung TVs and soundbars match the setup name. Google Cast matches service FEA0. Levoit, MELK, Midea, Zebra, JLab, ScentAir, Escort, Gard Pro, Vizio, Owlet, Tandem t:slim, SleepTracker, WHOOP, soundcore, Hume, Platco, NEEWER, 70mai, BlackVue, Galaxy Watch, and Galaxy Buds each have a row. CHB, HarpBT, and GT201 match a name prefix. The product behind those three is not identified. Epson also matches an ET- Series name. A Samsung oven on Bluetooth matches the appliance row. Osmo matches a Wi-Fi name that starts with osmo_. UniFi matches a U6- or UXG model name. None of these beep.
-- Catalog 114 names radios from recent sits. Acuity lighting matches its service or company id. Cardo matches the name Cardo or a name that starts with FREECOM. Cobra matches service 2A668FA4. An ELK LED strip matches a name that starts with ELK-BLEDO. A GLI open sign matches a name that starts with GLI1050. GM phone-as-key matches service FE48 or a name that starts with GM_PEPS. Gree matches a name that starts with GR-AC_. A HIKMICRO thermal optic matches a Wi-Fi name that starts with HIKMICRO_. IOSiX matches a Wi-Fi name that starts with IOSiX ELD. iRobot matches iRobot's company id. JLG ClearSky matches JLG's company id or the name ClearSky Smart Fleet. An LG appliance matches the setup name. Mazda matches a name that starts with Mazda and ends with _SPL. Mentra Live glasses match a name that starts with Mentra_Live, or XyBLE_ plus more characters. Phillips Connect matches its company id. Pulsar thermal and night-vision optics match the Stream Vision Wi-Fi names. RNode matches the name RNode plus four hex characters. Rove matches a name that starts with ROVE. Steiner and Burris thermal optics match the Steiner and Burris_BTH names. A Steiner M830 LRF binocular matches LRF X, Steiner LRF X, LRF1535, or Steiner LRF1535. TBS Crossfire matches a Wi-Fi name that starts with TBS_XF_AP_. TOZO matches a name that starts with TOZO. Mentra Live glasses, the Steiner M830 LRF binocular, and TBS Crossfire beep. The other new rows do not. Brilliant Frame is now Brilliant Labs glasses (Frame / Halo). Even G1 is now Even Realities G1 / G2. Apple AirTags is now Find My (AirTag or other Apple).
-- Update stock catalog from GitHub reads dist/fieldwatch-signatures.rsi. Phones on 1.1.12 through 1.1.44 still read dist/fieldwatch-signatures-v2.json. 1.1.11 still reads dist/fieldwatch-signatures.json.
-- Bundled language files are written for this version.
-
-## 1.1.44 — 13 November 2026
-
-- Exposure Notification names a Bluetooth advertisement on service FD6F. The radio page says the identifier is there and that the metadata is encrypted. It does not show those bytes. It does not beep. Catalog 111 adds the signature.
-- BTHome names a Bluetooth sensor that uses service FCD2. The radio page shows the measurements the device advertises, including temperature, humidity, battery, door, and motion. An open door or window shows on the live row. Encrypted packets only say they are encrypted. Catalog 110 adds the signature. It does not beep.
-- Remote ID authentication shows the type, page, and time the plate sends. The signature bytes stay off the page. It does not check the signature. A location message in the same session keeps that block. It does not beep.
-- Amazon Sidewalk names a Bluetooth device that sends the AMA service and Amazon's company ID. Registration mode shows on the live row. The radio page shows the beacon type and the battery band. It does not show the hidden id. An Echo without that service stays Amazon. Catalog 109 adds the signature. It does not beep.
-- Matter setup names a Bluetooth device that is offering Matter commissioning. The radio page shows the vendor ID, the product ID, and the discriminator the device sends. A live row says Matter setup. Proximity ranging is named and does not show the hidden id. Catalog 108 adds the signature. It does not beep.
-- HomeKit names the category and the paired line the accessory broadcasts. An unpaired accessory shows that category on the live row. Paired does not. Catalog 107 adds the signature. It does not beep.
-- French Direct Remote ID can fill the aircraft position, altitude, speed, course, and the takeoff pin when that Wi-Fi beacon is present. Height above takeoff shows on the radio page and is not the aircraft pin. A CTA-2063 serial on that plate can name the maker. The three-letter code does not. A later French plate in the same session replaces the stored one. Android 11 or newer. Catalog 106 updates the Remote ID note when it still says the French plate does not fill a position.
-- Compare and Debrief keep the percent moving on a large sit. Writing the text file is most of that bar, in pieces, so it climbs until the file is done. A step with no count still creeps the percent, so the wait does not look stuck.
-- A Wi-Fi access point can say what kind of network it is, whether it has internet, a venue, and a hotspot id. Detail shows that when the beacon includes it. Android 11 or newer. The access point sets these. They are not checked.
-- Compare (text) and Debrief (text) share a text file. A large report no longer puts the whole text in the share handoff.
-- If a share cannot open, Fieldwatch says why. That includes the phone being out of storage, out of memory, or the share being too large to open.
-- Google Find Hub shows a 20-byte or 32-byte ephemeral id, chosen from the payload length. When the hashed flags byte is in the advertisement, the line says it is present. That byte is encrypted, so the value is not shown. Catalog 105 copies this onto a phone that already saved the row.
-- Google Find Hub frame 0x40 is labeled not separated. That frame means unwanted-tracking protection is off. It does not say the tag is near its owner. Frame 0x41 stays separated. Catalog 104 copies that wording onto a phone that already saved the row.
-- Settings → Tracker monitoring has two warnings, both off until you turn one on. Separated tag with you warns when a tag says it is away from its owner, this phone has heard it for 30 minutes with no gap over 20 minutes, and this phone's GPS has three spots at least 100 m apart. Heard at two places warns when a finder with a stable address reaches two stops. The places list stays either way. Open radio opens that radio. Dismiss keeps that warning down while the same condition continues. There is no beep. A quiet notification shows the same lines when Fieldwatch is not on screen.
-- Pebblebee matches Bluetooth service FA25 as well as the Pebblebee and moto tag names. A tag that leaves its name off still matches. That service does not say whether the tag is away from its owner. Find Hub and DULT stay on their own rows. The row does not beep.
-- A Find My advertisement of 25 bytes says it is broadcasting a public key. A 2-byte advertisement says it is the short form, often a tag near its owner, and that this is not certain. The battery level is shown only when the recent-owner bit is set. The AirTag signature is unchanged.
-- Bundled language files are written for this version.
-- A language file can be up to 352 KiB. The English template fits in that limit.
-
-## 1.1.43 — 9 November 2026
-
-- A Bluetooth name of Quest, or one that starts with Quest followed by a space or a hyphen, or one that starts with Meta Quest, is Meta Quest. Quest 3S is that row. It is not labeled Ray-Ban / Meta glasses and it does not beep. A Meta company ID or service FEB8 without that name still matches the glasses row.
-- Bluetooth channel and frequency are left blank. Android does not report the advertising channel, so the radio page and the log no longer show 2402 MHz as if it were measured. Wi-Fi channel and frequency stay. An older log row that already says 2402 stays as it was.
-- Signature candidates keep a full custom service UUID. They no longer cut it down to four hex digits that can match a different Bluetooth service. A standard 16-bit service still meets its short form and its full Bluetooth UUID.
-- A Wi-Fi signal of 0 is treated as no reading. It no longer sorts as the strongest radio or paints as a loud signal. A real reading still does.
-- The log keeps the Bluetooth advertisement the phone already stored, up to 512 bytes. The raw field is that advertisement. Manufacturer data is its own field. A log row already saved stays as it was.
-- Named radios is its own row on the Settings list, after Alerts. Signature and network stays on Alerts.
-- Radio detail can show GitHub catalog request. It appears on an unmatched Bluetooth radio when the phone has a network that claims internet, the name looks like a factory model, and that name has been heard on two addresses this session. The tap opens a GitHub issue draft in the browser. Nothing is sent before that tap. The draft leaves out the address suffix, this phone's location, and the raw advertisement.
-- Signatures → Class A–Z lists every class, including one with no signatures. The count is 0 until a signature is in that class. Body-worn stays under Wearables.
-- Microsoft Nearby Sharing names the device type and whether sharing is set to My devices only or Everyone nearby. When it is Everyone nearby, the line includes the computer name from that advertisement. That background beacon is no longer called Swift Pair.
-- Catalog 101 removes the Novatel Wireless row. Address 28:80:A2 stays on Inseego and does not beep as public safety. Hatch drops address C8:FA:9C. The Hatch names and company ID stay. Opening this app drops that row and that address from the built-in signatures, including when Update stock catalog already saved catalog 101 and left them in place. A rule you added stays. A custom copy of Novatel that is not built-in stays.
-- Filters add Two-way radios and Military. Two-way radios has Icom ID-52, from the Bluetooth name ICOM BT(ID-52) while the radio is waiting to pair, plus wireless microphones Icom VS-3, Yaesu SSM-BT10, Yaesu SSM-BT20, Kenwood KHS-55BT, Kenwood KHS-56BT, and VGC BHM-88. On those microphones, Bluetooth is how the microphone works. Each row matches the published name on a Low Energy advertisement. A name that only appears on the Classic link stays quiet. Military has no signatures yet. Catalog 102 also matches Benshi-platform radios by the exact Bluetooth name UV-PRO, UV-50PRO, GA-5WB, VR-N75, VR-N76, VR-N7500, VR-N7600, or DB50-B, and BLE push-to-talk buttons named PTT-Z, PTT-AZ, or PTT-Z01. None of them beep.
-- A signature file that uses a class, a rule, or a radio this app does not know asks you to update Fieldwatch first. Update now on that message checks for an app update. The catalog on the phone stays as it is. The same message is used for Update stock catalog, Import signatures, and Import settings.
-- Wi-Fi vendor tags name WPA, WMM, WPS, Wi-Fi Direct, Miracast, Hotspot 2.0, MBO-OCE, EasyMesh, and OWE transition. A WMM tag no longer reads as Microsoft. Other vendor tags still show the company that owns the OUI.
-- Catalog 100 adds ExpressLRS setup Wi-Fi, Xiaomi Mi Home service FE95, and an EZVIZ setup network. Each names the family, not one model. ExpressLRS beeps like the other drone rows. The other two do not.
-- Catalog 99: DJI also matches the older DroneID Wi-Fi beacon, vendor IE 26:37:12. That labels the aircraft. It does not fill a position. ASTM Remote ID stays on the Remote ID row. Android 11 or newer can see that beacon field.
-
-## 1.1.42 — 5 November 2026
-
-- A live sit map keeps up on a long drive. The line, the stops, and the camera marks stay where they were.
-- On Reports → Path, the camera picture for that view slides with the map. Where two wedges of the same color overlap, the tint is painted once.
-- Hunt on a radio's detail page starts a new hunt. Leaving Hunt clears the walk.
-- When the signal is lost, the large number reads - - and the line under it reads -- dBm · Signal Lost.
-- Filters can hide randomized Bluetooth. Wi-Fi stays. The sit still keeps those radios.
-- Bundled language files are written for this version. Signal Lost and Hide randomized Bluetooth are the lines added since 1.1.41.
-
-## 1.1.41 — 4 November 2026
-
-- Warning dialogs for GPS, a cell, a trusted network, and a flood use one layout. The reason is a paragraph. Readings sit under Details, with the label and the value on one line.
-- The update offer has a Release Notes heading. Long notes scroll.
-- When an app on this phone is generating the GPS location, the warning is Possible GPS interference. It says an app on this phone is generating the GPS location, and this phone is using that instead of the satellites.
-- A cell warning keeps what happened in the title. The paragraph says Fieldwatch cannot tell the cause.
-- Bundled language files are written for this version. Release Notes is the line added since 1.1.40.
-
-## 1.1.40 — 3 November 2026
-
-- When this phone is online at start, Fieldwatch asks GitHub whether a newer version is there. A newer one shows the notes, with Update now and Later. Later skips that version until a newer one is published. Settings can check again. Update now downloads the app, and Android still asks you to confirm the install. If GitHub does not answer, the app on this phone stays as it is.
-- On-screen notes are shorter. They say what the control does. The scan status no longer calls the scan passive. Settings notes under the switches are one line. The longer explanation stays in the user guide.
-
-## 1.1.39 — 2 November 2026
-
-- A language file that comes with the app says it was written for this version. An imported file reports the keys added after the version it was written for. A translated line from an older file still shows.
-
-## 1.1.38 — 2 November 2026
-
-- Samsung SmartTags matches the SmartTag name or service FD5A. A phone, TV, Buds, or watch that only sends Samsung's company ID stays off that row. The stock catalog is 98. Opening this version drops that company ID from the built-in row. A rule you added stays. Update stock catalog from GitHub brings the same file.
-- Reports lists radios heard at two or more places in the last 7 days, without a sit and without hearing them now. The map shows where this phone was. Each radio has its own color on the map and beside its name. Privacy mode hides the map and the coordinates.
-- On that report, each stop is numbered. The time, the street, and the coordinate are on their own lines. The numbers are plain. The name is the live list's Name + type. Tap a radio to open it, including one that has left Live.
-- Cell connection monitoring is off until Monitor the cell connection is on. The first still visit at a place only learns. How long to learn starts at 3 days. The choices are None, 1 day, 3 days, 7 days, and 14 days. A later visit can warn on a new cell, or on a drop to 2G or 3G. The dialog can list the country, the operator, the channel, and the band. Debrief gets a section when a warning overlapped the sit. The alert is separate from the watchlist. Diagnostics lists the camp even when the watch is off.
-- Signature and network, under Alerts, saves words that replace the signature in the announcement. Those words apply to every radio of that signature with that network name. The network name is not spoken. A name on one radio still comes first. Saying the class only keeps the words saved and says the class. The list goes with Export settings.
-- Trusted networks shows how long learning has left. How long to learn adds 1 hour. Changing the length does not forget access points already saved.
-- Show live path and Reports → Path have a camera button. It hides the marks in the picture, or shows them again. The choice is saved. Hunt has no button. The list under Path, the sit report, and the printed path still follow the layer switches.
-- The new settings and alert text is in all 26 languages that come with the app.
-
-## 1.1.37 — 29 October 2026
-
-- Show live path and Hunt turn with the heading as it changes. The map already on screen turns with it, so the edges stay filled. Standing still, or turning the phone in place, leaves the map where it is.
-- A double-tap on Show live path or Hunt switches between the close view and the whole path right away.
-- Coming back to the live list draws the list first. The map follows.
-
-## 1.1.36 — 29 October 2026
-
-- Each trusted-network warning names that network and the reason that fired. The title is Possible evil twin of "{name}": {reason}. The reason is one or more of these: open security, weaker security, unknown device, or away from usual places. The line under it is that access point's address. "00:13:37 belongs to Orient Power Home Network." is an extra line, and only when that address starts with 00:13:37. A warning for any other address does not include it. That line does not replace the network name or the reason, and that address block does not warn by itself.
-- Trusted-network warning actions sit on their own lines.
-
-## 1.1.35 — 29 October 2026
-
-- Language packs cover more of the on-screen text: the live sit line, the radar, device explanations, filters, reports, and the human-readable Debrief and Compare wording, including the PDF. The English template lists a character limit for each line. Signature names and catalog notes stay English. CSV, JSON, GPX, KML, and the other machine exports stay as they are.
-- Importing a language pack can save a text report. It names the keys that will be used, the keys that are missing, and each line that is too long, with the length and the limit.
-- GNSS interference, Location and Maps, and TAK / CoT group the on/off switch apart from the choices under it. Each control has a short line about what it does. Warning level replaces Alert from. Warn when the signal holds replaces Spoofing checks. Keep the GPS receiver awake, Count satellites fading together, and Gain reads backwards replace the old receiver switches. Known cameras replaces Layers. Corner readout replaces Position. Display location on map is the title on that group.
-- On Trusted networks, the on/off switch sits on its own. The warning checks are in a Warnings group, each with a short line about what it catches. Learning, and how a warning reaches you, are separate.
-- On TAK / CoT, the GNSS heading is GNSS warnings. The Trusted networks heading on that page is gone. The note sits under Network warnings.
-- On TAK / CoT, the Floods heading is BLE Flood warnings. A Wi-Fi beacon flood still uses that same line. The notes under the TAK controls are shorter, and Trusted networks has one.
-- On TAK / CoT, under Trusted networks, that switch is Network warnings. The hold under it is How long a warning spot stays.
-- The Trusted networks TAK pin, and how long that pin stays, are on Settings → TAK / CoT. Both stay dim until Watch trusted networks is on.
-- The guide says Trusted networks is not a substitute for checking a network yourself. A quiet watch is not a finding that the network is safe.
-- The Display switch on Live is Show map with live path.
-- TAK / CoT to this phone no longer tries to pin its socket. Diagnostics says whether that same-phone feed reaches ATAK. It reaches ATAK when the socket opened on Wi-Fi or Ethernet. On cellular alone it needs Wi-Fi. A socket opened without Wi-Fi or Ethernet is still replaced once either connects.
-- Privacy mode masks raw advertisement bytes on the radio page, in Share as text, and in one-radio AI Export. The row keeps its label and byte count, and the hex shows as masked. Logs and sit export stay complete.
-- A Samsung SmartTag advertisement now says whether it is separated from its owner or with its owner, and a separated tag is followed across address changes.
-- Show live path, Hunt, and Reports → Path draw saved map pictures when the phone has no connection. A place with no saved picture stays a plain line. New pictures are still downloaded only while online.
-- The sit report leaves a camera list out when its layer switch is off. The count and the marks on the printed path stay off. The file stays on the phone. A switch that is on still names a list that is not on the phone.
-- Trusted networks watches a Wi-Fi name you mark on that radio's page. It can alert when a later sighting of that name is weaker, from an unknown maker, or far from the places this phone usually hears it. The list, the learning window, and a TAK pin are under Settings. The pin starts off. The phone does not connect to the network or ask for its password.
-- Show live path and Reports → Path open a card when you tap a known camera. The card names the kind, the company when the list has one, and the facing when one is stored. A number is several of that kind. Tap the mark again to close it. The card has no coordinates.
-- Opening Fieldwatch no longer closes while the path reads a saved camera list. A failed camera download stays on the settings row and says why. A saved copy stays, and the path still opens.
-- Importing a language pack, signatures, settings, trusted networks, or the stock catalog says why it failed. A file that cannot be read, is empty, is too large, or cannot be saved leaves what is already on the phone.
-- A watchlist alert on Live opens in the list under Show live path. By class, the strength list, Timeline, and Hybrid keep that row in the space below the map.
-- Tapping a known camera on the map uses the same card as a detection. The line meets that card. Cameras on the same spot are listed together.
-
-## 1.1.34 — 27 October 2026
-
-- TAK / CoT to this phone pins the loopback socket to lo before it is bound. A socket opened without Wi-Fi or Ethernet is replaced once either connects, including when cellular was already up. A socket opened on that LAN keeps sending after the LAN drops. Diagnostics lists whether TAK is on, the destination kind and port, whether the loopback socket is bound to lo, what was connected when it opened, and whether the last send succeeded. The host address stays off that page.
-
-## 1.1.33 — 27 October 2026
-
-- TAK / CoT to this phone still reaches ATAK when Fieldwatch starts with no Wi-Fi joined. A socket opened with no network is replaced once a network is there. A socket that already worked keeps sending after Wi-Fi drops.
-
-## 1.1.32 — 26 October 2026
-
-- Show live path draws alert dots and known cameras on top of the drive line.
-- Hunt draws the walk before GPS locks. The line on that picture is No GPS yet. This walk is not on a map. Streets and the place in the corner stay off. Two fresh fixes place that walk when it is still about the first 20 m. A longer walk stays off the map.
-- Reports → Path draws cameras and detections on top of the drive line. Zooming in splits a numbered group into separate spots, unless those spots are the same place.
-- A real stop stays green. GPS jitter no longer flips that stretch back to blue.
-- Show live path keeps the drive line on the map when the view is zoomed in.
-- Zooming Reports → Path keeps the drive line inside the map.
-- Reports → Path can be pinched and dragged. A double-tap fits the whole path again.
-- A known camera speaks when it is still about 500 m ahead. The path report still counts cameras within about 150 m.
-- The drive line is a slightly darker blue. A green stop is the same width as that blue line.
-- Voice Alerts calls the red-light switch Alert for red light cameras.
-- Hunt shows the latest GPS fix as soon as it opens. The circle is the size of that fix. The heat trail starts after two fresh fixes agree, and steps taken before that are left off. In the first 20 m, one tight fix that disagrees moves the dot onto that fix. A phone whose step sensor is missing, or never reports a step, counts steps from the walking motion. A compass jump does not move the walk unless the phone itself is turning.
-- The sit report lists known cameras the same way as Reports → Path. The heading is Known cameras on path. Each type is the name, then how many faced the path and how many were on the path with no direction. A missing list is still named.
-- Cameras on a sit path are drawn larger, with a light ring, so they stay visible on the blue path. Show live path and Hunt keep the smaller marks.
-- Reports → Path leaves Known cameras on path off when that list is not on the phone, or when its layer switch is off. A list that is on still shows its rows. The debrief still counts a saved list.
-- Reports → Path lists known cameras as one row for each type, with the same colors as the map. The line under the heading is the distance. The debrief keeps the full sentences.
-- Reports → Path lists known cameras on the path under the radios that alerted. The lines match the sit report.
-- Cameras sit on top of the path line. That is Reports → Path, the printed path, and Show live path.
-- The printed path in a Debrief PDF and in Compare is the same blue as the path on the phone. A real stop is still green. The second sit stays slate. Reports → Path and that printed path show the cameras the sit report counts. A stored direction counts when it pointed toward the path. No stored direction counts as on the path. Gunshot detectors and a direction that pointed away are left out. Show live path and Hunt still draw the layer that is switched on.
-- The sit report counts cameras along the path. A stored direction counts when it pointed toward the path. No stored direction counts as on the path. Flock, other plate readers, speed cameras, red lights, and other cameras are listed. Gunshot detectors are left out. The count uses the lists saved on this phone.
-- Reports → Path leaves the corner line off a sit that has ended. That line is the grid, or masked while Privacy mode is on. An open sit still shows where this phone is.
-- Show live path draws the drive as a thicker blue line. A real stop is still green.
-- Zooming out on Show live path or Hunt shows one map picture for each spot. A closer picture no longer stays on top of the wider one.
-- Scrolling Show live path or Hunt keeps the pictures already on screen and fills the new ground as each picture arrives. The next screen in the direction of that scroll is saved for the next drag.
-- Show live path and Hunt save the next screen of the map along the direction of travel, and a little to the side when the course is turning. Those pictures stay off the screen until you get there.
-- A double-tap on Show live path opens the same scale as a sit that has not moved yet. The short side reaches about 220 m.
-- Hunt places the start on a GPS fix only when that fix is within about 12 m. It asks to count steps, and uses this phone's step sensor once that is allowed. Opening Hunt does not count as a step.
-- Hunt still follows this phone on a handset whose step sensor will not report steps. That handset counts steps from the accelerometer.
-- The pink pin is off the hunt map.
-- Hunt map colors grade from one place into the next again. A loud pass still outweighs a much weaker one.
-- A nearly gone hunt signal stays blue. The color moves gradually through the shades toward red as you get closer, and red shows by about −50 dBm. The place you are standing keeps the loudest reading heard there.
-- Hunt keeps following this phone after the radio goes out of range. No color is added on that part of the walk, because there is no reading to paint.
-- Hunt follows steps and the phone heading. GPS places that walk on the map and only nudges it when a good fix agrees. The circle on the dot grows as the walk gets longer. Hold the phone flat. A tilted phone pauses the steps. The place you are standing keeps the loudest reading heard there. The next place, about a step and a half on, gets the strength heard there, weaker included. The color grades evenly from one place into the next.
-- Dragging or pinching Show live path or Hunt keeps the direction already chosen. Direction of travel stays up. It no longer snaps to north up.
-- Show live path and Hunt fill the corners of the map when it turns with travel.
-- Location and Maps keeps saved map pictures on the phone, up to 512 MB, and can clear them. Clear saved maps does not remove plate readers or other sensors.
-- Location and Maps adds USGS Imagery Topo and FAA VFR Sectional. The USGS maps and FAA VFR Sectional cover the United States and do not ask for a key. FAA VFR Sectional says it is not for navigation. A view that is too far out for that chart asks you to zoom in. Under Map, Overlays can put USGS Shaded Relief and USGS Hydrography on top of the map you picked. Both cover the United States. Leave them off for the map alone. With an overlay on, the map credit and each overlay credit are separate lines on the right, so the grid on the left stays readable. With overlays off, the map credit stays one short line.
-- Location and Maps adds two Layers. License plate reader cameras downloads the United States plate-reader list (about 37 MB). Other sensors downloads the speed camera, red light, gunshot detector, and other camera list, about 1 MB. The map pictures stay the same. Neither list is included with the app. Each has its own Update. Marks show on Show live path, Hunt, and Reports → Path. Flock plate readers are blue. Other plate readers are amber. Speed cameras are teal, red lights are red, gunshot detectors are purple dots, and other cameras are a smaller gray mark. A crowd of one type keeps that color. Each type has its own voice alert, off until turned on. Turning one on speaks that notice. A switch does not hide marks. A plate-reader alert names the company when the file has one.
-- After that list finishes downloading, the row says Processing while the phone reads the file. A sensor with a known direction is a view cone. It stays small when the map is far out and grows when you zoom in. No direction, and every gunshot detector, is a dot. A saved copy that has only Flock cameras asks before Update, even when the downloaded list has not changed.
-- On Location and Maps, the paragraph above Map has the same space before the box that Position already has.
-- Bitchat is a Mesh signature. It matches the BLE service advertisement. It does not beep. Settings → Update stock catalog from GitHub adds it. Catalog 97.
-
-## 1.1.31 — 23 October 2026
-
-- The Wi-Fi, Bluetooth, and signature counts in the top bar each keep room for 888, so the line does not shift as the numbers change.
-- Hunt no longer shows Very Close, Faint, or Gone. Watch the number, the sparkline, and the cloud. Beep and Vibrate still stay quiet when there is no packet, or the radio has left.
-- Settings → Location and Maps can use world maps from Esri, MapTiler, Stadia, and Thunderforest. Those maps are marked Key. Paste the key from your own account. It stays on this phone, and Export settings leaves it out. OpenStreetMap and the USGS maps do not ask for a key. A bad key or a map that does not load shows a popup.
-- A double-tap on Show live path switches between the whole path and a close view around this phone. The close view keeps this phone in the center, and the short side reaches a little past about 100 m. North up and direction of travel each keep that zoom.
-- The drive line keeps a point every few meters, so it follows the street around a corner. A turn leaves the road already driven where it was. Green is still a real stop.
-- Show live path and Hunt have a compass button where the N mark was. Tap it to switch between north up and direction of travel. The picture shows all four combinations. Zoomed out is a bent path, with N above it when north is up. Direction of travel puts the same compass letters as the close view above a smaller bent path. Zoomed in is those letters, or N above an arrow when north is up. Standing still keeps the last direction. A turn in place does not turn the map. Reports → Path and the saved path figure stay north-up.
-- Show live path follows the road through a turn. A straight stretch still leaves GPS wobble off the line. Green is a real stop: this phone stayed within about 25 m for about 40 seconds. The rest of the drive is the plain line.
-- Hunt leaves the top of the page for the map. Watch the number, the sparkline, and the cloud. The scale starts at Weak. The words beside the number follow the language pack.
-- Hunt draws a heat cloud of where this phone heard that radio. The color runs from blue where it is weak, through cyan, green, yellow, and orange, to red where it is powerful. Walk or drive the area. The brightest patch is where it was loudest. The loudest mark sits in that patch. It is not a distance and not a pin on the other radio.
-- Hunt opens close in, and the cloud is drawn finer. Steps fill in short moves between GPS fixes. A tight GPS fix still recenters the walk.
-- The hunt cloud follows the walk. Hears connect, and the color changes smoothly from one to the next. Close parts of the walk fill in between the lines. A far gap stays open. The edge fades that color out.
-- Hunt stays close on you as the walk gets longer. Leaving the page keeps the cloud until Reset, or until you hunt a different radio. A turn in place does not move the dot. The lower-left reading matches the dot. While GPS is moving, steps follow that direction. The top of the phone is used when GPS is stuck.
-- Settings → Maps chooses the map under Show live path, Reports → Path, and the path figure. OpenStreetMap is the start. USGS Imagery and USGS Topo cover the United States. A small line in the corner of the map names the source.
-- The radio page shows the grid beside the GPS. For an ordinary radio that is where this phone was. A Remote ID aircraft shows the aircraft position and the takeoff, pilot, or fixed point, each with a grid, plus the distance and bearing from this phone. A sit report uses where this phone was when that position was heard and names the time. An older sit shows the grid and leaves the distance and bearing off. Privacy mode masks the grid and leaves the distance and bearing off.
-- Settings → Maps can show where this phone is now on the lower left of the map, as GPS or as a grid. Off leaves that corner empty. Privacy mode masks it. The corner stays put until this phone has moved.
-
-## 1.1.30 — 22 October 2026
-
-- Places no longer closes the app on Android 10 and 11.
-
-## 1.1.29 — 22 October 2026
-
-- On Radar, Display dims Title line, Subtitle line, Show live path, RSSI bars, Frequency, and First / last seen. Timeline dims RSSI bars. The saved choice stays, and it comes back on a view that uses it. View, Sort, Brief hold, and Signature names stay available.
-- While Location is off, Fieldwatch does not ask for Wi-Fi or Bluetooth scans. Turning Location on waits a moment, then starts them again.
-- If Fieldwatch closes from a crash, the next open shows what happened before anything else starts. Copy sends it. Continue opens the app. A normal close does not show it.
-
-## 1.1.28 — 22 October 2026
-
-- Show live path is on Display, the first switch, above RSSI bars. It starts off. Turn it on and a north-up map of this phone sits across the top of Live, with the list still under it. Drag the bar between the map and the list. While View is Radar the switch stays dimmed and does not turn off.
-- The line starts where you are when the map opens and draws as soon as you move. A bend is kept when the drive leaves the last line by about 12 meters. Side-to-side GPS wobble stays off the line. With no sit, the line is the later of when you turned the switch on and 15 minutes ago. An open sit draws from the start of the sit, walking or driving. Dots are watchlist alerts. Pinch or drag holds the view. Recenter, or a double-tap, follows you again.
-- Reports → Path uses that same line.
-- Turning Location on while Fieldwatch is open pauses Wi-Fi and Bluetooth for a moment, then starts them again. A bad scan result is skipped instead of closing the app.
-- Debrief and Compare path figures draw the street tiles solid. The disclaimer and the path caption use the body text.
-
-## 1.1.27 — 16 October 2026
-
-- Places remembers a stable tracker this phone hears at two or more places in the last 7 days, and a return after a quiet stretch. The lines are on that radio’s page and in the sit report, with where this phone was. A stop from another day includes the date. Online place names adds the street. Filters can limit Live to the ones you can hear now. A radio that changes its address is skipped. Ordinary Wi-Fi and Bluetooth stay off. There is no beep and no TAK marker. Each radio keeps the latest 8 stops. A ninth confirmed stop drops the oldest.
-- The user manual explains Places: what a stop is, which radios qualify, and the limits.
-- Signature candidates shows a progress dialog while it reads the log and matches the catalog. The bar follows the file.
-- Sit export can write GeoJSON. It is the same map as the sit GPX and KML: this phone's path, and a point where this phone heard each radio.
-- Settings opens as a list of topics. Tap a row for that page. The row shows the current choice. Back returns to the list. Named radios is its own row, after Watchlist. The row shows how many are saved.
-
-- A Filters row names what is selected in the same muted text as Settings. That line is not green.
-- The sit list is spaced a little tighter.
-- The Signatures page says Bookmark to alert. The line about hiding a family on Filters is gone.
-- The Sits line says Radios heard during a named stretch of time. Under Start sit it says Select Sit for actions below.
-- Moving with you says Loud Bluetooth radios that stay with you.
-- Presets says tap a preset to load it, long-press one to delete it, or save the current filters settings to a new preset.
-- Selected signature classes says to pick Show only or Hide these, then the classes, and that a preset includes those selections.
-- Selected signatures says to pick Show only or Hide these, then the signatures, and that a preset includes those selections.
-- Edit signature drops the last sentence under Notes and the last sentence under Extra attention.
-- Edit signature says the class is what Filters uses for Show only or Hide these.
-- Edit signature and Decode fields use shorter, accurate lines for Min peers, color, rules, restore defaults, removing a decode map, and an empty preview.
-- Settings → Diagnostics says it shows whether scanning is running, and the state of Wi-Fi, Bluetooth, Location, and GPS. The Diagnostics page no longer tells you to paste the copy into an issue.
-- The Settings footer no longer says Wi-Fi and Bluetooth only.
-- The Live tour points at the sliders in the top right. Open it shows how Live looks. Skip closes the tour. An upgrade to this version shows that card once, on the first Live screen. Settings → Show Live tour still brings it back.
-- The language list uses the English name of each language, in alphabetical order. Use the phone's locale if available stays first.
-- The user manual explains Language: the bundled drafts were translated with AI, a wrong line belongs in a GitHub issue, and a new language is a file in the author’s own repository. The author guide is linked from that section.
-- An off switch keeps a light knob, so it still looks like it can be turned on. A switch that cannot be used stays faded.
-- Reports keeps Sits open. Path, Debrief, Sit export, Compare, Log Export, and Signature candidates each open their own page. The line under each row is a short description. Signature candidates explains the search, and Find candidates starts it. Path, Debrief, Sit export, and Compare sit under a line that names the sit they use, with a bar on the left in the same green as those rows. Log and Signature candidates stay full width under that group.
-- Keep or hide calls the three keep switches Keep signature matches only, Keep watched only, and Keep named only. Hide my radios is Hide Mine.
-- Filters keeps Presets and Radios open at the top. Moving with you, Seen at more than one place, and New detections are switches on that list. Keep or hide, Selected signature classes, Selected signatures, and Signal, name, MAC, vendor open their own page. The row names what is selected in that section.
-- Selected signatures is one list. Show only and Hide these sit above it, the same way Selected signature classes works. Turning a chip off keeps the picks.
-- Sit export can write an ATAK data package. ATAK imports the zip. It has this phone's path, a point for each radio, an aircraft pin and its short track when a position was advertised, an operator pin when that position was advertised, and a GNSS hit as a pin on the path. The ellipse and floods stay on the live feed.
-- Each phone gets its own TAK marker. The name is Fieldwatch plus a 4-character tag, unless you type one. Two phones on one network no longer share that marker. A Remote ID aircraft with a UAS ID is still one shared marker. This is not direction finding.
-- Settings → GNSS interference can record the phone’s raw GPS measurements around a hit. The switch is off until you turn it on. Share last recording is on that page. Privacy mode does not record.
-
-## 1.1.26 — 12 October 2026
-
-- A Remote ID operator location says what that point is. Takeoff is the launch spot. Pilot is a live GPS operator. Fixed is a point the aircraft declared. An older sit says Operator. The pin stays Orange. A known operator altitude is shown. Unknown stays blank. The card can say the aircraft height is above takeoff or above the ground. EU category and class show only when the plate says the classification is EU.
-- Settings calls the longer GNSS mark an ellipse. A short hit is still a pin. A longer hit is one ellipse from the start to the last place, half as wide as it is long.
-- The user manual, under GNSS interference, explains how a hit is decided.
-
-## 1.1.25 — 11 October 2026
-
-- A GNSS hit can put a mark on the ATAK map where this phone was. A short hit is a pin. If the phone keeps moving while the hit lasts, the mark becomes an oval from where it started to where it was last heard, half as wide as it is long. The words also stay on this phone's Fieldwatch marker. The mark does not say where the cause is.
-- How long that mark stays is a setting: 1 hour, 6 hours, 24 hours, or until deleted. The default is 1 hour. Until deleted stays until GNSS on TAK is turned off.
-- A radio spot on TAK keeps its name after the radio leaves. How long a spot stays is 1 hour, 6 hours, 24 hours, or until deleted. The default is 1 hour. This phone's Fieldwatch marker still refreshes about every 2 minutes. Turning the feed off, or Privacy mode on, takes those radio spots off the map. A short GNSS pin that grows into an oval does not leave a Fieldwatch spot behind.
-
-## 1.1.24 — 10 October 2026
-
-- The icons in the top bar show whether Wi-Fi, Bluetooth, and signatures are healthy. Green means that part is working, including the wait between Wi-Fi scans and a planned Bluetooth rest. A signature count of 0 stays green. Gray means the scan is stopped. Dim gray means that radio is off. Red means Location is off while that scan is running, or Android is refusing it. The words after the icons stay in the secondary text color. Night mode folds the colors into the red display.
-- A GPS mark with no number sits in that bar while the GNSS interference check is on. Green when the check is armed and quiet. Gray while it is still settling or learning, while the phone has paused GPS, while this phone graded Poor, or while the scan is stopped. Red while a hit is up. A pause stays gray.
-- Faster Wi-Fi AP scans matches Developer options. The switch is on only when Wi-Fi scan throttling is off. Tap it to open that page. About every 8 seconds instead of the normal wait. Fieldwatch cannot change that switch for you.
-- The window uses the full height of the phone, so the top bar, the list, and the tabs still draw on phones that were leaving them blank.
-
-## 1.1.23 — 9 October 2026
-
-- A GPS pause is not interference. If the satellites and the gain disappear together, or the phone reports the receiver stopped, Live says GNSS paused by the phone. There is no popup, red line, or TAK line. The check waits a few seconds after GPS returns before it watches for a drop again. A real drop is still a gain change while satellites are being tracked.
-
-## 1.1.22 — 9 October 2026
-
-- Catalog 94. Flipper Zero also matches official-firmware services 3080–3083, so a renamed official unit still matches. Tile also matches FEEC, the pre-activation service. Polar is a new Wearable row: company 0x006B, service FEEE, or a Bluetooth name that starts with Polar. A Polar strap that also sends the GoPro heart-rate service stays on Polar.
-- A GPS warning posts a phone notification only when Settings → GNSS interference → System notification is on. That switch is off until you turn it on, and it is separate from the watchlist switch. The popup, the red line, the beep, and the voice are unchanged.
-- After calibration, Settings says Calibration complete and names this phone Good, Fair, or Poor. Good says the check should work with a steady view of the sky, away from other electronics.
-- The GPS popup says what was noticed and why, in plain words. The receiver numbers come after that, under Details. The red line, the sit, and the path note keep the shorter technical line.
-- A clock mismatch, a position mismatch, or a jump faster than travel does not warn on its own. Those count with a gain drop, or with each other. A network fix of 100 m or coarser does not count. The centers have to be clearly apart, and the mismatch has to hold.
-- A pairing or name flood stays quiet while this phone is moving faster than a walk and the burst is about -80 dBm or weaker. A loud burst still warns at any speed. Standing or walking still warns at any loudness. A Wi-Fi beacon flood is unchanged.
-- TAK / CoT can add a flood note to this phone's marker when a flood is detected, until the flood ends. Off until you choose On. Not a separate pin, and it does not change the red line on Live. A store full of radios advertising pairing can cause it. The note does not say it was one radio.
-- The GNSS check ignores the first minute after it starts. Those readings are not the baseline. It then learns for about a minute, and a warning can come after that. The saved calibration for this phone still applies.
-- A GNSS detection is a red diamond on Reports → Path, where this phone was. The note under the map, and the Debrief and Compare section, have the time, the level, and what changed. The diamond is not where the interference came from. A sit with no GPS fix still lists the hit, with no diamond.
-- GNSS interference check stays off until this phone is calibrated, then until you turn it on. Calibrate this phone takes about a minute outside, standing still, away from a router. The result stays on this phone until you calibrate again and is left out of Export settings. Good, Fair, or Poor says how useful the check will be on this GPS. A weaker receiver can still tag a path. Poor leaves the popup off. While Fieldwatch is scanning, a hit opens a popup, then a red line on Live. Debrief and Compare record it. Spoofing checks, voice, sensitivity, and the confidence that alerts are separate switches. Voice for this check is on. A Wi-Fi router or other electronics next to the phone can cause a hit. Fieldwatch cannot tell the source or the distance. Diagnostics lists the receiver facts and the calibration grade, and does not include GPS coordinates. TAK / CoT can add that line to this phone's marker: Off, While alerting, Red line, or Any hit. It is not a separate pin.
-- Live shows a banner when Location is off. Turn on opens the phone’s Location screen when that screen exists. Android will not return Wi-Fi or Bluetooth results while Location is off.
-- Diagnostics stops naming Wi-Fi scanning and Bluetooth scanning when that radio is already on. A refused Wi-Fi scan or a parked Bluetooth scan says the radio is on.
-- Catalog 93. Flock Safety Cameras keeps B4:1E:52 and a name that starts with Flock-. A name that only contains Flock, FLCK, Condor, Falcon, or Sparrow no longer matches. FS Ext Battery keeps the name and a name that starts with FS Ext. Silicon Labs prefixes and FS_* are gone. Penguin keeps the XUNTONG manufacturer ID and a name that starts with Penguin-. LiteOn camera radio drops B8:35:32. 08:3A:88 stays. That prefix is Universal Global Scientific Industrial, not Lite-On.
-- Pairing flood leaves out the Windows background beacon (company 0x0006 starting with 01). Swift Pair still counts: beacon id 03, a pairing sub-scenario, and the reserved byte. Find My stays out, including a Find My advertisement whose later bytes look like proximity pairing.
-- Settings → Diagnostics starts with What to check. It names a switch that is off and needs to be on. If that does not explain an empty Live list, Copy still pastes the page.
-- Voice alerts can reach a speech engine on Android 11 and newer. Android 10 already could. The phone still needs a public engine with a downloaded voice, Voice on, and the media volume up.
-
-## 1.1.21 — 6 October 2026
-
-- Privacy mode masks a Remote ID in the sit-report path key: the MAC tail, the UAS id, and the aircraft and pilot coordinates. Altitude, course, and speed stay. The map and the dotted track still draw. The same UAS id is masked in the rest of Debrief, Compare, and AI Export. The log, sit export, and GPX/KML/WiGLE files are unchanged.
-- WiGLE CSV prefixes a name whose first non-space character is =, +, -, or @ when that name is not a plain number, same as sit CSV and log CSV. RSSI, coordinates, and a normal network name stay as they were.
-- Settings → Diagnostics, under Show Live tour, lists the phone, Android version, catalog, and whether Wi-Fi, Bluetooth, and Location are scanning. It also lists Faster Wi-Fi AP scans, Allow background usage, and Unrestricted battery. Copy pastes those lines into an issue. It has no network names and no GPS coordinates. An empty Live list points there when a scan is blocked.
-
-## 1.1.20 — 5 October 2026
-
-- Sit CSV and log CSV prefix a cell whose first character is =, +, -, or @, so a spreadsheet keeps the name or note as text. A plain number, including a negative coordinate, stays as it was. WiGLE CSV is unchanged.
-- Import settings asks before it applies a file that would turn the TAK / CoT feed on or change its destination. A file that leaves the feed and the destination as they are still imports with no extra step. Cancel leaves the phone as it was.
-- Catalog 92: LiteOn camera radio drops 48:27:EA (Samsung) and 82:6B:F2 (a local address, not a factory block). F8:A2:D6 stays. Ray-Ban / Meta glasses also matches a Bluetooth name that starts with Meta RB Display. Axon notes say body-worn or fixed ALPR. That public address prefix is shared by body cameras and fixed readers. Remote ID names Autel from a serial that starts with 1748C, and Skydio from 1668B, when the ID type is a serial. A shorter prefix does not get that name.
-
-## 1.1.19 — 4 October 2026
-
-- Catalog 91: DJI Power matches a Bluetooth name that starts with Power2000. It is a power station, Home IoT, and it is not bookmarked. Osmo cameras stay on the Osmo row. A DJI Power hit drops the DJI drone row. Other DJI radios stay on DJI. Model id 4500 reads Power 2000. The name is what selects the row.
-- Atrius cart tag is the name of that iBeacon UUID. The advertisement does not name the store, so the row no longer says Target.
-- A name flood counts randomized Bluetooth addresses. A factory address with a stable name stays out of that count. Pairing popups still count every address. A smaller cluster of pairing popups stays quiet.
-- The pairing flood dialog says the burst can be many radios already advertising pairing, such as in a store, or one radio changing its address on every packet. A name flood can be tags in a store, or one radio changing its name and address. Continue leaves them on Live. Hide these takes them off Live. The sit and the log still keep them. The advertisement does not name the tool.
-- During a sit, Continue or Hide these holds until the sit ends. The first burst still asks. Later bursts keep the red line and do not open the dialog. Hide these also takes later bursts in that sit off Live. Ending the sit asks again. With no sit open, the choice holds for about 15 minutes and does not slide. A later burst in that time keeps the red line. After 15 minutes the next burst asks again. Starting a sit while that hold is running keeps the answer until the sit ends. Pairing and name floods share the answer. A Wi-Fi beacon flood asks once on its own.
-
-## 1.1.18 — 3 October 2026
-
-- Live warns when many new Bluetooth addresses advertise a pairing popup, or many new names, within a few seconds at about the same loudness. One dialog, then a single line until that burst goes quiet. The advertisement does not name the tool.
-- A pairing or name flood during a sit is one quiet Flood line on Debrief and Compare: the time, the kind, how many new addresses, and which sit on a compare. Those addresses are left out of the radio counts and lists. The line says how many were set aside. The sit file and the log still keep them. A sit saved before the addresses were stored still counts them with the other radios. The note is saved when the live warning appears.
-- Hide this burst, on the Live flood line, takes that burst’s new addresses off the Live display until they would have left on their own. The sit file and the log still keep them. Debrief and Compare leave them out of the radio counts and lists. Alerts stay quiet for those addresses. The next burst starts with the switch off.
-- Live warns when many new Wi-Fi names show up in one scan, about the same loudness, and are gone on the next scan. The first scan of a session stays quiet. A repeated name, a mesh, an extender, or a guest network is not counted. One dialog, then a single line, then the same Flood note. Those addresses are left out of the radio counts and lists. The sit file and the log still keep them. The advertisement does not name the tool.
-- Pairing flood counts a Swift Pair beacon (beacon id, a pairing sub-scenario, and the reserved byte), so Hide this burst covers those new Microsoft Device addresses. Nearby Sharing still counts from its own advertisement.
-- Pairing flood counts a Samsung Easy Setup buds or watch advertisement, so Hide this burst covers those new addresses. They still show as Samsung SmartTags. A tag advertising service FD5A or FD59 is unchanged.
-- Pairing flood counts a LoveSpouse advertisement (company 0x00FF and its fixed prefix), so Hide this burst covers those new addresses. They stay unmatched. A shorter 0x00FF blob stays out.
-- Catalog 89: Even G1 also matches the Even Realities company id. RayNeo matches only when the name starts with RayNeo and the advertisement uses the TCL company id. LiteOn camera radio adds E0:0A:F6 and 14:B5:CD, still with no Extra attention.
-- Catalog 90: Remote ID also labels the French Direct Remote ID vendor IE. Position and pilot still come from the ASTM plate. Tello matches a name that starts with TELLO or RMTT. Potensic, Holy Stone, Hubsan, Yuneec, SwellPro, and Crazyflie match a name that starts with the brand. Parrot also matches Skycontroller. These drone rows are bookmarked and have no Extra attention.
-- Remote ID names Freefly, BRINC, and Teal from the serial on the ASTM plate, when the ID type is a serial. The row stays Remote ID. A session ID and the French plate do not get that name.
-- Mine marks a radio you can already name. The live list shows a Mine chip. That radio does not beep, speak, flash, vibrate, or raise a card while Mine is on, including when a bookmarked signature matches. Other radios of that signature still alert. Debrief and Compare list it under Marked mine and leave it out of the co-travel callouts. Turning Mine on fills a blank custom name the same way observer notes do.
-- Filters → Who stays → Hide my radios takes radios marked Mine off the live list. The sit, the log, and Debrief still include them. Turning on Moving with you leaves this switch on. Live does not show a reminder line for it.
-- A Bluetooth company name stays on the company line. It is no longer stored as the IEEE vendor when the MAC prefix is not in the list. An address with the local bit set is not called a factory address.
-- Settings → Named radios puts the Wi-Fi or BLE mark on the name line. The custom name and MAC each stay on one line. Mine and Alert sit under the name.
-- Debrief and Compare lead with counts. The PDF draws class, channel, and compare bars. A radio is listed when it is Extra attention, has a custom name, is marked Mine, or is bookmarked. Compare also lists a decoded value that changed. Reports → Sit report → Show all radios brings the full rosters back. Text has the same counts and the same lines. Sit export is unchanged.
-
-## 1.1.17 — 1 October 2026
-
-- Privacy mode no longer hides the map on Reports → Path, or on the Debrief and Compare letter path figures. Those tiles follow Online place names and maps. Privacy mode still masks MAC tails and coordinates, omits street names, and pauses the TAK / CoT feed.
-- Reports → Path keeps about 400 m of ground on the short side when the GPS path is one fix or a short sit. A longer walk still fills the plot.
-
-## 1.1.16 — 30 September 2026
-
-- Reports → Path plots MAC alerts and signature alerts, each once at the strongest hear, as a class icon. A count is several in one place. The black dot is the start. The blue dot is you, at the last point. The list puts the Wi-Fi or BLE icon next to the MAC. The symbol key under the map is gone, and the alert rows sit closer together. An alert with a decoded latitude and longitude is drawn at the last advertised fix as a class icon. The advertised track on that card is a white dotted line. If that icon shares a spot with other alerts, the count lists them together. The pilot is a person icon, with no word label on the map. A lone class icon has no number box; tap it for that one radio. A count still lists only the radios in that spot. A fix farther than 2 km stays on that aircraft’s map. Other alerts stay at the strongest hear. Debrief and Compare PDF figures draw that track as a black dotted line, with a class icon at the last position and a person icon for the pilot. On a compare, the second sit’s track is a blue dotted line. Those PDF figures plot the same MAC alerts and signature alerts, at the last advertised position when the radio sent one. The Path key under that figure lists an advertised aircraft with the drone class icon, plus its live status, UAS id, last position, motion, and pilot position. A start or end mark that covers a detection still opens that detection.
-- A decode field can ask to show its value on the live row, and which named values use the stronger chip. Catalog 85 turns that on for DULT mode: Separated stands out; Near owner stays quiet. The separated sentence is catalog text on that value. Older apps skip the new keys and still import the pack.
-- Debrief and Compare quote that live label and its catalog sentence. A separated tag keeps the about-a-day sentence instead of the rotating-address line. Compare says when the decoded value changed between sits. Catalog 86 adds the near-owner sentence. A named sit stores the label, because the sit does not keep the advertisement bytes.
-- Catalog 87: Google Find Hub mode uses the same live row. Separated is the stronger chip and keeps the about-a-day sentence. Nearby stays quiet, with a sentence that co-travel is often your own tag or someone who joined with their own keys.
-- Catalog 88: Remote ID location status uses the same live row. Undeclared, Ground, Airborne, Emergency, and RID failure all show. Emergency is the stronger chip.
-- A sit keeps a short trail of advertised positions, joined by UAS id on the report. A track within 2 km of the phone path shares that map. A farther aircraft gets its own map. Reports → Path draws that track as a white dotted line on an open or saved sit. The letter-size figure draws it in black dots. Last 15 minutes marks the current advertised position and does not keep a track. Sits recorded before this change keep a single last position.
-
-## 1.1.15 — 28 September 2026
-
-- Catalog 82: Flock Safety Cameras Extra attention is IEEE B4:1E:52 and Flock / FLCK / Flock-* / Condor / Falcon / Sparrow names only. LiteOn / module prefixes move to LiteOn camera radio (Cameras class, no Extra attention, not bookmarked). UGSI E0:4F:43 is dropped so a Ring- SSID is Ring, not a Flock pole.
-- Sit export CSV / JSON lines include matched signatures and Extra attention family names (semicolon-separated). Extra attention true/false stays. GPX / KML / WiGLE unchanged.
-- Named sit cap 6000 unique radios (was 3000). Unnamed BLE still drops first. Low-memory gate unchanged.
-- Debrief text/PDF hide unmatched rotating BLE from inventories by default. Counts, Extra attention, named signatures, bookmarks, payload pins, and Sit export still include them. Reports switch: Show unmatched rotating BLE.
-- Catalog 83: Penguin decode on XUNTONG 0x09C8 manufacturer data — MAC in payload and ASCII serial starting TN. Identity is still the company ID / Penguin* names.
-- Catalog 84: DULT tracker on BLE service data FCB2 (IETF Detecting Unwanted Location Trackers). Decode Network ID and near-owner vs separated. No Extra attention. Chipolo / Pebblebee names may dual-label. A bare FCB2 UUID list does not match.
-- Wi-Fi Remote ID ASTM message packs (vendor IE FA:0B:BC type 13) are framed as BLE FFFA (`0x0D` + counter + each 25-byte message) so the stock Remote ID Decode fields map, detail, and TAK Payload location use the same fields as BLE. GitHub catalog stays v2.
-- Update stock catalog from GitHub: unknown decode sources keep the signature and drop only that field map. After import, a second dialog asks for a newer APK when any map was skipped.
-
-## 1.1.14 — 27 September 2026
-
-- Debrief / Compare PDF path figure: OpenStreetMap tiles when Online place names and maps is on and Privacy is off (same gate as Reports → Path). Full-width letter frame, thick green stays, numbered Extra attention (red) and bookmarked (blue) hits. Offline or Privacy: the north-up trace only.
-- Remote ID Location: heading uses the OpenDroneID east/west flag (direction 0–179, +180 when that bit is set) instead of a ×2 scale. Horizontal speed (`hspeed`) decodes with the SpeedMult bit (×0.25, or ×0.75 + 63.75). Catalog 79. ATAK track course/speed follow those values.
-- Catalog 80: BLE manufacturer 0x09C8 (XUNTONG) moves from Raven / ShotSpotter to Penguin. That ID is the Flock external battery, not the acoustic sensor. Raven keeps names, UUIDs 3100–3500, and OUI D4:11:D6.
-- Catalog 81: Axon `BWCDEVICE` matches ASCII (and byte-reversed) in BLE service data, not the advertised name. Empty-UUID service-data rules contain that hex in any service payload.
-
-## 1.1.13 — 26 September 2026
-
-- TAK / CoT: advertised Remote ID aircraft pins include ATAK track course and speed when the Location message has them. Wi-Fi Remote ID (vendor IE FA:0B:BC type 0x0D) decodes Location / Basic ID / System the same way as BLE FFFA, so Payload location can pin a Wi-Fi-only drone. Vendor IE payload is no longer truncated at 24 bytes.
-
-## 1.1.12 — 26 September 2026
-
-- Google Find Hub tags (FEAA frames 40/41). Catalog 78. Eddystone UID/URL/TLM stay unmatched. Separated mode can hold a MAC about a day. GitHub update uses dist/fieldwatch-signatures-v2.json; 1.1.11 still reads the v1 pack (catalog 77).
-- Catalog 77 (already on GitHub for 1.1.11): Flock/FS Ext drop Espressif and Silicon Labs OUIs; Axon TASER/Axon UUIDs; Meta FEB7/FEB8, Snap FE45, Vuzix; Remote ID Wi-Fi FA:0B:BC and BLE v0–v2 location extras.
-
-## 1.1.11 — 26 September 2026
-
-- Detail / share: RSSI 127 is Bluetooth “not available,” not transmit power. It is omitted from current, min/max, sparkline, Hunt, and share text.
-
-## 1.1.10 — 26 September 2026
-
-- Path: Extra attention and bookmarked radios as numbered dots at strongest RSSI. Observer notes on Path only if that radio is bookmarked. Present for the entire route is dropped. GPS trails keep spread samples across the sit instead of only the last 40. Path drops GPS spikes (out-and-back jumps or hops faster than about 150 km/h).
-- Stock catalog: BLE TPMS. Aftermarket valve-cap sensors (TPMS* / FBB0 / manufacturer data 80–83) decode pressure, temperature, battery, and alarm. SYTPMS / BR (name BR or UUID 27A5) decode gauge pressure, temperature, battery, and motion. Tesla tsTPMS decodes pressure / temperature / battery when the sensor is awake. New rows: TireCheck, Bluetooth TPMS service. FOBO also matches service 00EE. Not a bare Nokia 0x0001 match. Catalog 76.
-
-## 1.1.9 — 25 September 2026
-
-- Path: stays as thick green on the line, time ticks, header stop / entire-route counts, RSSI min–max on Present for the entire route. Each Extra attention / Named radio plots once at strongest RSSI. Entire-route uses first/last heard vs the sit window (not the 40-sample GPS trail).
-- Settings → Online place names and maps (default on) also loads OSM tiles under Path. Tiles fill the plot box then clip, with extra map around the route. Offline, no tiles, or Privacy mode: north-up trace only, no error. User manual updated.
-
-## 1.1.8 — 25 September 2026
-
-- Reports → Sit export: its own card under Sit report, same Format and radios chips as Log export (CSV, JSON lines, GPX, KML, WiGLE). One row per unique radio in the selected sit (or last 15 minutes), not the rotating log. GPX / KML include this phone’s path as a track plus hear-points. Privacy mode does not mask the file. The log card is titled Log export. User manual §5.6.2 / §11.6 spells sit vs log.
-- Path legend: Line = this phone on its own row; Blue = Named in cyan (same as Named dots).
-
-## 1.1.7 — 25 September 2026
-
-- Named radios: Observer notes (up to 280 characters) on the same KIND+MAC as the custom name. Cyan block on detail under the name; a saved custom name is the large title, advertised name smaller. Edit on detail or Settings → Named radios. Saving notes without a name still creates the Named-radio row (suggested label, Alert off). Live list shows a cyan notes chip next to Extra attention “!”. Debrief lists Observer notes after Where you were; Compare after Windows. Path and AI Export list heard radios and the note. Extra attention stays gold. BLE privacy addresses still hide the pencil. Settings backup includes the note.
-- Debrief / Compare PDF: stay/transit lines, Channel occupancy / Loudest APs and other “Label:” kickers are bold; bullets and Path key numbers are structured.
-- Reports use the custom name from Named radios (not the advertised SSID/LE name) in Debrief, Compare, Path, AI Export, and GPX/KML. WiGLE CSV still writes the advertised SSID.
-- Reports → Path: north-up plot of this sit (or last 15 minutes). Operator GPS track, scale bar, Extra attention / Named dots. Stacked counts tap for one inset. No map tiles. Hear-points, not radio fixes. Debrief PDF and Compare PDF include a letter-size operator-path figure (compare overlays both walks).
-- Reports → Log: Format (Log file — CSV, Log file — JSON lines, GPX — GPS Exchange, KML — Google Earth, WiGLE CSV — wigle.net) and radios (Both / Wi-Fi only / BLE only). Rotating file is JSON lines. CSV / maps are Share/Save projections. Hear-point pins are this phone. Fieldwatch does not upload. Settings CSV/JSON chips removed.
-- User manual rewritten for Path, Compare, Log export, Observer notes, custom names, and the Live notes chip. Screenshots recaptured in Privacy mode.
-
-## 1.1.6 — 24 September 2026
-
-- Decode field numbers and radar zoom use `Locale.US`, so French/German phones keep a period (`26.48 °C`, `×1.5`). Parser unit tests and GitHub Actions (`testDebugUnitTest` + debug APK) on push/PR.
-- Reports → Compare sits: this sit (open, selected, or last 15 minutes) vs a second saved sit. Compare (text) and Compare (PDF) — same letter layout as Debrief. Compare AI Export is an addendum (overlap, exclusive Extra attention / Named radios), not a rewrite of the lists. Presence: only in this sit, only in the second, in both. Kind + MAC. Extra attention and Named radios marked. Privacy mode on the share text.
-- Sit-report AI Export is the same addendum shape: onboard Debrief verbatim, then 5/15-minute rates, RSSI bands, Extra attention and finder-tag IDs for a tracking stress-test — not a second Wi-Fi/BLE roster.
-
-## 1.1.5 — 24 September 2026
-
-- Detail “What this looks like” uses a matched catalog family instead of a generic SSID guess. A `DIRECT-rR-Raven-*` AP is a Raven / ShotSpotter sensor, not a phone or TV on Wi-Fi Direct.
-- Removed the stock **Unknown Signature** catch-all (`ESP_*`, `ANDROID-`, `DIRECT-`, `UNIT-`). Those names were not a product family and dual-labeled real rows (Raven, Roku, Epson). Generic `DIRECT-` SSIDs stay unmatched; the guess can still say Wi-Fi Direct.
-- Custom name on detail is always available for Wi-Fi, including locally administered BSSIDs (vehicle / mesh / guest APs). BLE privacy addresses still hide the pencil. Identity copy no longer calls a Wi-Fi local-bit BSSID a rotating privacy MAC.
-- Stock Extra attention: Digital Ally body/in-car (IEEE 00:23:BD); Limitless, Bee, Omi, and Friend wearable recorders (unique BLE services / names); Brilliant Frame and Even G1 glasses; Reveal Media and Wolfcom bodycams; Panasonic i-PRO / Arbitrator; Hayden AI, Miovision, Tattile, and LVT LiveView (name-only — cellular units stay quiet).
-- Stock filter chips: All traffic, Wi-Fi only, BLE only, Strong signal, Moving with you, Watched only. Trackers / Hide trackers / Hide phones left the stock set (class chips + Save current as… still make those sits). Existing custom chips that duplicate a stock name or filter are folded on upgrade.
-- User manual Chapter 14 Technical specifications / How it works (Fig. 20).
-
-## 1.1.4 — 21 September 2026
-
-- Slightly smaller switches. Outlined fields and dropdowns share the same tight inner padding (Display, signature editor, Decode, Filters, Settings TAK, sit/name dialogs). Rule Kind/Value and Manufacturer data fields no longer overlap.
-- Opening Display dims Live and blocks taps on radios behind it. Tap the dim area to close.
-
-## 1.1.3 — 21 September 2026
-
-- Live Tune (Display) overlays the radar/list instead of pushing it down. The panel stays collapsed at launch. In portrait it uses the height above the tab bar; in landscape it scrolls, with a fade and down-chevron when more options sit below.
-- Tighter FIELDWATCH header, Filters/Signatures subtitle bar, and bottom tab bar.
-- Night mode is under Appearance. Dark theme is no longer a switch — the display is always dark. An upgrade or settings import with Dark theme off is forced on.
-
-## 1.1.2 — 21 September 2026
-
-- Stock signature: BlueTOAD Spectra (Iteris Vantage Velocity / Spectra CV roadside Bluetooth travel-time reader). Surveillance class. Labels on a BlueTOAD / Vantage Velocity / Spectra CV name or Iteris OUI `00:14:7B`. No Extra attention and not a stock bookmark — quiet cabinets and 5.9 GHz C-V2X will not appear.
-- Stock signatures: BlipTrack (travel-time, no beep); Hanwha Wisenet, Uniview, Rhombus (cameras, Extra attention); MeshCore, goTenna, SenseCAP, RAK WisGate (mesh, no beep); GhostESP and Bruce (pentest Extra attention, GhostNet / BruceNet only). Existing phones now get the new Extra attention bookmarks (GhostESP, Bruce, Hanwha, Uniview, Rhombus) without Restore.
-- Locks class is now labeled Access control. ASSA ABLOY, SALTO, dormakaba, and Paxton move there from Surveillance (door readers, not cameras). Stored class value is still LOCK.
-- Settings footer shows Catalog N. Update stock catalog from GitHub replaces stock rows (including Extra attention) from the repo JSON; bookmarks and Settings stay. Needs internet. Offline: Import signatures.
-
-## 1.1.1 — 20 September 2026
-
-- Reports → Sits: a short note on what a sit is, and that Sit report uses the open sit, a selected saved sit, or last 15 minutes.
-
-## 1.1.0 — 19 September 2026
-
-- Named sits. Optional: Reports → Start sit. Debrief and AI Export use that window instead of the last 15 minutes in RAM. Live list, Filters, Hunt, and TAK are unchanged if you never start one.
-
-## 1.0.8 — 19 September 2026
-
-- TAK remarks are a short card when you inspect a marker: callsign, radio kind, MAC, RSSI, heard-here vs advertised vs pilot, signatures, Extra attention. Map label is still the 32-character callsign.
-
-## 1.0.7 — 19 September 2026
-
-- TAK heard-here pins hold the loudest hear (closest approach) instead of following the operator. A weaker hear still refreshes the same lat/lon every ~10 s so ATAK does not drop the marker. Advertised Remote ID / pilot pins still follow the payload. Not direction-finding.
-
-## 1.0.6 — 19 September 2026
-
-- Radar sweep runs off the display refresh so it still turns when Developer options Animator duration scale is off. The trail fades off the beam; contacts brighten when the sweep paints them.
-- New installs / Restore: Live display is By class. RSSI bars, Signature names, Frequency, and First / last seen are on. Existing phones keep the view they already chose.
-
-## 1.0.5 — 18 September 2026
-
-- Sideload APK is signed with an Off Grid Pete LLC release certificate, not the Android debug cert. Certificate SHA-256 is in `instruction.txt`. Phones that already have 1.0.4 or earlier must uninstall first; Android will not update over a different signer.
-
-## 1.0.4 — 18 September 2026
-
-- Dropped unused `RECEIVE_BOOT_COMPLETED`. Fieldwatch never started at boot; scanners flagged a permission with no receiver.
-
-## 1.0.3 — 17 September 2026
-
-- TAK / CoT: Remote ID keeps one aircraft marker that moves (sticky UAS ID, not the rotating BLE MAC). Decoded pilot lat/lon is a second pin, linked to the aircraft.
-- Heard-here callsigns end in (here); Extra attention uses Maroon, advertised drones Yellow, pilot Orange. Radios that leave are dropped on ATAK instead of sitting ~120 s.
-- Settings Feed status shows pins on the feed and sends this tick, plus dest, error, and time. Destination chips: This phone (`127.0.0.1:10011`), LAN multicast (`239.2.3.1:6969`), Custom. UDP only — a TAK server’s TCP 8087 is not this feed.
-- New installs / Restore: Voice on watched signature on; What to say is Class + signature. Dark theme, Keep screen on, Jump to new watched detection, and Beep were already on.
-- Stock bookmarks include Extra attention (including every Surveillance row that has Extra attention text) plus every built-in Drone-class row (DJI, Remote ID, Skydio, Autel, Parrot, HOVERAir). Existing phones keep their current Settings and watchlist unless you Restore defaults.
-
-## 1.0.2 — 16 September 2026
-
-- Settings backup: Export settings / Save settings / Import settings. Named radios, filter presets, and Settings switches; not the catalog, logs, or GPS. Done and error show an OK dialog.
-- Import signatures uses the same OK / error dialogs.
-- Bottom tabs cut immediately (no 700 ms fade).
-
-## 1.0.1 — 15 September 2026
-
-- Moving with you is BLE only. Wi-Fi access points stay off (a loud AP you drive past paints your path). Filters shows BLE only while that switch is on.
-
-## 1.0.0 — 15 September 2026
-
-- New app: Fieldwatch (`app.fieldwatch`). Sideload next to Spectre; data does not migrate.
-- MIT License for Fieldwatch source. Apache-2.0 libraries and IEEE / Bluetooth SIG lookup tables: see NOTICE.
-- Operator-visible name is Fieldwatch (launcher, notification, Debrief, TAK, first-run).
-- Signature export uses `fieldwatch-signatures`. Spectre packs (`spectre-signatures`) still import.
-- Includes Spectre 1.2.14: Android 12–14 no longer crash on the first BLE advertisement; Android 15 still shows Public / Random from the stack. Sideload APK is not a debug build. BLE scan starts about half a second after Wi-Fi at launch.
+# Yenilikler
+
+En yenisi önce. Bu, Fieldwatch'tur (`app.fieldwatch`). Aşağıdaki her derleme, Ayarlar'da sürüm olarak görünen sürümdür.
+
+Fieldwatch, Spectre 1.2.14 saha derlemesini yeni bir ad, uygulama kimliği ve MIT Lisansı altında sürdürür. Bir telefondaki Spectre'ın yerini almaz.
+
+## 1.2.2 — 23 Kasım 2026
+
+- Android 13 ve üzeri sürümlerde bildirim izni istenir; reddetmek artık uygulamayı engellemez. Tarama bildirimi yine gösterilir, böylece ekran kapalıyken tarama çalışmaya devam edebilir. Uyarı bildirimleri, siz izin verene kadar kapalı kalır.
+- Katalog 118, bir ürün adı veya o şirketin kendi Bluetooth kimliği için satırlar ekler: Air Lift, BlueParrott, Danlaw, Directed, Dreo, GN Hearing, Grundfos, HughesNet, iFIT, Kia, Kuna, Lighthouse, Lippert, Optimum, Otodata, PrepWizard, Procon, Pura, Redtiger, ResMed, Rinnai, Sennheiser, SonicWall, Soundstream, Toast, Turtle Beach, Ubee, Victron ve Vivint. Bunların hiçbiri bip sesi çıkarmaz. Eddystone mağaza işaretçileri eşleşmeden kalır.
+- Katalog 118, zaten mevcut olan satırlara dört kurulum ve seri adı ekler. Tuya, SmartLife- veya SmartLife_ ile başlayıp dört karakterle devam eden bir kurulum Wi-Fi adıyla eşleşir. Bu ad yalnızca eşleştirme sırasında görünür. UniFi, UDM Setup ile başlayan bir kurulum Wi-Fi adıyla, yani bir Dream Machine ile eşleşir. Midea, net_ac_ ile başlayan bir kurulum Wi-Fi adıyla eşleşir. net kelimesi tek başına Midea değildir. Motive, bu ad yayınlanırken AABL ile başlayan bir Bluetooth adıyla, yani bir Vehicle Gateway serisiyle eşleşir. Bunların hiçbiri bip sesi çıkarmaz.
+- Başka bir uygulama, MainActivity'ye gönderilen `app.fieldwatch.OPEN` ile Fieldwatch ekranını açabilir. AutomationService'e gönderilen `app.fieldwatch.CLOSE`, ekranı arka plana gönderir ve taramayı çalışır durumda bırakır. Fieldwatch'u Son Kullanılanlar'dan kaydırarak kapatmak taramayı yine durdurur.
+- Oturum dışa aktarma ve Günlük dışa aktarma, en son kullandığınız biçimde açılır. İlk sefer yine Günlük dosyası — CSV'dir. GeoJSON ve ATAK veri paketi Oturum dışa aktarma'da kalır.
+- Başka bir uygulama taramayı başlatıp durdurabilir, bir oturumu başlatıp durdurabilir ve taramanın çalışıp çalışmadığını sorabilir. Ayrıca en yeni kaydedilmiş oturumu veya radyo günlüğünü yazabilir. Sonuç, `Android/data/app.fieldwatch/files/automation` altındaki `status.txt` dosyasıdır. Oturum dışa aktarma o kaydedilmiş oturumu yazar. Açık bir oturum ve son 15 dakika dışarıda kalır.
+- Ayarlar listesindeki Tarama altındaki satır, tarama yoğunluğunu ve Pil korumasının Açık veya Kapalı olduğunu gösterir.
+- Ayarlar → Drone izleme, canlı listedeki bir Remote ID acil durum bildirdiğinde uyarabilir. Anahtar siz açana kadar kapalıdır. Bip sesi, sesli okuma ve sessiz bildirim, o sayfadaki diğer uyarılarla aynı anahtarlardır. Bluetooth ve Wi-Fi üzerindeki aynı UAS ID tek bir uyarıdır. GPS kilidi veya yer imi gerektirmez. Size ait olarak işaretlenmiş bir drone yine uyarı verir. Satır; Remote ID, hava aracı adı veya UAS ID, acil durum bildirdi şeklindedir.
+- Canlı yol ile haritayı göster, bir Remote ID izini hareket yönünde beyaz köşeli çift ayraçlar olarak çizer. Açık halka ilk noktadır. Son konum sınıf simgesi olarak kalır. Bildirilmiş bir acil durum o bölümü işaretler.
+- Bir oturum yolu, bir Remote ID izini hava aracı kaydıyla aynı köşeli çift ayraçlar, açık halka ve okla çizer. Oturum ve rapor irtifa, hız ve rotayı gösterir. Bildirilmiş bir acil durum zamanı not eder ve o bölümü işaretler.
+- Bir Remote ID acil durumu ziyaretle birlikte saklanır. Kart ne zaman bildirildiğini not eder. Yolun o bölümü işaretlenir ve başladığı yerde bir elmas gösterilir.
+- Bir Remote ID yolu hareket yönünde köşeli çift ayraçlarla çizilir. Açık halka duyulan ilk noktadır. Ok son noktadır. Ziyaret, hava aracının gönderdiği irtifa, hız ve rotayı gösterir.
+- Bir Remote ID ziyareti ne kadar sürdüğünü gösterir. Kayıt, hava aracının gönderdiği yolu ve o ziyaret için tek bir pilot pinini saklar. Aynı alandaki ziyaretler haritayı paylaşır, her biri kendi rengindedir. Diğerlerinden uzak bir ziyaretin kendi haritası olur. Pilot pini 2 km içindeyken çizilir. Gizlilik modu haritayı korur.
+- Raporlar, son 14 gündeki Remote ID hava araçlarını listeler. Bir satır bir hava aracıdır. Bir geçiş bir ziyarettir ve sonraki geçiş 20 dakika sessizlikten sonra başlar. Radyo sayfası kaç gün duyulduğunu ve bu geçişten önce ne zaman duyulduğunu gösterir. Bu satır aynı kaydı açar.
+- Katalog 117 üç radyoyu adlandırır. iTAG, Bluetooth adı tam olarak iTAG olanla eşleşir. Daha uzun bir ad eşleşmez. VIOFO, VIOFO ile başlayan bir Wi-Fi adıyla eşleşir. Bir oyuncak kamera drone'u, WIFI_UFO veya FLY-UFO- ile başlayan bir Wi-Fi adıyla eşleşir. Drone bip sesi çıkarır. iTAG ve VIOFO çıkarmaz.
+- Bilinen kamera sesi tek bir uyarıyı paylaşabilir. Konuşan kameranın 200 m içindeki kameralar sessiz kalır. Anahtar siz açana kadar kapalıdır. Harita yine her kamerayı gösterir.
+- Tek türden bir grup çoğulu söyler, örneğin İleride bilinen Flock kameraları. Birden fazla türden bir grup her türü adlandırır, örneğin İleride Flock ve kırmızı ışık kameraları. Tek bir kamera hâlâ size bakıp bakmadığını söyler.
+- Porkchop, tam olarak PORKCHOP adıyla ve M5PORKCHOP ile başlayan bir adla eşleşir. Yalnızca bu harfleri içeren daha uzun bir ad eşleşmez. 50:52:4B satıcı işareti yine eşleşir.
+- Bir radyoda Sessize al, o radyo için bip sesini, sesli okumayı, bildirimi ve titreşimi durdurur. Aynı imza adıyla listede kalır. Size ait olarak işaretlenmez.
+- Katalog 116, yakın zamandaki bir oturumdan dört radyoyu adlandırır. LEDnetWF, LEDnetWF ile başlayan bir Bluetooth adıyla eşleşir. EZ Lynk, EZLYNK ile başlayan bir Wi-Fi adıyla eşleşir. Trackunit, Trackunit'in şirket kimliğiyle eşleşir. OontZ, OontZ ile başlayan bir Bluetooth adıyla eşleşir. Bunların hiçbiri bip sesi çıkarmaz.
+- Ekran kapalıyken başlayan bir tarama açık kalır. Konum, Fieldwatch bir sonraki ekranda olduğunda eklenir.
+- Adlandırılmış bir radyo sessizleştiğinde uyarabilir. Anahtar siz açana kadar kapalıdır. 2 dakika boyunca duyulduktan sonra tek bir bip, bir titreşim ve bir sesli mesaj verir. Sessize al sessiz kalır. Benim de bunu kullanabilir. Taramayı durdurmak bunu tetiklemez.
+- Bu sürüm için paketlenmiş dil dosyaları yazılır.
+
+## 1.2.1 — 20 Kasım 2026
+
+- İzleme listesindeki sesli okuma, bip sesinden sonra yeniden konuşur. Uzun bir izleme listesi bip sesi çıkarıp cümleyi atlayabiliyordu; çünkü bip sesi, cümle kaydedilmeden önce bitiyordu. Cümle artık saklanır. Duran bir konuşma motoru yeniden başlatılır. Zaten açık olan ses açık kalır.
+- Bu sürüm için paketlenmiş dil dosyaları yazılır.
+
+## 1.2.0 — 19 Kasım 2026
+
+- Ayarlar → Drone izleme bölümünde Drone çevre algılama bulunur. Anahtarın altındaki satır, aşağıda seçilen menzil içinde Remote ID kullanan bir drone algıladığını söyler. Anahtarın altındaki mesafeler 100 m, 250 m, 500 m ve 1 km'dir; başlangıç 250 m'dir. 50 m veya daha iyi bir GPS kilidi gerekir. Bip sesi, sesli okuma ve sessiz bildirim, sürü uyarısıyla aynı anahtarlardır. Canlı satır, en son taze konum içindeyken o mesafe içinde olduğunu söyler. Yayın mesafenin bir buçuk katını geçtikten sonra veya o drone gittikten sonra yeniden uyarır. Remote ID yer imi, bu uyarının ilk ipucunu alabilmesi için 10 saniyeye kadar bekler. Uyarı açık olan adlandırılmış bir radyo yine kendi başına uyarır.
+- Ayarlar listesindeki o bölüm artık İmza izleme listesi uyarıları olarak adlandırılır.
+- Ayarlar listesi Görünüm, İmza izleme listesi uyarıları, Konum ve Haritalar ile TAK'ta aynı Açık ve Kapalı ifadelerini kullanır. Hücresel bağlantı izleme uyarı cümlesini söyler. İmza izleme listesi uyarıları altındaki not, izlenen bir radyo için sessiz bildirimi adlandırır.
+- Ayarlar → İzleyici izleme, bir uyarı ilk açıldığında bip sesi çıkarır ve konuşur. İkisi de siz birini kapatana kadar açıktır. Sistem bildirimi siz açana kadar kapalıdır. Bu bildirim sessizdir ve açılır pencere açıkken gösterilebilir. Bunlar kapalıysa açılır pencere yine açılır. Bir uyarının size nasıl ulaşacağı; GPS girişimi, Güvenilir ağlar, Hücresel bağlantı izleme, Drone izleme ve İzleyici izleme üzerinde aynı bloktur.
+- Drone sürüsü algılama, Remote ID aşağıdaki zaman penceresinde yeni drone'lar algıladığında uyarır. Ayarlar → Drone izleme, sürü uyarısı ve mesafe uyarısı için kendi başına bip sesi çıkarır ve konuşur. İkisi de siz birini kapatana kadar açıktır ve ikisi de izleme listesini izlemez. Sistem bildirimi siz açana kadar kapalıdır. Bu bildirim sessizdir. Bunlar kapalıysa uyarı yine açılır. Tek bir Uyarı size nasıl ulaşsın bloğu ikisini de kapsar.
+- Düşük pil koruma modu siz seçene kadar kapalıdır. Düşük pil taramayı Pil tasarrufuna düşürür, ardından durdurabilir. Pil tasarrufu açıkken Wi-Fi ve Bluetooth simgeleri sarıya döner. Kaydedilmiş yoğunluk korunur. Şarja takmak yavaşlatmayı geri alır. Bir durdurma, Fieldwatch açılana kadar durmuş kalır.
+- Sizinle ayrılmış etiket uyarıyı açıklar. Paragraf, bir izleme etiketinin sahibinden uzakta olduğunu, ardından bu telefonun onu kaç dakika ve kaç yerde duyduğunu söyler.
+- İki yerde duyuldu uyarıyı açıklar. Paragraf, bir izleme etiketinin bu telefonun bulunduğu yerlerde duyulduğunu söyler.
+- Katalog 113 iki yönlü telsizleri adlandırır. Bir BLE KISS TNC, KISS hizmetiyle eşleşir. Icom IC-705, Bluetooth adı ICOM BT(IC-705) ve Wi-Fi adı IC-705 ile eşleşir. Icom ID-5200, ICOM BT(ID-5200) ile eşleşir. Icom UT-137, ICOM BT-003 ile eşleşir. Bir Blu-PTT düğmesi, yayınladığı hizmetle eşleşir. TIDRADIO TD-H9, TD-H9 ile başlayan bir adla eşleşir. Bir AINA PTT Smart Button, ASB artı altı karakterle eşleşir. Wireless CPS açık olan bir el telsizi, tam olarak walkie-talkie adıyla eşleşir. Bu ad marka veya modeli söylemez. Bunların hiçbiri bip sesi çıkarmaz.
+- Katalog 112, bu telefonun görmeye devam ettiği radyoları adlandırır. Samsung TV'ler ve soundbar'lar kurulum adıyla eşleşir. Google Cast, FEA0 hizmetiyle eşleşir. Levoit, MELK, Midea, Zebra, JLab, ScentAir, Escort, Gard Pro, Vizio, Owlet, Tandem t:slim, SleepTracker, WHOOP, soundcore, Hume, Platco, NEEWER, 70mai, BlackVue, Galaxy Watch ve Galaxy Buds'ın her birinin bir satırı vardır. CHB, HarpBT ve GT201 bir ad önekiyle eşleşir. Bu üçünün arkasındaki ürün tanımlanmadı. Epson ayrıca bir ET- Series adıyla eşleşir. Bluetooth üzerindeki bir Samsung fırını cihaz satırıyla eşleşir. Osmo, osmo_ ile başlayan bir Wi-Fi adıyla eşleşir. UniFi, U6- veya UXG model adıyla eşleşir. Bunların hiçbiri bip sesi çıkarmaz.
+- Katalog 114, yakın zamandaki oturumlardan radyoları adlandırır. Acuity aydınlatma, hizmeti veya şirket kimliğiyle eşleşir. Cardo, Cardo adıyla veya FREECOM ile başlayan bir adla eşleşir. Cobra, 2A668FA4 hizmetiyle eşleşir. Bir ELK LED şerit, ELK-BLEDO ile başlayan bir adla eşleşir. Bir GLI açık tabelası, GLI1050 ile başlayan bir adla eşleşir. GM phone-as-key, FE48 hizmetiyle veya GM_PEPS ile başlayan bir adla eşleşir. Gree, GR-AC_ ile başlayan bir adla eşleşir. Bir HIKMICRO termal optik, HIKMICRO_ ile başlayan bir Wi-Fi adıyla eşleşir. IOSiX, IOSiX ELD ile başlayan bir Wi-Fi adıyla eşleşir. iRobot, iRobot'un şirket kimliğiyle eşleşir. JLG ClearSky, JLG'nin şirket kimliğiyle veya ClearSky Smart Fleet adıyla eşleşir. Bir LG cihazı kurulum adıyla eşleşir. Mazda, Mazda ile başlayıp _SPL ile biten bir adla eşleşir. Mentra Live gözlükler, Mentra_Live ile başlayan bir adla veya XyBLE_ artı daha fazla karakterle eşleşir. Phillips Connect, şirket kimliğiyle eşleşir. Pulsar termal ve gece görüş optikleri, Stream Vision Wi-Fi adlarıyla eşleşir. RNode, RNode artı dört onaltılık karakter adıyla eşleşir. Rove, ROVE ile başlayan bir adla eşleşir. Steiner ve Burris termal optikleri, Steiner ve Burris_BTH adlarıyla eşleşir. Bir Steiner M830 LRF dürbünü, LRF X, Steiner LRF X, LRF1535 veya Steiner LRF1535 ile eşleşir. TBS Crossfire, TBS_XF_AP_ ile başlayan bir Wi-Fi adıyla eşleşir. TOZO, TOZO ile başlayan bir adla eşleşir. Mentra Live gözlükler, Steiner M830 LRF dürbün ve TBS Crossfire bip sesi çıkarır. Diğer yeni satırlar çıkarmaz. Brilliant Frame artık Brilliant Labs glasses (Frame / Halo) oldu. Even G1 artık Even Realities G1 / G2 oldu. Apple AirTags artık Find My (AirTag or other Apple) oldu.
+- GitHub'dan stok kataloğunu güncelle, `dist/fieldwatch-signatures.rsi` dosyasını okur. 1.1.12–1.1.44 arası telefonlar hâlâ `dist/fieldwatch-signatures-v2.json` okur. 1.1.11 hâlâ `dist/fieldwatch-signatures.json` okur.
+- Bu sürüm için paketlenmiş dil dosyaları yazılır.
+
+## 1.1.44 — 13 Kasım 2026
+
+- Exposure Notification, FD6F hizmetindeki bir Bluetooth reklamını adlandırır. Radyo sayfası tanımlayıcının orada olduğunu ve meta verinin şifreli olduğunu söyler. Bu baytları göstermez. Bip sesi çıkarmaz. Katalog 111 imzayı ekler.
+- BTHome, FCD2 hizmetini kullanan bir Bluetooth sensörünü adlandırır. Radyo sayfası, cihazın yayınladığı ölçümleri; sıcaklık, nem, pil, kapı ve hareket dahil gösterir. Açık bir kapı veya pencere canlı satırda gösterilir. Şifreli paketler yalnızca şifreli olduklarını söyler. Katalog 110 imzayı ekler. Bip sesi çıkarmaz.
+- Remote ID kimlik doğrulaması, plakanın gönderdiği türü, sayfayı ve zamanı gösterir. İmza baytları sayfada kalmaz. İmzayı doğrulamaz. Aynı oturumdaki bir konum mesajı bu bloğu korur. Bip sesi çıkarmaz.
+- Amazon Sidewalk, AMA hizmetini ve Amazon'un şirket kimliğini gönderen bir Bluetooth cihazını adlandırır. Kayıt modu canlı satırda gösterilir. Radyo sayfası işaretçi türünü ve pil bandını gösterir. Gizli kimliği göstermez. Bu hizmeti olmayan bir Echo, Amazon olarak kalır. Katalog 109 imzayı ekler. Bip sesi çıkarmaz.
+- Matter kurulumu, Matter devreye almayı sunan bir Bluetooth cihazını adlandırır. Radyo sayfası, cihazın gönderdiği satıcı kimliğini, ürün kimliğini ve ayırt ediciyi gösterir. Canlı satır Matter kurulumu der. Yakınlık mesafe ölçümü adlandırılır ve gizli kimliği göstermez. Katalog 108 imzayı ekler. Bip sesi çıkarmaz.
+- HomeKit, aksesuarın yayınladığı kategoriyi ve eşleştirilmiş satırını adlandırır. Eşleştirilmemiş bir aksesuar o kategoriyi canlı satırda gösterir. Eşleştirilmiş göstermez. Katalog 107 imzayı ekler. Bip sesi çıkarmaz.
+- Fransız Direct Remote ID, o Wi-Fi işaretçisi mevcut olduğunda hava aracı konumunu, irtifasını, hızını, rotasını ve kalkış pinini doldurabilir. Kalkış üzerindeki yükseklik radyo sayfasında gösterilir ve hava aracı pini değildir. Bu plakadaki bir CTA-2063 seri numarası üreticiyi adlandırabilir. Üç harfli kod adlandıramaz. Aynı oturumdaki daha sonraki bir Fransız plakası saklanan plakayı değiştirir. Android 11 veya üzeri. Katalog 106, hâlâ Fransız plakasının bir konumu doldurmadığını söylüyorsa Remote ID notunu günceller.
+- Karşılaştır ve Özet, büyük bir oturumda yüzdeyi ilerletmeye devam eder. Metin dosyasını yazmak bu çubuğun çoğunu oluşturur; parçalar halinde yazıldığı için dosya bitene kadar tırmanır. Sayısı olmayan bir adım da yüzdeyi yavaşça ilerletir, böylece bekleme takılı görünmez.
+- Bir Wi-Fi erişim noktası ağın ne tür olduğunu, interneti olup olmadığını, bir mekanı ve bir hotspot kimliğini söyleyebilir. Ayrıntı, işaretçi bunu içerdiğinde gösterir. Android 11 veya üzeri. Bu değerleri erişim noktası belirler. Doğrulanmazlar.
+- Karşılaştır (metin) ve Özet (metin) bir metin dosyasını paylaşır. Büyük bir rapor artık tüm metni paylaşım aktarımına koymaz.
+- Bir paylaşım açılamazsa Fieldwatch nedenini söyler. Buna telefonun depolama alanının dolması, belleğin tükenmesi veya paylaşımın açılmayacak kadar büyük olması dahildir.
+- Google Find Hub, yük uzunluğundan seçilen 20 baytlık veya 32 baytlık geçici bir kimlik gösterir. Karma bayrak baytı reklamda olduğunda satır bunun mevcut olduğunu söyler. Bu bayt şifrelidir, bu yüzden değer gösterilmez. Katalog 105 bunu satırı zaten kaydetmiş bir telefona kopyalar.
+- Google Find Hub çerçevesi 0x40, ayrılmamış olarak etiketlenir. Bu çerçeve istenmeyen izleme korumasının kapalı olduğu anlamına gelir. Etiketin sahibine yakın olduğunu söylemez. 0x41 çerçevesi ayrılmış olarak kalır. Katalog 104 bu ifadeyi satırı zaten kaydetmiş bir telefona kopyalar.
+- Ayarlar → İzleyici izleme, ikisi de siz birini açana kadar kapalı olan iki uyarıya sahiptir. Sizinle ayrılmış etiket; bir etiket sahibinden uzakta olduğunu söylediğinde, bu telefon onu 20 dakikayı aşan boşluk olmadan 30 dakika duyduğunda ve bu telefonun GPS'i en az 100 m arayla üç nokta aldığında uyarır. İki yerde duyuldu; kararlı bir adrese sahip bir bulucu iki durağa ulaştığında uyarır. Yerler listesi her iki durumda da kalır. Radyoyu aç o radyoyu açar. Kapat, aynı koşul sürerken bu uyarıyı kapalı tutar. Bip sesi yoktur. Fieldwatch ekranda değilken sessiz bir bildirim aynı satırları gösterir.
+- Pebblebee, Pebblebee ve moto tag adlarının yanı sıra Bluetooth hizmeti FA25 ile de eşleşir. Adını göndermeyen bir etiket yine eşleşir. Bu hizmet, etiketin sahibinden uzakta olup olmadığını söylemez. Find Hub ve DULT kendi satırlarında kalır. Satır bip sesi çıkarmaz.
+- 25 baytlık bir Find My reklamı, genel anahtar yayınladığını söyler. 2 baytlık bir reklam, kısa biçim olduğunu, genellikle sahibine yakın bir etiketi ifade ettiğini ve bunun kesin olmadığını söyler. Pil seviyesi yalnızca son-sahip biti ayarlandığında gösterilir. AirTag imzası değişmez.
+- Bu sürüm için paketlenmiş dil dosyaları yazılır.
+- Bir dil dosyası en fazla 352 KiB olabilir. İngilizce şablon bu sınıra sığar.
+
+## 1.1.43 — 9 Kasım 2026
+
+- Quest olan bir Bluetooth adı; Quest ile başlayıp boşluk veya tireyle devam eden bir ad; ya da Meta Quest ile başlayan bir ad Meta Quest'tir. Quest 3S o satırdır. Ray-Ban / Meta glasses olarak etiketlenmez ve bip sesi çıkarmaz. Bu ad olmadan bir Meta şirket kimliği veya FEB8 hizmeti hâlâ gözlük satırıyla eşleşir.
+- Bluetooth kanalı ve frekansı boş bırakılır. Android reklam kanalını bildirmez, bu yüzden radyo sayfası ve günlük artık 2402 MHz'i ölçülmüş gibi göstermez. Wi-Fi kanalı ve frekansı kalır. Zaten 2402 diyen eski bir günlük satırı olduğu gibi kalır.
+- İmza adayları tam bir özel hizmet UUID'sini korur. Artık bunu farklı bir Bluetooth hizmetiyle eşleşebilecek dört onaltılık basamağa indirmez. Standart bir 16-bit hizmet hâlâ kısa biçimiyle ve tam Bluetooth UUID'siyle eşleşir.
+- 0 olan bir Wi-Fi sinyali okuma yokmuş gibi değerlendirilir. Artık en güçlü radyo olarak sıralanmaz veya yüksek sinyal gibi boyanmaz. Gerçek bir okuma hâlâ öyle davranır.
+- Günlük, telefonun zaten sakladığı Bluetooth reklamını 512 bayta kadar tutar. Ham alan o reklamdır. Üretici verisi kendi alanıdır. Zaten kaydedilmiş bir günlük satırı olduğu gibi kalır.
+- Adlandırılmış radyolar, Ayarlar listesinde Uyarılar'dan sonra kendi satırıdır. İmza ve ağ, Uyarılar'da kalır.
+- Radyo ayrıntısı GitHub katalog isteği gösterebilir. Bu, eşleşmeyen bir Bluetooth radyoda; telefonun interneti olduğunu iddia eden bir ağı olduğunda, ad fabrika modeline benzediğinde ve bu ad bu oturumda iki adreste duyulduğunda görünür. Dokunmak tarayıcıda bir GitHub issue taslağı açar. O dokunuştan önce hiçbir şey gönderilmez. Taslak; adres son ekini, bu telefonun konumunu ve ham reklamı dışarıda bırakır.
+- İmzalar → A–Z Sınıfı, imzası olmayanlar dahil her sınıfı listeler. O sınıfta bir imza olana kadar sayı 0'dır. Vücuda takılan, Giyilebilirler altındadır.
+- Microsoft Nearby Sharing, cihaz türünü ve paylaşımın Yalnızca cihazlarım mı yoksa Yakındaki herkes mi olarak ayarlandığını adlandırır. Yakındaki herkes olduğunda satır, o reklamdan gelen bilgisayar adını içerir. Bu arka plan işaretçisi artık Swift Pair olarak adlandırılmaz.
+- Katalog 101, Novatel Wireless satırını kaldırır. 28:80:A2 adresi Inseego'da kalır ve kamu güvenliği olarak bip sesi çıkarmaz. Hatch, C8:FA:9C adresini bırakır. Hatch adları ve şirket kimliği kalır. Bu uygulamayı açmak, GitHub'dan stok kataloğunu güncelle zaten katalog 101'i kaydetmiş ve bunları yerinde bırakmış olsa bile, bu satırı ve bu adresi yerleşik imzalardan kaldırır. Eklediğiniz bir kural kalır. Yerleşik olmayan özel bir Novatel kopyası kalır.
+- Filtreler İki yönlü telsizler ve Askeri ekler. İki yönlü telsizler; radyo eşleşmeyi beklerken Bluetooth adı ICOM BT(ID-52) olan Icom ID-52'yi ve Icom VS-3, Yaesu SSM-BT10, Yaesu SSM-BT20, Kenwood KHS-55BT, Kenwood KHS-56BT ve VGC BHM-88 kablosuz mikrofonlarını içerir. Bu mikrofonlarda Bluetooth, mikrofonun çalışma şeklidir. Her satır, Low Energy reklamında yayınlanan adla eşleşir. Yalnızca Classic bağlantıda görünen bir ad sessiz kalır. Askeri'de henüz imza yok. Katalog 102 ayrıca Benshi tabanlı radyoları tam Bluetooth adı UV-PRO, UV-50PRO, GA-5WB, VR-N75, VR-N76, VR-N7500, VR-N7600 veya DB50-B olanlarla; BLE bas-konuş düğmelerini de PTT-Z, PTT-AZ veya PTT-Z01 adlı olanlarla eşleştirir. Hiçbiri bip sesi çıkarmaz.
+- Bu uygulamanın bilmediği bir sınıf, kural veya radyo kullanan bir imza dosyası, önce Fieldwatch'u güncellemenizi ister. Bu mesajdaki Şimdi güncelle bir uygulama güncellemesi denetler. Telefondaki katalog olduğu gibi kalır. Aynı mesaj GitHub'dan stok kataloğunu güncelle, İmzaları içe aktar ve Ayarları içe aktar için kullanılır.
+- Wi-Fi satıcı etiketleri WPA, WMM, WPS, Wi-Fi Direct, Miracast, Hotspot 2.0, MBO-OCE, EasyMesh ve OWE geçişini adlandırır. Bir WMM etiketi artık Microsoft olarak okunmaz. Diğer satıcı etiketleri hâlâ OUI'ye sahip şirketi gösterir.
+- Katalog 100, ExpressLRS kurulum Wi-Fi'sini, Xiaomi Mi Home hizmeti FE95'i ve bir EZVIZ kurulum ağını ekler. Her biri tek bir modeli değil aileyi adlandırır. ExpressLRS, diğer drone satırları gibi bip sesi çıkarır. Diğer ikisi çıkarmaz.
+- Katalog 99: DJI ayrıca daha eski DroneID Wi-Fi işaretçisi, satıcı IE 26:37:12 ile de eşleşir. Bu, hava aracını etiketler. Bir konumu doldurmaz. ASTM Remote ID, Remote ID satırında kalır. Android 11 veya üzeri bu işaretçi alanını görebilir.
+
+## 1.1.42 — 5 Kasım 2026
+
+- Uzun bir sürüşte canlı oturum haritası güncel kalır. Çizgi, duraklar ve kamera işaretleri olduğu yerde kalır.
+- Raporlar → Yol üzerinde, o görünüme ait kamera resmi haritayla birlikte kayar. Aynı rengin iki diliminin üst üste geldiği yerde tonlama bir kez boyanır.
+- Bir radyonun ayrıntı sayfasındaki Av, yeni bir av başlatır. Av'dan ayrılmak yürüyüşü temizler.
+- Sinyal kaybolduğunda büyük sayı - - olarak, altındaki satır -- dBm · Sinyal Kayboldu olarak okunur.
+- Filtreler rastgeleleştirilmiş Bluetooth'u gizleyebilir. Wi-Fi kalır. Oturum yine bu radyoları tutar.
+- Bu sürüm için paketlenmiş dil dosyaları yazılır. Sinyal Kayboldu ve Rastgeleleştirilmiş Bluetooth'u gizle, 1.1.41'den beri eklenen satırlardır.
+
+## 1.1.41 — 4 Kasım 2026
+
+- GPS, hücre, güvenilir ağ ve taşma için uyarı iletişim kutuları tek bir düzen kullanır. Neden bir paragraftır. Okumalar Ayrıntılar altında yer alır; etiket ve değer aynı satırdadır.
+- Güncelleme teklifi Sürüm Notları başlığına sahiptir. Uzun notlar kaydırılır.
+- Bu telefondaki bir uygulama GPS konumunu üretiyorsa uyarı Olası GPS girişimidir. Bu telefondaki bir uygulamanın GPS konumunu ürettiğini ve bu telefonun uydular yerine bunu kullandığını söyler.
+- Bir hücre uyarısı başlıkta ne olduğunu korur. Paragraf, Fieldwatch'un nedeni söyleyemediğini belirtir.
+- Bu sürüm için paketlenmiş dil dosyaları yazılır. Sürüm Notları, 1.1.40'tan beri eklenen satırdır.
+
+## 1.1.40 — 3 Kasım 2026
+
+- Bu telefon başlangıçta çevrimiçiyse Fieldwatch, GitHub'a daha yeni bir sürüm olup olmadığını sorar. Daha yeni bir sürüm notları Şimdi güncelle ve Daha sonra ile gösterir. Daha sonra, daha yeni bir sürüm yayınlanana kadar o sürümü atlar. Ayarlar yeniden denetleyebilir. Şimdi güncelle uygulamayı indirir ve Android yine kurulumu onaylamanızı ister. GitHub yanıt vermezse bu telefondaki uygulama olduğu gibi kalır.
+- Ekrandaki notlar daha kısadır. Denetimin ne yaptığını söyler. Tarama durumu artık taramayı pasif olarak adlandırmaz. Anahtarların altındaki Ayarlar notları tek satırdır. Daha uzun açıklama kullanım kılavuzunda kalır.
+
+## 1.1.39 — 2 Kasım 2026
+
+- Uygulamayla gelen bir dil dosyası, bu sürüm için yazıldığını söyler. İçe aktarılan bir dosya, yazıldığı sürümden sonra eklenen anahtarları bildirir. Daha eski bir dosyadan gelen çevrilmiş satır yine gösterilir.
+
+## 1.1.38 — 2 Kasım 2026
+
+- Samsung SmartTags, SmartTag adıyla veya FD5A hizmetiyle eşleşir. Yalnızca Samsung'un şirket kimliğini gönderen bir telefon, TV, Buds veya saat o satırın dışında kalır. Stok katalog 98'dir. Bu sürümü açmak, o şirket kimliğini yerleşik satırdan kaldırır. Eklediğiniz bir kural kalır. GitHub'dan stok kataloğunu güncelle aynı dosyayı getirir.
+- Raporlar, son 7 gün içinde iki veya daha fazla yerde duyulan, oturumu olmayan ve şu anda duyulmayan radyoları listeler. Harita bu telefonun nerede olduğunu gösterir. Her radyonun haritada ve adının yanında kendi rengi vardır. Gizlilik modu haritayı ve koordinatları gizler.
+- Bu raporda her durak numaralandırılır. Saat, sokak ve koordinat kendi satırlarındadır. Numaralar düzdür. Ad, canlı listenin Ad + tür biçimidir. Canlı'dan ayrılmış olan dahil bir radyoyu açmak için dokunun.
+- Hücresel bağlantı izleme, Hücre bağlantısını izle açık olana kadar kapalıdır. Bir yerdeki ilk durağan ziyaret yalnızca öğrenir. Öğrenme süresi 3 günle başlar. Seçenekler Yok, 1 gün, 3 gün, 7 gün ve 14 gündür. Daha sonraki bir ziyaret yeni bir hücrede veya 2G ya da 3G'ye düşüşte uyarabilir. İletişim kutusu ülke, operatör, kanal ve bant listeleyebilir. Bir uyarı oturumla örtüştüğünde Özet bir bölüm alır. Uyarı, izleme listesinden ayrıdır. Tanılama, izleme kapalıyken bile kampı listeler.
+- Uyarılar altındaki İmza ve ağ, duyuruda imzanın yerini alan kelimeleri kaydeder. Bu kelimeler, o ağ adına sahip o imzanın her radyosuna uygulanır. Ağ adı söylenmez. Tek bir radyodaki ad hâlâ önce gelir. Yalnızca sınıfı söylemek kelimeleri kayıtlı tutar ve sınıfı söyler. Liste Ayarları dışa aktar ile gider.
+- Güvenilir ağlar, öğrenmenin ne kadar süresi kaldığını gösterir. Öğrenme süresi 1 saat ekler. Süreyi değiştirmek zaten kaydedilmiş erişim noktalarını unutmaz.
+- Canlı yol ile haritayı göster ve Raporlar → Yol bir kamera düğmesine sahiptir. Resimdeki işaretleri gizler veya yeniden gösterir. Seçim kaydedilir. Av'ın düğmesi yoktur. Yol altındaki liste, oturum raporu ve yazdırılan yol hâlâ katman anahtarlarını izler.
+- Yeni ayarlar ve uyarı metni, uygulamayla gelen 26 dilin tamamındadır.
+
+## 1.1.37 — 29 Ekim 2026
+
+- Canlı yol ile haritayı göster ve Av, yön değiştikçe döner. Ekranda zaten olan harita onunla döner, böylece kenarlar dolu kalır. Yerinde durmak veya telefonu yerinde çevirmek haritayı olduğu yerde bırakır.
+- Canlı yol ile haritayı göster veya Av üzerinde çift dokunma, yakın görünüm ile tüm yol arasında hemen geçiş yapar.
+- Canlı listeye geri dönmek önce listeyi çizer. Harita ardından gelir.
+
+## 1.1.36 — 29 Ekim 2026
+
+- Her güvenilir ağ uyarısı o ağı ve tetikleyen nedeni adlandırır. Başlık Olası kötü ikiz "{name}": {reason} biçimindedir. Neden bunlardan biri veya birkaçı olabilir: açık güvenlik, daha zayıf güvenlik, bilinmeyen cihaz veya alışılmış yerlerden uzakta. Altındaki satır o erişim noktasının adresidir. "00:13:37 Orient Power Home Network'e aittir." fazladan bir satırdır ve yalnızca o adres 00:13:37 ile başladığında görünür. Başka bir adres için uyarı bunu içermez. Bu satır ağ adının veya nedenin yerini almaz ve bu adres bloğu kendi başına uyarmaz.
+- Güvenilir ağ uyarı eylemleri kendi satırlarında yer alır.
+
+## 1.1.35 — 29 Ekim 2026
+
+- Dil paketleri ekrandaki metnin daha fazlasını kapsar: canlı oturum satırı, radar, cihaz açıklamaları, filtreler, raporlar ve insan tarafından okunabilir Özet ile Karşılaştır ifadeleri, PDF dahil. İngilizce şablon her satır için bir karakter sınırı listeler. İmza adları ve katalog notları İngilizce kalır. CSV, JSON, GPX, KML ve diğer makine dışa aktarımları olduğu gibi kalır.
+- Bir dil paketi içe aktarmak bir metin raporu kaydedebilir. Kullanılacak anahtarları, eksik anahtarları ve uzunluk ile sınırla birlikte çok uzun her satırı adlandırır.
+- GNSS girişimi, Konum ve Haritalar ve TAK / CoT, açma/kapama anahtarını altındaki seçeneklerden ayrı gruplar. Her denetimin ne yaptığına dair kısa bir satırı vardır. Uyarı seviyesi, Uyarı başlangıcı ifadesinin yerini alır. Sinyal tutulduğunda uyar, Sahtecilik denetimleri ifadesinin yerini alır. GPS alıcısını uyanık tut, Birlikte solan uyduları say ve Kazanç geriye doğru okur, eski alıcı anahtarlarının yerini alır. Bilinen kameralar, Katmanlar ifadesinin yerini alır. Köşe okuması, Konum ifadesinin yerini alır. Haritada konumu göster, o grubun başlığıdır.
+- Güvenilir ağlar üzerinde açma/kapama anahtarı tek başına durur. Uyarı denetimleri, her biri neyi yakaladığına dair kısa bir satırla Uyarılar grubundadır. Öğrenme ve bir uyarının size nasıl ulaşacağı ayrıdır.
+- TAK / CoT üzerinde GNSS başlığı GNSS uyarılarıdır. O sayfadaki Güvenilir ağlar başlığı kalkmıştır. Not Ağ uyarıları altındadır.
+- TAK / CoT üzerinde Taşmalar başlığı BLE Taşma uyarılarıdır. Bir Wi-Fi işaretçi taşması hâlâ aynı satırı kullanır. TAK denetimlerinin altındaki notlar daha kısadır ve Güvenilir ağlar'ın bir notu vardır.
+- TAK / CoT üzerinde, Güvenilir ağlar altında o anahtar Ağ uyarılarıdır. Altındaki tutma süresi Bir uyarı noktasının ne kadar kaldığıdır.
+- Güvenilir ağlar TAK pini ve o pinin ne kadar kaldığı Ayarlar → TAK / CoT altındadır. Güvenilir ağları izle açık olana kadar ikisi de soluk kalır.
+- Kılavuz, Güvenilir ağlar'ın bir ağı kendiniz kontrol etmenin yerine geçmediğini söyler. Sessiz bir izleme, ağın güvenli olduğuna dair bir bulgu değildir.
+- Canlı üzerindeki Görüntüle anahtarı Canlı yol ile haritayı göster'dir.
+- Bu telefona giden TAK / CoT artık soketini sabitlemeye çalışmaz. Tanılama, aynı telefondaki beslemenin ATAK'a ulaşıp ulaşmadığını söyler. Soket Wi-Fi veya Ethernet üzerinde açıldığında ATAK'a ulaşır. Yalnızca hücresel bağlantıda Wi-Fi gerekir. Wi-Fi veya Ethernet olmadan açılan bir soket, ikisinden biri bağlandığında yine değiştirilir.
+- Gizlilik modu, radyo sayfasında, Metin olarak paylaş'ta ve tek radyo AI Dışa Aktarımı'nda ham reklam baytlarını maskeler. Satır etiketini ve bayt sayısını korur; hex masked olarak gösterilir. Günlükler ve oturum dışa aktarma eksiksiz kalır.
+- Bir Samsung SmartTag reklamı artık sahibinden ayrılmış mı yoksa sahibinin yanında mı olduğunu söyler ve ayrılmış bir etiket adres değişiklikleri boyunca takip edilir.
+- Canlı yol ile haritayı göster, Av ve Raporlar → Yol, telefonun bağlantısı olmadığında kaydedilmiş harita resimlerini çizer. Kaydedilmiş resmi olmayan bir yer düz bir çizgi olarak kalır. Yeni resimler hâlâ yalnızca çevrimiçiyken indirilir.
+- Oturum raporu, katman anahtarı kapalıyken kamera listesini dışarıda bırakır. Sayı ve yazdırılan yoldaki işaretler kapalı kalır. Dosya telefonda kalır. Açık olan bir anahtar, telefonda olmayan bir listeyi yine adlandırır.
+- Güvenilir ağlar, o radyonun sayfasında işaretlediğiniz bir Wi-Fi adını izler. O adın daha sonraki bir görülmesinde daha zayıfsa, bilinmeyen bir üreticiden geliyorsa veya bu telefonun genellikle duyduğu yerlerden uzaktaysa uyarabilir. Liste, öğrenme penceresi ve bir TAK pini Ayarlar altındadır. Pin başlangıçta kapalıdır. Telefon ağa bağlanmaz veya parolasını istemez.
+- Canlı yol ile haritayı göster ve Raporlar → Yol, bilinen bir kameraya dokunduğunuzda bir kart açar. Kart türü, liste bir tane varsa şirketi ve kayıtlıysa yönü adlandırır. Bir sayı o türden birkaç tane olduğunu belirtir. Kapatmak için işarete yeniden dokunun. Kartta koordinat yoktur.
+- Fieldwatch'u açmak artık yol kaydedilmiş bir kamera listesini okurken kapanmaz. Başarısız bir kamera indirmesi ayarlar satırında kalır ve nedenini söyler. Kaydedilmiş bir kopya kalır ve yol yine açılır.
+- Bir dil paketi, imzalar, ayarlar, güvenilir ağlar veya stok kataloğu içe aktarmak neden başarısız olduğunu söyler. Okunamayan, boş, çok büyük veya kaydedilemeyen bir dosya telefonda zaten olanı bırakır.
+- Canlı üzerindeki bir izleme listesi uyarısı, Canlı yol ile haritayı göster altındaki listede açılır. Sınıfa göre, güç listesi, Zaman çizelgesi ve Hibrit, o satırı haritanın altındaki alanda tutar.
+- Haritadaki bilinen bir kameraya dokunmak, bir algılamayla aynı kartı kullanır. Çizgi o karta ulaşır. Aynı noktadaki kameralar birlikte listelenir.
+
+## 1.1.34 — 27 Ekim 2026
+
+- Bu telefona giden TAK / CoT, loopback soketini bağlamadan önce lo'ya sabitler. Wi-Fi veya Ethernet olmadan açılan bir soket, hücresel zaten açıkken bile ikisinden biri bağlandığında değiştirilir. O LAN üzerinde açılan bir soket, LAN düştükten sonra göndermeye devam eder. Tanılama; TAK'ın açık olup olmadığını, hedef türünü ve portunu, loopback soketinin lo'ya bağlı olup olmadığını, açıldığında neyin bağlı olduğunu ve son gönderimin başarılı olup olmadığını listeler. Ana bilgisayar adresi o sayfada kalmaz.
+
+## 1.1.33 — 27 Ekim 2026
+
+- Bu telefona giden TAK / CoT, Fieldwatch bağlı Wi-Fi olmadan başladığında hâlâ ATAK'a ulaşır. Ağ yokken açılan bir soket, ağ olduğunda değiştirilir. Zaten çalışan bir soket, Wi-Fi düştükten sonra göndermeye devam eder.
+
+## 1.1.32 — 26 Ekim 2026
+
+- Canlı yol ile haritayı göster, uyarı noktalarını ve bilinen kameraları sürüş çizgisinin üzerine çizer.
+- Av, GPS kilitlenmeden önce yürüyüşü çizer. O resimdeki satır Henüz GPS yok. Bu yürüyüş haritada değil şeklindedir. Sokaklar ve köşedeki yer kapalı kalır. İki taze sabitleme, hâlâ yaklaşık ilk 20 m içindeyken o yürüyüşü yerleştirir. Daha uzun bir yürüyüş haritada kalmaz.
+- Raporlar → Yol, kameraları ve algılamaları sürüş çizgisinin üzerine çizer. Yakınlaştırmak, bu noktalar aynı yer olmadığı sürece numaralı bir grubu ayrı noktalara böler.
+- Gerçek bir durak yeşil kalır. GPS titremesi artık o bölümü tekrar maviye çevirmez.
+- Canlı yol ile haritayı göster, görünüm yakınlaştırıldığında sürüş çizgisini haritada tutar.
+- Raporlar → Yol üzerinde yakınlaştırmak sürüş çizgisini haritanın içinde tutar.
+- Raporlar → Yol sıkıştırılabilir ve sürüklenebilir. Çift dokunma tüm yolu yeniden sığdırır.
+- Bilinen bir kamera, hâlâ yaklaşık 500 m ilerideyken konuşur. Yol raporu hâlâ yaklaşık 150 m içindeki kameraları sayar.
+- Sürüş çizgisi biraz daha koyu mavidir. Yeşil bir durak, o mavi çizgiyle aynı genişliktedir.
+- Sesli Uyarılar, kırmızı ışık anahtarını Kırmızı ışık kameraları için uyar olarak adlandırır.
+- Av, açılır açılmaz en son GPS sabitlemesini gösterir. Daire o sabitlemenin boyutundadır. Isı izi, iki taze sabitleme uyuştuktan sonra başlar ve bundan önce atılan adımlar dışarıda bırakılır. İlk 20 m'de, uyuşmayan tek bir sıkı sabitleme noktayı o sabitlemeye taşır. Adım sensörü eksik olan veya hiç adım bildirmeyen bir telefon, adımları yürüyüş hareketinden sayar. Bir pusula sıçraması, telefonun kendisi dönmüyorsa yürüyüşü taşımaz.
+- Oturum raporu, bilinen kameraları Raporlar → Yol ile aynı şekilde listeler. Başlık Yoldaki bilinen kameralardır. Her tür; ad, sonra yola bakan kaç tane ve yönü olmayan yolda kaç tane olduğu şeklindedir. Eksik bir liste yine adlandırılır.
+- Bir oturum yolundaki kameralar daha büyük, açık halkalı çizilir; böylece mavi yol üzerinde görünür kalırlar. Canlı yol ile haritayı göster ve Av daha küçük işaretleri korur.
+- Raporlar → Yol, bu liste telefonda olmadığında veya katman anahtarı kapalı olduğunda Yoldaki bilinen kameralar bölümünü dışarıda bırakır. Telefonda olan bir liste yine satırlarını gösterir. Özet hâlâ kaydedilmiş bir listeyi sayar.
+- Raporlar → Yol, bilinen kameraları haritayla aynı renklerde, her tür için bir satır olarak listeler. Başlığın altındaki satır mesafedir. Özet tam cümleleri korur.
+- Raporlar → Yol, yoldaki bilinen kameraları uyarı veren radyoların altında listeler. Satırlar oturum raporuyla eşleşir.
+- Kameralar yol çizgisinin üzerinde durur. Bu; Raporlar → Yol, yazdırılan yol ve Canlı yol ile haritayı göster için geçerlidir.
+- Bir Özet PDF'indeki ve Karşılaştır'daki yazdırılan yol, telefondaki yolun aynısı mavidir. Gerçek bir durak hâlâ yeşildir. İkinci oturum arduvaz rengindedir. Raporlar → Yol ve o yazdırılan yol, oturum raporunun saydığı kameraları gösterir. Saklanan bir yön, yola doğru bakıyorsa sayılır. Saklanan yön yoksa yolda sayılır. Silah sesi dedektörleri ve uzağa bakan bir yön dışarıda bırakılır. Canlı yol ile haritayı göster ve Av hâlâ açık olan katmanı çizer.
+- Oturum raporu, yol boyunca kameraları sayar. Saklanan bir yön, yola doğru bakıyorsa sayılır. Saklanan yön yoksa yolda sayılır. Flock, diğer plaka okuyucular, hız kameraları, kırmızı ışıklar ve diğer kameralar listelenir. Silah sesi dedektörleri dışarıda bırakılır. Sayım bu telefonda kayıtlı listeleri kullanır.
+- Raporlar → Yol, bitmiş bir oturumda köşe satırını dışarıda bırakır. Bu satır ızgara ya da Gizlilik modu açıkken maskelenmiş halidir. Açık bir oturum hâlâ bu telefonun nerede olduğunu gösterir.
+- Canlı yol ile haritayı göster, sürüşü daha kalın mavi bir çizgi olarak çizer. Gerçek bir durak hâlâ yeşildir.
+- Canlı yol ile haritayı göster veya Av üzerinde uzaklaştırmak, her nokta için bir harita resmi gösterir. Daha yakın bir resim artık daha geniş olanın üzerinde kalmaz.
+- Canlı yol ile haritayı göster veya Av üzerinde kaydırmak, ekranda zaten olan resimleri tutar ve her resim geldikçe yeni zemini doldurur. O kaydırma yönündeki sonraki ekran, bir sonraki sürükleme için kaydedilir.
+- Canlı yol ile haritayı göster ve Av, seyahat yönü boyunca ve rota dönerken biraz yana doğru haritanın sonraki ekranını kaydeder. Bu resimler siz oraya gelene kadar ekranda kalmaz.
+- Canlı yol ile haritayı göster üzerinde çift dokunma, henüz hareket etmemiş bir oturumla aynı ölçeği açar. Kısa kenar yaklaşık 220 m'ye ulaşır.
+- Av, başlangıcı yalnızca bu sabitleme yaklaşık 12 m içindeyken bir GPS sabitlemesine yerleştirir. Adımları saymayı ister ve buna izin verildikten sonra bu telefonun adım sensörünü kullanır. Av'ı açmak adım sayılmaz.
+- Av, adım sensörü adım bildirmeyen bir telefonda bu telefonu izlemeye devam eder. Bu telefon adımları ivmeölçerden sayar.
+- Pembe pin av haritasından kaldırıldı.
+- Av haritası renkleri bir yerden diğerine yeniden derecelenir. Yüksek bir geçiş, çok daha zayıf bir geçişten hâlâ ağır basar.
+- Neredeyse kaybolmuş bir av sinyali mavi kalır. Renk yaklaştıkça tonlar arasında kademeli olarak kırmızıya doğru ilerler ve yaklaşık −50 dBm'de kırmızı görünür. Üzerinde durduğunuz yer, orada duyulan en yüksek okumayı tutar.
+- Av, radyo menzil dışına çıktıktan sonra bu telefonu izlemeye devam eder. O yürüyüş bölümüne renk eklenmez, çünkü boyanacak okuma yoktur.
+- Av, adımları ve telefon yönünü izler. GPS, o yürüyüşü haritaya yerleştirir ve yalnızca iyi bir sabitleme uyuştuğunda hafifçe düzeltir. Noktanın üzerindeki daire, yürüyüş uzadıkça büyür. Telefonu düz tutun. Eğik telefon adımları duraklatır. Üzerinde durduğunuz yer, orada duyulan en yüksek okumayı tutar. Yaklaşık bir buçuk adım ilerideki sonraki yer, zayıf olan dahil orada duyulan gücü alır. Renk bir yerden diğerine eşit derecelenir.
+- Canlı yol ile haritayı göster veya Av üzerinde sürüklemek ya da sıkıştırmak, zaten seçilmiş yönü korur. Seyahat yönü yukarıda kalır. Artık kuzey yukarıya geçmez.
+- Canlı yol ile haritayı göster ve Av, seyahatle döndüğünde haritanın köşelerini doldurur.
+- Konum ve Haritalar, kaydedilmiş harita resimlerini telefonda 512 MB'a kadar tutar ve temizleyebilir. Kaydedilmiş haritaları temizle, plaka okuyucuları veya diğer sensörleri kaldırmaz.
+- Konum ve Haritalar, USGS Imagery Topo ve FAA VFR Sectional ekler. USGS haritaları ve FAA VFR Sectional Amerika Birleşik Devletleri'ni kapsar ve anahtar istemez. FAA VFR Sectional navigasyon için olmadığını söyler. Bu harita için çok uzak bir görünüm yakınlaştırmanızı ister. Harita altında Kaplamalar, seçtiğiniz haritanın üzerine USGS Shaded Relief ve USGS Hydrography koyabilir. İkisi de Amerika Birleşik Devletleri'ni kapsar. Yalnızca harita için kapalı bırakın. Kaplama açıkken harita kredisi ve her kaplama kredisi sağda ayrı satırlardır, böylece soldaki ızgara okunabilir kalır. Kaplamalar kapalıyken harita kredisi tek kısa satır olarak kalır.
+- Konum ve Haritalar iki Katman ekler. Plaka okuyucu kameralar, Amerika Birleşik Devletleri plaka okuyucu listesini indirir (yaklaşık 37 MB). Diğer sensörler, hız kamerası, kırmızı ışık, silah sesi dedektörü ve diğer kamera listesini indirir; yaklaşık 1 MB. Harita resimleri aynı kalır. Her iki liste de uygulamayla birlikte gelmez. Her birinin kendi Güncellemesi vardır. İşaretler Canlı yol ile haritayı göster, Av ve Raporlar → Yol üzerinde görünür. Flock plaka okuyucular mavidir. Diğer plaka okuyucular kehribardır. Hız kameraları turkuaz, kırmızı ışıklar kırmızı, silah sesi dedektörleri mor noktalar ve diğer kameralar daha küçük gri işaretlerdir. Bir türden kalabalık o rengi korur. Her türün kendi sesli uyarısı vardır; siz açana kadar kapalıdır. Birini açmak o bildirimi söyler. Bir anahtar işaretleri gizlemez. Plaka okuyucu uyarısı, dosyada varsa şirketi adlandırır.
+- Bu liste indirmeyi bitirdikten sonra satır, telefon dosyayı okurken İşleniyor der. Bilinen yönü olan bir sensör görüş konisidir. Harita uzakken küçük kalır, yakınlaştırdığınızda büyür. Yön yoksa ve her silah sesi dedektörü bir noktadır. Yalnızca Flock kameraları olan kaydedilmiş bir kopya, indirilen liste değişmemiş olsa bile Güncelle'den önce sorar.
+- Konum ve Haritalar üzerinde, Harita'nın üzerindeki paragraf, Konum'un zaten sahip olduğu kutudan önceki aynı boşluğa sahiptir.
+- Bitchat bir Mesh imzasıdır. BLE hizmet reklamıyla eşleşir. Bip sesi çıkarmaz. Ayarlar → GitHub'dan stok kataloğunu güncelle onu ekler. Katalog 97.
+
+## 1.1.31 — 23 Ekim 2026
+
+- Üst çubuktaki Wi-Fi, Bluetooth ve imza sayıları, sayılar değiştikçe satır kaymasın diye her biri 888 için yer tutar.
+- Av artık Çok Yakın, Zayıf veya Gitti göstermez. Sayıyı, kıvılcım çizgisini ve bulutu izleyin. Bip ve Titreşim, paket olmadığında veya radyo ayrıldığında hâlâ sessiz kalır.
+- Ayarlar → Konum ve Haritalar, Canlı yol ile haritayı göster, Raporlar → Yol ve yol şekli altında Esri, MapTiler, Stadia ve Thunderforest dünya haritalarını kullanabilir. Bu haritalar Anahtar olarak işaretlidir. Kendi hesabınızdan aldığınız anahtarı yapıştırın. Bu telefonda kalır ve Ayarları dışa aktar onu dışarıda bırakır. OpenStreetMap ve USGS haritaları anahtar istemez. Hatalı bir anahtar veya yüklenmeyen bir harita bir açılır pencere gösterir.
+- Canlı yol ile haritayı göster üzerinde çift dokunma, tüm yol ile bu telefonun çevresindeki yakın görünüm arasında geçiş yapar. Yakın görünüm bu telefonu merkezde tutar ve kısa kenar yaklaşık 100 m'nin biraz ötesine ulaşır. Kuzey yukarı ve seyahat yönü bu yakınlaştırmayı korur.
+- Sürüş çizgisi birkaç metrede bir nokta tutar, böylece bir köşede sokağı izler. Bir dönüş, zaten sürülen yolu olduğu yerde bırakır. Yeşil hâlâ gerçek bir duraktır.
+- Canlı yol ile haritayı göster ve Av, N işaretinin olduğu yerde bir pusula düğmesine sahiptir. Kuzey yukarı ve seyahat yönü arasında geçiş yapmak için dokunun. Resim dört birleşimi de gösterir. Uzaklaştırılmış görünüm bükülü bir yoldur; kuzey yukarıdayken üzerinde N vardır. Seyahat yönü, yakın görünümle aynı pusula harflerini daha küçük bükülü bir yolun üzerine koyar. Yakınlaştırılmış görünüm bu harflerdir ya da kuzey yukarıdayken bir okun üzerinde N vardır. Yerinde durmak son yönü korur. Yerinde dönüş haritayı döndürmez. Raporlar → Yol ve kaydedilmiş yol şekli kuzey yukarı kalır.
+- Canlı yol ile haritayı göster, bir dönüş boyunca yolu izler. Düz bir bölüm hâlâ GPS yalpalamasını çizginin dışında bırakır. Yeşil gerçek bir duraktır: bu telefon yaklaşık 40 saniye boyunca yaklaşık 25 m içinde kaldı. Sürüşün geri kalanı düz çizgidir.
+- Av, harita için sayfanın üst kısmını bırakır. Sayıyı, kıvılcım çizgisini ve bulutu izleyin. Ölçek Zayıf ile başlar. Sayının yanındaki kelimeler dil paketini izler.
+- Av, bu telefonun o radyoyu duyduğu yerlerin bir ısı bulutunu çizer. Renk zayıf olduğu yerde maviden, camgöbeği, yeşil, sarı ve turuncudan geçerek güçlü olduğu yerde kırmızıya gider. Bölgeyi yürüyün veya sürün. En parlak yama en yüksek sesle duyulduğu yerdir. En yüksek ses işareti o yamanın içindedir. Bu bir mesafe değildir ve diğer radyonun üzerinde bir pin değildir.
+- Av yakın açılır ve bulut daha ince çizilir. Adımlar, GPS sabitlemeleri arasındaki kısa hareketleri doldurur. Yakın zamandaki sıkı bir GPS sabitlemesi yürüyüşü yeniden merkezler.
+- Av bulutu yürüyüşü izler. Duyumlar bağlanır ve renk birinden diğerine yumuşakça değişir. Yürüyüşün yakın bölümleri çizgiler arasında dolar. Uzak bir boşluk açık kalır. Kenar o rengi dışarı doğru soldurur.
+- Av, yürüyüş uzadıkça size yakın kalır. Sayfadan ayrılmak bulutu Sıfırla'ya kadar veya farklı bir radyo avlayana kadar tutar. Yerinde dönüş noktayı hareket ettirmez. Sol alttaki okuma noktaya uyar. GPS hareket ederken adımlar o yönü izler. GPS takılıyken telefonun üstü kullanılır. Üzerinde durduğunuz yer, orada duyulan en yüksek okumayı tutar. Yaklaşık bir buçuk adım ilerideki sonraki yer, zayıf olan dahil orada duyulan gücü alır. Renk bir yerden diğerine eşit derecelenir.
+- Ayarlar → Haritalar, Canlı yol ile haritayı göster, Raporlar → Yol ve yol şekli altındaki haritayı seçer. OpenStreetMap başlangıçtır. USGS Imagery ve USGS Topo Amerika Birleşik Devletleri'ni kapsar. Haritanın köşesindeki küçük satır kaynağı adlandırır.
+- Radyo sayfası GPS'in yanında ızgarayı gösterir. Sıradan bir radyo için bu, bu telefonun bulunduğu yerdir. Bir Remote ID hava aracı, hava aracı konumunu ve kalkış, pilot veya sabit noktayı, her biri bir ızgarayla birlikte, artı bu telefondan mesafe ve yönü gösterir. Bir oturum raporu, bu telefonun o konum duyulduğunda nerede olduğunu kullanır ve zamanı adlandırır. Daha eski bir oturum ızgarayı gösterir, mesafe ve yönü dışarıda bırakır. Gizlilik modu ızgarayı maskeler, mesafe ve yönü dışarıda bırakır.
+- Ayarlar → Haritalar, bu telefonun şu anda nerede olduğunu haritanın sol alt köşesinde GPS veya ızgara olarak gösterebilir. Kapalı o köşeyi boş bırakır. Gizlilik modu onu maskeler. Bu telefon hareket edene kadar köşe yerinde kalır.
+
+## 1.1.30 — 22 Ekim 2026
+
+- Yerler artık Android 10 ve 11'de uygulamayı kapatmıyor.
+
+## 1.1.29 — 22 Ekim 2026
+
+- Radar üzerinde Görüntüle; Başlık satırı, Alt başlık satırı, Canlı yol ile haritayı göster, RSSI çubukları, Frekans ve İlk / son görülmeyi soldurur. Zaman çizelgesi RSSI çubuklarını soldurur. Kaydedilmiş seçim kalır ve onu kullanan bir görünümde geri gelir. Görünüm, Sırala, Kısa tut ve İmza adları kullanılabilir kalır.
+- Konum kapalıyken Fieldwatch, Wi-Fi veya Bluetooth taraması istemez. Konumu açmak bir an bekler, sonra onları yeniden başlatır.
+- Fieldwatch bir çökmeden kapanırsa, bir sonraki açılış başka bir şey başlamadan önce ne olduğunu gösterir. Kopyala onu gönderir. Devam uygulamayı açar. Normal bir kapanış onu göstermez.
+
+## 1.1.28 — 22 Ekim 2026
+
+- Canlı yol ile haritayı göster, Görüntüle üzerindedir; ilk anahtardır, RSSI çubuklarının üzerindedir. Kapalı başlar. Açtığınızda bu telefonun kuzey yukarı haritası Canlı'nın üstüne yerleşir, liste hâlâ altındadır. Harita ile liste arasındaki çubuğu sürükleyin. Görünüm Radar iken anahtar soluk kalır ve kapanmaz.
+- Çizgi, harita açıldığında bulunduğunuz yerde başlar ve hareket eder etmez çizilir. Sürüş son çizgiden yaklaşık 12 metre ayrıldığında bir kıvrım korunur. Yana doğru GPS yalpalaması çizginin dışında kalır. Oturum yokken çizgi, anahtarı açtığınız zaman ile 15 dakika öncesinin daha geç olanıdır. Açık bir oturum, yürüyerek veya araçla oturumun başından çizer. Noktalar izleme listesi uyarılarıdır. Sıkıştırmak veya sürüklemek görünümü tutar. Yeniden ortala veya çift dokunma sizi yeniden izler.
+- Raporlar → Yol aynı çizgiyi kullanır.
+- Fieldwatch açıkken Konumu açmak Wi-Fi ve Bluetooth'u bir an duraklatır, sonra yeniden başlatır. Hatalı bir tarama sonucu uygulamayı kapatmak yerine atlanır.
+- Özet ve Karşılaştır yol şekilleri sokak döşemelerini dolu çizer. Sorumluluk reddi ve yol başlığı gövde metnini kullanır.
+
+## 1.1.27 — 16 Ekim 2026
+
+- Yerler, bu telefonun son 7 gün içinde iki veya daha fazla yerde duyduğu kararlı bir izleyiciyi ve sessiz bir aradan sonraki dönüşü hatırlar. Satırlar o radyonun sayfasında ve oturum raporundadır; bu telefonun bulunduğu yerle birlikte. Başka bir günden gelen bir durak tarihi içerir. Çevrimiçi yer adları sokağı ekler. Filtreler Canlı'yı şu anda duyabildiklerinizle sınırlayabilir. Adresini değiştiren bir radyo atlanır. Sıradan Wi-Fi ve Bluetooth dışarıda kalır. Bip sesi yoktur ve TAK işaretçisi yoktur. Her radyo en son 8 durağı tutar. Dokuzuncu doğrulanmış durak en eskisini düşürür.
+- Kullanıcı kılavuzu Yerler'i açıklar: bir durağın ne olduğu, hangi radyoların uygun olduğu ve sınırlar.
+- İmza adayları, günlüğü okuyup kataloğu eşleştirirken bir ilerleme iletişim kutusu gösterir. Çubuk dosyayı izler.
+- Oturum dışa aktarma GeoJSON yazabilir. Bu, oturum GPX ve KML ile aynı haritadır: bu telefonun yolu ve bu telefonun her radyoyu duyduğu nokta.
+- Ayarlar konu listesi olarak açılır. O sayfa için bir satıra dokunun. Satır geçerli seçimi gösterir. Geri listeye döner. Adlandırılmış radyolar, İzleme listesinden sonra kendi satırıdır. Satır kaç tane kaydedildiğini gösterir.
+
+- Bir Filtreler satırı, Ayarlar ile aynı soluk metinde neyin seçildiğini adlandırır. Bu satır yeşil değildir.
+- Oturum listesi biraz daha sıkı aralıklıdır.
+- İmzalar sayfası Uyarı için yer imi ekle der. Filtreler üzerinde bir aileyi gizleme satırı kaldırılmıştır.
+- Oturumlar satırı, Radyolar adlandırılmış bir zaman dilimi boyunca duyuldu der. Oturum başlat altında Aşağıdaki eylemler için Oturum seç der.
+- Sizinle hareket ediyor, Sizinle kalan yüksek sesli Bluetooth radyoları der.
+- Ön ayarlar, bir ön ayarı yüklemek için dokunun, silmek için uzun basın veya geçerli filtre ayarlarını yeni bir ön ayara kaydedin der.
+- Seçili imza sınıfları, Yalnızca göster veya Bunları gizle seçin, sonra sınıfları seçin ve bir ön ayarın bu seçimleri içerdiğini söyler.
+- Seçili imzalar, Yalnızca göster veya Bunları gizle seçin, sonra imzaları seçin ve bir ön ayarın bu seçimleri içerdiğini söyler.
+- İmzayı düzenle, Notlar altındaki son cümleyi ve Ekstra dikkat altındaki son cümleyi kaldırır.
+- İmzayı düzenle, sınıfın Filtreler'in Yalnızca göster veya Bunları gizle için kullandığı şey olduğunu söyler.
+- İmzayı düzenle ve Alanları çöz; Min eşler, renk, kurallar, varsayılanları geri yükle, bir çözüm haritasını kaldırma ve boş önizleme için daha kısa, doğru satırlar kullanır.
+- Ayarlar → Tanılama, taramanın çalışıp çalışmadığını ve Wi-Fi, Bluetooth, Konum ve GPS durumunu gösterdiğini söyler. Tanılama sayfası artık kopyayı bir issue'ya yapıştırmanızı söylemez.
+- Ayarlar alt bilgisi artık Yalnızca Wi-Fi ve Bluetooth demez.
+- Canlı tur, sağ üstteki kaydırıcıları gösterir. Aç göster, Canlı'nın nasıl göründüğünü gösterir. Atla turu kapatır. Bu sürüme yükseltme, o kartı ilk Canlı ekranında bir kez gösterir. Ayarlar → Canlı turu göster onu geri getirir.
+- Dil listesi, her dilin İngilizce adını alfabetik sırayla kullanır. Varsa telefonun yerel ayarını kullan ilk sırada kalır.
+- Kullanıcı kılavuzu Dil'i açıklar: paketlenmiş taslaklar AI ile çevrildi, yanlış bir satır GitHub issue'sunda olmalı ve yeni bir dil yazarın kendi deposundaki bir dosyadır. Yazar kılavuzu o bölümden bağlantılanır.
+- Kapalı bir anahtar, yine açılabiliyormuş gibi görünmesi için açık bir topuz tutar. Kullanılamayan bir anahtar soluk kalır.
+- Raporlar Oturumlar'ı açık tutar. Yol, Özet, Oturum dışa aktarma, Karşılaştır, Günlük Dışa Aktarma ve İmza adayları her biri kendi sayfasını açar. Her satırın altındaki satır kısa bir açıklamadır. İmza adayları aramayı açıklar ve Adayları bul onu başlatır. Yol, Özet, Oturum dışa aktarma ve Karşılaştır, kullandıkları oturumu adlandıran bir satırın altında, o satırlarla aynı yeşilde bir çubukla yer alır. Günlük ve İmza adayları o grubun altında tam genişlikte kalır.
+- Tut veya gizle; İmza eşleşmelerini yalnızca tut, Yalnızca izlenenleri tut ve Yalnızca adlandırılanları tut olmak üzere üç tut anahtarını adlandırır. Radyolarımı gizle, Benim'i Gizle'dir.
+- Filtreler, üstte Ön ayarlar ve Radyolar'ı açık tutar. Sizinle hareket ediyor, Birden fazla yerde görüldü ve Yeni algılamalar o listedeki anahtarlardır. Tut veya gizle, Seçili imza sınıfları, Seçili imzalar ve Sinyal, ad, MAC, satıcı kendi sayfasını açar. Satır o bölümde neyin seçildiğini adlandırır.
+- Seçili imzalar tek bir listedir. Yalnızca göster ve Bunları gizle, Seçili imza sınıflarının çalıştığı şekilde üstünde yer alır. Bir çipi kapatmak seçimleri korur.
+- Oturum dışa aktarma bir ATAK veri paketi yazabilir. ATAK zip'i içe aktarır. İçinde bu telefonun yolu, her radyo için bir nokta, bir konum yayınlandıysa bir hava aracı pini ve kısa izi, o konum yayınlandıysa bir operatör pini ve yolda bir pin olarak GNSS vuruşu vardır. Elips ve taşmalar canlı akışta kalır.
+- Her telefon kendi TAK işaretçisini alır. Ad, siz bir ad yazmadığınız sürece Fieldwatch artı 4 karakterlik bir etikettir. Aynı ağdaki iki telefon artık o işaretçiyi paylaşmaz. UAS ID'si olan bir Remote ID hava aracı hâlâ tek bir paylaşılan işaretçidir. Bu yön bulma değildir.
+- Ayarlar → GNSS girişimi, bir vuruş çevresinde telefonun ham GPS ölçümlerini kaydedebilir. Anahtar siz açana kadar kapalıdır. Son kaydı paylaş o sayfadadır. Gizlilik modu kaydetmez.
+
+## 1.1.26 — 12 Ekim 2026
+
+- Bir Remote ID operatör konumu o noktanın ne olduğunu söyler. Kalkış, fırlatma noktasıdır. Pilot, canlı bir GPS operatörüdür. Sabit, hava aracının bildirdiği bir noktadır. Daha eski bir oturum Operatör der. Pin Turuncu kalır. Bilinen bir operatör irtifası gösterilir. Bilinmeyen boş kalır. Kart, hava aracı yüksekliğinin kalkışın üzerinde mi yoksa yerin üzerinde mi olduğunu söyleyebilir. AB kategorisi ve sınıfı yalnızca plaka sınıflandırmanın AB olduğunu söylediğinde gösterilir.
+- Ayarlar, daha uzun GNSS işaretini elips olarak adlandırır. Kısa bir vuruş hâlâ pindir. Daha uzun bir vuruş, başlangıçtan son yere kadar, uzunluğunun yarısı genişliğinde tek bir elipstir.
+- Kullanıcı kılavuzu, GNSS girişimi altında bir vuruşun nasıl kararlaştırıldığını açıklar.
+
+## 1.1.25 — 11 Ekim 2026
+
+- Bir GNSS vuruşu, bu telefonun bulunduğu yerde ATAK haritasına bir işaret koyabilir. Kısa bir vuruş pindir. Vuruş sürerken telefon hareket etmeye devam ederse işaret, başladığı yerden son duyulduğu yere kadar, uzunluğunun yarısı genişliğinde bir oval olur. Kelimeler ayrıca bu telefonun Fieldwatch işaretçisi üzerinde kalır. İşaret nedenin nerede olduğunu söylemez.
+- Bu işaretin ne kadar kaldığı bir ayardır: 1 saat, 6 saat, 24 saat veya silinene kadar. Varsayılan 1 saattir. Silinene kadar, TAK üzerindeki GNSS kapatılana kadar kalır.
+- TAK üzerindeki bir radyo noktası, radyo ayrıldıktan sonra adını korur. Bir noktanın ne kadar kaldığı 1 saat, 6 saat, 24 saat veya silinene kadar. Varsayılan 1 saattir. Bu telefonun Fieldwatch işaretçisi hâlâ yaklaşık her 2 dakikada bir yenilenir. Beslemeyi kapatmak veya Gizlilik modunu açmak bu radyo noktalarını haritadan kaldırır. Ovale dönüşen kısa bir GNSS pini arkasında bir Fieldwatch noktası bırakmaz.
+
+## 1.1.24 — 10 Ekim 2026
+
+- Üst çubuktaki simgeler Wi-Fi, Bluetooth ve imzaların sağlıklı olup olmadığını gösterir. Yeşil, Wi-Fi taramaları arasındaki bekleme ve planlı bir Bluetooth dinlenmesi dahil o bölümün çalıştığı anlamına gelir. 0 imza sayısı yeşil kalır. Gri, taramanın durdurulduğu anlamına gelir. Soluk gri, o radyonun kapalı olduğu anlamına gelir. Kırmızı, o tarama çalışırken Konum'un kapalı olduğu veya Android'in onu reddettiği anlamına gelir. Simgelerden sonraki kelimeler ikincil metin renginde kalır. Gece modu renkleri kırmızı ekrana katlar.
+- GNSS girişim denetimi açıkken o çubukta numarasız bir GPS işareti durur. Denetim hazır ve sessizken yeşil. Hâlâ yerleşirken veya öğrenirken, telefon GPS'i duraklatırken, bu telefon Zayıf derecelendirildiğinde veya tarama durdurulduğunda gri. Bir vuruş sürerken kırmızı. Bir duraklama gri kalır.
+- Daha hızlı Wi-Fi AP taramaları, Geliştirici seçenekleriyle eşleşir. Anahtar yalnızca Wi-Fi tarama kısıtlaması kapalıyken açıktır. O sayfayı açmak için dokunun. Normal bekleme yerine yaklaşık her 8 saniyede bir. Fieldwatch bu anahtarı sizin için değiştiremez.
+- Pencere telefonun tam yüksekliğini kullanır, böylece üst çubuk, liste ve sekmeler onları boş bırakan telefonlarda yine çizilir.
+
+## 1.1.23 — 9 Ekim 2026
+
+- GPS duraklaması girişim değildir. Uydular ve kazanç birlikte kaybolursa veya telefon alıcının durduğunu bildirirse, Canlı GNSS telefon tarafından duraklatıldı der. Açılır pencere, kırmızı çizgi veya TAK satırı yoktur. Denetim, GPS döndükten sonra bir düşüşü izlemeye başlamadan önce birkaç saniye bekler. Gerçek bir düşüş hâlâ uydular izlenirken bir kazanç değişimidir.
+
+## 1.1.22 — 9 Ekim 2026
+
+- Katalog 94. Flipper Zero ayrıca resmi aygıt yazılımı hizmetleri 3080–3083 ile eşleşir, böylece yeniden adlandırılmış resmi bir birim yine eşleşir. Tile ayrıca etkinleştirme öncesi hizmet olan FEEC ile eşleşir. Polar yeni bir Giyilebilir satırıdır: şirket 0x006B, hizmet FEEE veya Polar ile başlayan bir Bluetooth adı. GoPro kalp atış hızı hizmetini de gönderen bir Polar kayışı Polar'da kalır.
+- Bir GPS uyarısı, yalnızca Ayarlar → GNSS girişimi → Sistem bildirimi açıkken telefon bildirimi gönderir. Bu anahtar siz açana kadar kapalıdır ve izleme listesi anahtarından ayrıdır. Açılır pencere, kırmızı çizgi, bip sesi ve sesli okuma değişmez.
+- Kalibrasyondan sonra Ayarlar Kalibrasyon tamamlandı der ve bu telefonu İyi, Orta veya Zayıf olarak adlandırır. İyi, denetimin gökyüzünü net gören bir yerde, diğer elektroniklerden uzakta çalışması gerektiğini söyler.
+- GPS açılır penceresi neyin fark edildiğini ve nedenini sade sözlerle söyler. Alıcı numaraları bundan sonra Ayrıntılar altında gelir. Kırmızı çizgi, oturum ve yol notu daha kısa teknik satırı korur.
+- Bir saat uyumsuzluğu, konum uyumsuzluğu veya seyahatten daha hızlı bir sıçrama tek başına uyarmaz. Bunlar bir kazanç düşüşüyle veya birbirleriyle birlikte sayılır. 100 m veya daha kaba bir ağ sabitlemesi sayılmaz. Merkezlerin açıkça ayrı olması ve uyumsuzluğun sürmesi gerekir.
+- Bu telefon bir yürüyüşten daha hızlı hareket ederken ve patlama yaklaşık -80 dBm veya daha zayıfken bir eşleştirme veya ad taşması sessiz kalır. Yüksek bir patlama herhangi bir hızda yine uyarır. Durmak veya yürümek herhangi bir ses yüksekliğinde yine uyarır. Bir Wi-Fi işaretçi taşması değişmez.
+- TAK / CoT, bir taşma algılandığında taşma bitene kadar bu telefonun işaretçisine bir taşma notu ekleyebilir. Siz Açık seçene kadar kapalıdır. Ayrı bir pin değildir ve Canlı üzerindeki kırmızı çizgiyi değiştirmez. Eşleştirme reklamı yapan radyolarla dolu bir mağaza buna neden olabilir. Not bunun tek bir radyo olduğunu söylemez.
+- GNSS denetimi başladıktan sonraki ilk dakikayı yok sayar. Bu okumalar temel çizgi değildir. Ardından yaklaşık bir dakika öğrenir ve bundan sonra bir uyarı gelebilir. Bu telefon için kaydedilmiş kalibrasyon hâlâ geçerlidir.
+- Bir GNSS algılaması, Raporlar → Yol üzerinde bu telefonun bulunduğu yerde kırmızı bir elmas olarak görünür. Haritanın altındaki not ile Özet ve Karşılaştır bölümü zaman, seviye ve neyin değiştiğini içerir. Elmas girişimin geldiği yer değildir. GPS sabitlemesi olmayan bir oturum vuruşu yine listeler, elmas olmadan.
+- GNSS girişim denetimi, bu telefon kalibre edilene kadar, sonra siz açana kadar kapalı kalır. Bu telefonu kalibre et, dışarıda, yerinde dururken, bir yönlendiriciden uzakta yaklaşık bir dakika sürer. Sonuç siz yeniden kalibre edene kadar bu telefonda kalır ve Ayarları dışa aktar dışarıda bırakılır. İyi, Orta veya Zayıf, denetimin bu GPS üzerinde ne kadar yararlı olacağını söyler. Daha zayıf bir alıcı yine bir yolu etiketleyebilir. Zayıf, açılır pencereyi kapalı bırakır. Fieldwatch tararken bir vuruş bir açılır pencere, sonra Canlı üzerinde kırmızı bir çizgi açar. Özet ve Karşılaştır bunu kaydeder. Sahtecilik denetimleri, ses, hassasiyet ve uyarı veren güven ayrı anahtarlardır. Bu denetim için ses açıktır. Telefonun yanındaki bir Wi-Fi yönlendirici veya başka elektronik bir vuruşa neden olabilir. Fieldwatch kaynağı veya mesafeyi söyleyemez. Tanılama alıcı gerçeklerini ve kalibrasyon derecesini listeler; GPS koordinatlarını içermez. TAK / CoT bu satırı bu telefonun işaretçisine ekleyebilir: Kapalı, Uyarı verirken, Kırmızı çizgi veya Herhangi bir vuruş. Ayrı bir pin değildir.
+- Konum kapalıyken Canlı bir başlık gösterir. Aç, o ekran varsa telefonun Konum ekranını açar. Konum kapalıyken Android Wi-Fi veya Bluetooth sonuçları döndürmez.
+- Tanılama, o radyo zaten açıkken Wi-Fi tarama ve Bluetooth taramayı adlandırmayı bırakır. Reddedilen bir Wi-Fi taraması veya park edilmiş bir Bluetooth taraması radyonun açık olduğunu söyler.
+- Katalog 93. Flock Safety Cameras, B4:1E:52 ve Flock- ile başlayan bir adı tutar. Yalnızca Flock, FLCK, Condor, Falcon veya Sparrow içeren bir ad artık eşleşmez. FS Ext Battery adı ve FS Ext ile başlayan bir adı tutar. Silicon Labs önekleri ve FS_* kaldırıldı. Penguin, XUNTONG üretici kimliğini ve Penguin- ile başlayan bir adı tutar. LiteOn kamera radyosu B8:35:32'yi bırakır. 08:3A:88 kalır. Bu önek Universal Global Scientific Industrial'a aittir, Lite-On'a değil.
+- Eşleştirme taşması, Windows arka plan işaretçisini (01 ile başlayan şirket 0x0006) dışarıda bırakır. Swift Pair hâlâ sayılır: işaretçi kimliği 03, bir eşleştirme alt senaryosu ve ayrılmış bayt. Find My dışarıda kalır; sonraki baytları yakınlık eşleştirmesine benzeyen bir Find My reklamı dahil.
+- Ayarlar → Tanılama, Ne kontrol edilmeli ile başlar. Kapalı olan ve açık olması gereken bir anahtarı adlandırır. Bu boş bir Canlı listesini açıklamazsa, Kopyala yine sayfayı yapıştırır.
+- Sesli uyarılar Android 11 ve üzeri sürümlerde bir konuşma motoruna ulaşabilir. Android 10 zaten ulaşabiliyordu. Telefonun hâlâ indirilen sesi olan herkese açık bir motora, Ses açık olmasına ve medya sesinin açık olmasına ihtiyacı vardır.
+
+## 1.1.21 — 6 Ekim 2026
+
+- Gizlilik modu, oturum raporu yol anahtarında bir Remote ID'yi maskeler: MAC sonu, UAS kimliği ve hava aracı ile pilot koordinatları. İrtifa, rota ve hız kalır. Harita ve noktalı iz yine çizilir. Aynı UAS kimliği Özet, Karşılaştır ve AI Dışa Aktarımı'nın geri kalanında maskelenir. Günlük, oturum dışa aktarma ve GPX/KML/WiGLE dosyaları değişmez.
+- WiGLE CSV, ilk boşluk olmayan karakteri =, +, - veya @ olan bir adı, o ad düz bir sayı değilse, oturum CSV ve günlük CSV ile aynı şekilde önekler. RSSI, koordinatlar ve normal bir ağ adı olduğu gibi kalır.
+- Ayarlar → Tanılama, Canlı turu göster altında telefonu, Android sürümünü, kataloğu ve Wi-Fi, Bluetooth ile Konum'un tarayıp taramadığını listeler. Ayrıca Daha hızlı Wi-Fi AP taramaları, Arka plan kullanımına izin ver ve Kısıtlanmamış pil değerlerini listeler. Kopyala bu satırları bir issue'ya yapıştırır. Ağ adı ve GPS koordinatı içermez. Boş bir Canlı listesi, bir tarama engellendiğinde orayı gösterir.
+
+## 1.1.20 — 5 Ekim 2026
+
+- Oturum CSV ve günlük CSV, ilk karakteri =, +, - veya @ olan bir hücreyi önekler; böylece bir elektronik tablo ad veya notu metin olarak tutar. Negatif bir koordinat dahil düz bir sayı olduğu gibi kalır. WiGLE CSV değişmez.
+- Ayarları içe aktar, TAK / CoT beslemesini açacak veya hedefini değiştirecek bir dosyayı uygulamadan önce sorar. Beslemeyi ve hedefi olduğu gibi bırakan bir dosya yine fazladan adım olmadan içe aktarılır. İptal telefonu olduğu gibi bırakır.
+- Katalog 92: LiteOn kamera radyosu 48:27:EA (Samsung) ve 82:6B:F2 (yerel bir adres, fabrika bloğu değil) düşürür. F8:A2:D6 kalır. Ray-Ban / Meta glasses ayrıca Meta RB Display ile başlayan bir Bluetooth adıyla eşleşir. Axon notları vücuda takılan veya sabit ALPR der. Bu genel adres öneki vücut kameraları ve sabit okuyucular tarafından paylaşılır. Remote ID, ID türü seri olduğunda 1748C ile başlayan bir seriden Autel'i, 1668B ile başlayan bir seriden Skydio'yu adlandırır. Daha kısa bir önek o adı almaz.
+
+## 1.1.19 — 4 Ekim 2026
+
+- Katalog 91: DJI Power, Power2000 ile başlayan bir Bluetooth adıyla eşleşir. Bu bir güç istasyonudur, Ev IoT'dur ve yer imli değildir. Osmo kameralar Osmo satırında kalır. Bir DJI Power vuruşu DJI drone satırını düşürür. Diğer DJI radyoları DJI'da kalır. Model kimliği 4500, Power 2000 olarak okunur. Satırı seçen addır.
+- Atrius sepet etiketi, o iBeacon UUID'sinin adıdır. Reklam mağazayı adlandırmaz, bu yüzden satır artık Target demez.
+- Bir ad taşması rastgeleleştirilmiş Bluetooth adreslerini sayar. Kararlı adı olan bir fabrika adresi o sayının dışında kalır. Eşleştirme açılır pencereleri hâlâ her adresi sayar. Daha küçük bir eşleştirme açılır penceresi kümesi sessiz kalır.
+- Eşleştirme taşması iletişim kutusu, patlamanın mağazadaki gibi zaten eşleştirme reklamı yapan birçok radyo olabileceğini ya da her pakette adresini değiştiren tek bir radyo olabileceğini söyler. Bir ad taşması mağazadaki etiketler veya adını ve adresini değiştiren tek bir radyo olabilir. Devam onları Canlı'da bırakır. Bunları gizle onları Canlı'dan alır. Oturum ve günlük yine onları tutar. Reklam aracı adlandırmaz.
+- Bir oturum sırasında Devam veya Bunları gizle oturum bitene kadar tutulur. İlk patlama yine sorar. Daha sonraki patlamalar kırmızı çizgiyi korur ve iletişim kutusunu açmaz. Bunları gizle ayrıca o oturumdaki daha sonraki patlamaları Canlı'dan alır. Oturumu bitirmek yeniden sorar. Açık oturum yokken seçim yaklaşık 15 dakika tutulur ve kaymaz. O süredeki daha sonraki bir patlama kırmızı çizgiyi korur. 15 dakika sonra sonraki patlama yeniden sorar. Bu tutma sürerken bir oturum başlatmak yanıtı oturum bitene kadar korur. Eşleştirme ve ad taşmaları yanıtı paylaşır. Bir Wi-Fi işaretçi taşması kendi başına bir kez sorar.
+
+## 1.1.18 — 3 Ekim 2026
+
+- Canlı, birçok yeni Bluetooth adresi birkaç saniye içinde yaklaşık aynı ses yüksekliğinde bir eşleştirme açılır penceresi reklamı yaptığında veya birçok yeni ad yayınladığında uyarır. Tek bir iletişim kutusu, sonra o patlama sessizleşene kadar tek bir satır. Reklam aracı adlandırmaz.
+- Bir oturum sırasında eşleştirme veya ad taşması, Özet ve Karşılaştır üzerinde sessiz bir Taşma satırıdır: zaman, tür, kaç yeni adres ve karşılaştırmada hangi oturum. Bu adresler radyo sayılarından ve listelerinden dışarıda bırakılır. Satır kaç tanesinin ayrıldığını söyler. Oturum dosyası ve günlük yine onları tutar. Adresler saklanmadan önce kaydedilmiş bir oturum yine onları diğer radyolarla sayar. Not, canlı uyarı göründüğünde kaydedilir.
+- Canlı taşma satırındaki Bu patlamayı gizle, o patlamanın yeni adreslerini kendi kendilerine ayrılacakları zamana kadar Canlı görüntüsünden alır. Oturum dosyası ve günlük yine onları tutar. Özet ve Karşılaştır onları radyo sayılarından ve listelerinden dışarıda bırakır. Bu adresler için uyarılar sessiz kalır. Sonraki patlama anahtar kapalıyken başlar.
+- Canlı, tek bir taramada birçok yeni Wi-Fi adı göründüğünde, yaklaşık aynı ses yüksekliğindeyken ve sonraki taramada gittiklerinde uyarır. Bir oturumun ilk taraması sessiz kalır. Tekrarlanan bir ad, mesh, genişletici veya misafir ağı sayılmaz. Tek bir iletişim kutusu, sonra tek bir satır, sonra aynı Taşma notu. Bu adresler radyo sayılarından ve listelerinden dışarıda bırakılır. Oturum dosyası ve günlük yine onları tutar. Reklam aracı adlandırmaz.
+- Eşleştirme taşması bir Swift Pair işaretçisini (işaretçi kimliği, bir eşleştirme alt senaryosu ve ayrılmış bayt) sayar, böylece Bu patlamayı gizle o yeni Microsoft Device adreslerini kapsar. Nearby Sharing hâlâ kendi reklamından sayılır.
+- Eşleştirme taşması bir Samsung Easy Setup kulaklık veya saat reklamını sayar, böylece Bu patlamayı gizle o yeni adresleri kapsar. Yine Samsung SmartTags olarak görünürler. FD5A veya FD59 hizmetini reklam eden bir etiket değişmez.
+- Eşleştirme taşması bir LoveSpouse reklamını (şirket 0x00FF ve sabit öneki) sayar, böylece Bu patlamayı gizle o yeni adresleri kapsar. Eşleşmeden kalırlar. Daha kısa bir 0x00FF blobu dışarıda kalır.
+- Katalog 89: Even G1 ayrıca Even Realities şirket kimliğiyle eşleşir. RayNeo yalnızca ad RayNeo ile başladığında ve reklam TCL şirket kimliğini kullandığında eşleşir. LiteOn kamera radyosu E0:0A:F6 ve 14:B5:CD ekler, hâlâ Ekstra dikkat yoktur.
+- Katalog 90: Remote ID ayrıca Fransız Direct Remote ID satıcı IE'sini etiketler. Konum ve pilot hâlâ ASTM plakasından gelir. Tello, TELLO veya RMTT ile başlayan bir adla eşleşir. Potensic, Holy Stone, Hubsan, Yuneec, SwellPro ve Crazyflie, markayla başlayan bir adla eşleşir. Parrot ayrıca Skycontroller ile eşleşir. Bu drone satırları yer imlidir ve Ekstra dikkatleri yoktur.
+- Remote ID, ID türü seri olduğunda ASTM plakasındaki seriden Freefly, BRINC ve Teal'i adlandırır. Satır Remote ID olarak kalır. Bir oturum kimliği ve Fransız plakası bu adı almaz.
+- Benim, zaten adlandırabildiğiniz bir radyoyu işaretler. Canlı liste bir Benim çipi gösterir. Benim açıkken o radyo bip sesi çıkarmaz, konuşmaz, yanıp sönmez, titreşmez veya bir kart yükseltmez; yer imli bir imza eşleşse bile. O imzanın diğer radyoları yine uyarır. Özet ve Karşılaştır onu Benim olarak işaretlenenler altında listeler ve birlikte seyahat çağrılarını dışarıda bırakır. Benim'i açmak, gözlemci notlarının yaptığı gibi boş bir özel adı doldurur.
+- Filtreler → Kim kalır → Radyolarımı gizle, Benim olarak işaretlenen radyoları canlı listeden alır. Oturum, günlük ve Özet yine onları içerir. Sizinle hareket ediyor'u açmak bu anahtarı açık bırakır. Canlı bunun için bir hatırlatma satırı göstermez.
+- Bir Bluetooth şirket adı şirket satırında kalır. MAC öneki listede değilken artık IEEE satıcısı olarak saklanmaz. Yerel biti ayarlı bir adres fabrika adresi olarak adlandırılmaz.
+- Ayarlar → Adlandırılmış radyolar, ad satırına Wi-Fi veya BLE işaretini koyar. Özel ad ve MAC her biri tek satırda kalır. Benim ve Uyarı adın altında yer alır.
+- Özet ve Karşılaştır sayılarla başlar. PDF sınıf, kanal ve karşılaştırma çubuklarını çizer. Bir radyo; Ekstra dikkat olduğunda, özel adı olduğunda, Benim olarak işaretlendiğinde veya yer imli olduğunda listelenir. Karşılaştır ayrıca değişen bir çözülmüş değeri listeler. Raporlar → Oturum raporu → Tüm radyoları göster tam listeleri geri getirir. Metin aynı sayılara ve aynı satırlara sahiptir. Oturum dışa aktarma değişmez.
+
+## 1.1.17 — 1 Ekim 2026
+
+- Gizlilik modu artık Raporlar → Yol üzerindeki haritayı veya Özet ve Karşılaştır mektup yol şekillerini gizlemez. Bu döşemeler Çevrimiçi yer adları ve haritaları izler. Gizlilik modu hâlâ MAC sonlarını ve koordinatları maskeler, sokak adlarını dışarıda bırakır ve TAK / CoT beslemesini duraklatır.
+- Raporlar → Yol, GPS yolu tek bir sabitleme veya kısa bir oturum olduğunda kısa kenarda yaklaşık 400 m zemin tutar. Daha uzun bir yürüyüş yine çizimi doldurur.
+
+## 1.1.16 — 30 Eylül 2026
+
+- Raporlar → Yol, MAC uyarılarını ve imza uyarılarını, her birini en güçlü duyumda bir kez, sınıf simgesi olarak çizer. Bir sayı bir yerde birkaç tane olduğunu belirtir. Siyah nokta başlangıçtır. Mavi nokta sizsiniz, son noktadasınız. Liste MAC'in yanına Wi-Fi veya BLE simgesini koyar. Haritanın altındaki sembol anahtarı kaldırılmıştır ve uyarı satırları birbirine daha yakındır. Çözülmüş enlem ve boylamı olan bir uyarı, son reklamı yapılan sabitlemede sınıf simgesi olarak çizilir. O karttaki reklamı yapılan iz beyaz noktalı bir çizgidir. Bu simge diğer uyarılarla aynı noktayı paylaşıyorsa sayı onları birlikte listeler. Pilot, haritada kelime etiketi olmayan bir kişi simgesidir. Tek bir sınıf simgesinin sayı kutusu yoktur; o tek radyo için dokunun. Bir sayı hâlâ yalnızca o noktadaki radyoları listeler. 2 km'den uzak bir sabitleme o hava aracının haritasında kalır. Diğer uyarılar en güçlü duyumda kalır. Özet ve Karşılaştır PDF şekilleri o izi siyah noktalı çizgi olarak, son konumda sınıf simgesiyle ve pilot için kişi simgesiyle çizer. Bir karşılaştırmada ikinci oturumun izi mavi noktalı çizgidir. Bu PDF şekilleri aynı MAC uyarılarını ve imza uyarılarını, radyo bir tane gönderdiyse son reklamı yapılan konumda çizer. Yol anahtarı o şeklin altında reklamı yapılan bir hava aracını drone sınıf simgesiyle, artı canlı durumu, UAS kimliği, son konumu, hareketi ve pilot konumuyla listeler. Bir algılamayı kapatan bir başlangıç veya bitiş işareti hâlâ o algılamayı açar.
+- Bir çözüm alanı, değerini canlı satırda göstermeyi ve hangi adlandırılmış değerlerin daha güçlü çipi kullandığını isteyebilir. Katalog 85 bunu DULT modu için açar: Ayrılmış öne çıkar; Sahibinin yanında sessiz kalır. Ayrılmış cümlesi o değerdeki katalog metnidir. Eski uygulamalar yeni anahtarları atlar ve paketi yine içe aktarır.
+- Özet ve Karşılaştır o canlı etiketi ve katalog cümlesini alıntılar. Ayrılmış bir etiket, dönen adres satırı yerine yaklaşık bir gün cümlesini korur. Karşılaştır, çözülmüş değerin oturumlar arasında değişip değişmediğini söyler. Katalog 86 sahibinin yanında cümlesini ekler. Adlandırılmış bir oturum etiketi saklar, çünkü oturum reklam baytlarını tutmaz.
+- Katalog 87: Google Find Hub modu aynı canlı satırı kullanır. Ayrılmış daha güçlü çiptir ve yaklaşık bir gün cümlesini korur. Yakında sessiz kalır; birlikte seyahatin çoğu zaman sizin kendi etiketiniz veya kendi anahtarlarıyla katılan biri olduğu cümlesiyle.
+- Katalog 88: Remote ID konum durumu aynı canlı satırı kullanır. Bildirilmedi, Yerde, Havada, Acil durum ve RID hatası hepsi gösterilir. Acil durum daha güçlü çiptir.
+- Bir oturum, raporda UAS kimliğiyle birleştirilen kısa bir reklamı yapılan konum izini tutar. Telefon yolunun 2 km içindeki bir iz o haritayı paylaşır. Daha uzaktaki bir hava aracı kendi haritasını alır. Raporlar → Yol, bu izi açık veya kaydedilmiş bir oturumda beyaz noktalı çizgi olarak çizer. Mektup boyutu şekil onu siyah noktalarda çizer. Son 15 dakika geçerli reklamı yapılan konumu işaretler ve iz tutmaz. Bu değişiklikten önce kaydedilen oturumlar tek bir son konumu korur.
+
+## 1.1.15 — 28 Eylül 2026
+
+- Katalog 82: Flock Safety Cameras Ekstra dikkat yalnızca IEEE B4:1E:52 ve Flock / FLCK / Flock-* / Condor / Falcon / Sparrow adlarıdır. LiteOn / modül önekleri LiteOn kamera radyosuna taşınır (Kameralar sınıfı, Ekstra dikkat yok, yer imli değil). UGSI E0:4F:43 bırakılır, böylece bir Ring- SSID'si Flock direği değil Ring olur.
+- Oturum dışa aktarma CSV / JSON satırları eşleşen imzaları ve Ekstra dikkat aile adlarını (noktalı virgülle ayrılmış) içerir. Ekstra dikkat true/false kalır. GPX / KML / WiGLE değişmez.
+- Adlandırılmış oturum sınırı 6000 benzersiz radyo (eskiden 3000). Adsız BLE hâlâ önce düşer. Düşük bellek kapısı değişmez.
+- Özet metin/PDF varsayılan olarak eşleşmeyen dönen BLE'yi envanterlerden gizler. Sayılar, Ekstra dikkat, adlandırılmış imzalar, yer imleri, yük pinleri ve Oturum dışa aktarma yine onları içerir. Raporlar anahtarı: Eşleşmeyen dönen BLE'yi göster.
+- Katalog 83: XUNTONG 0x09C8 üretici verisinde Penguin çözümü — yükte MAC ve TN ile başlayan ASCII seri. Kimlik hâlâ şirket kimliği / Penguin* adlarıdır.
+- Katalog 84: BLE hizmet verisi FCB2 üzerinde DULT izleyici (IETF Detecting Unwanted Location Trackers). Ağ Kimliği ve sahibinin yanında / ayrılmış çözümü. Ekstra dikkat yok. Chipolo / Pebblebee adları çift etiketlenebilir. Yalnızca FCB2 UUID listesi eşleşmez.
+- Wi-Fi Remote ID ASTM mesaj paketleri (satıcı IE FA:0B:BC tür 13), stok Remote ID Alanları çöz haritasının, ayrıntının ve TAK Yük konumunun BLE ile aynı alanları kullanması için BLE FFFA (`0x0D` + sayaç + her 25 baytlık mesaj) olarak çerçevelenir. GitHub kataloğu v2 kalır.
+- GitHub'dan stok kataloğunu güncelle: bilinmeyen çözüm kaynakları imzayı tutar ve yalnızca o alan haritasını düşürür. İçe aktarmadan sonra, herhangi bir harita atlandıysa ikinci bir iletişim kutusu daha yeni bir APK ister.
+
+## 1.1.14 — 27 Eylül 2026
+
+- Özet / Karşılaştır PDF yol şekli: Çevrimiçi yer adları ve haritalar açıkken ve Gizlilik kapalıyken OpenStreetMap döşemeleri (Raporlar → Yol ile aynı kapı). Tam genişlikte mektup çerçevesi, kalın yeşil kalır, numaralı Ekstra dikkat (kırmızı) ve yer imli (mavi) vuruşlar. Çevrimdışı veya Gizlilik: yalnızca kuzey yukarı iz.
+- Remote ID Konum: yön, OpenDroneID doğu/batı bayrağını kullanır (yön 0–179, o bit ayarlandığında +180); ×2 ölçeği yerine. Yatay hız (`hspeed`), SpeedMult bitiyle çözülür (×0.25 veya ×0.75 + 63.75). Katalog 79. ATAK iz rotası/hızı bu değerleri izler.
+- Katalog 80: BLE üreticisi 0x09C8 (XUNTONG), Raven / ShotSpotter'dan Penguin'e taşınır. Bu kimlik Flock harici pilidir, akustik sensör değil. Raven adları, UUID'ler 3100–3500 ve OUI D4:11:D6'yı tutar.
+- Katalog 81: Axon `BWCDEVICE`, reklamı yapılan adla değil, BLE hizmet verisinde ASCII (ve bayt ters çevrilmiş) olarak eşleşir. Boş UUID hizmet verisi kuralları o hex'i herhangi bir hizmet yükünde içerir.
+
+## 1.1.13 — 26 Eylül 2026
+
+- TAK / CoT: reklamı yapılan Remote ID hava aracı pinleri, Konum mesajında varsa ATAK iz rotasını ve hızını içerir. Wi-Fi Remote ID (satıcı IE FA:0B:BC tür 0x0D), Konum / Temel ID / Sistem'i BLE FFFA ile aynı şekilde çözer; böylece Yük konumu yalnızca Wi-Fi olan bir drone'u sabitleyebilir. Satıcı IE yükü artık 24 baytta kesilmez.
+
+## 1.1.12 — 26 Eylül 2026
+
+- Google Find Hub etiketleri (FEAA çerçeveleri 40/41). Katalog 78. Eddystone UID/URL/TLM eşleşmeden kalır. Ayrılmış mod bir MAC'i yaklaşık bir gün tutabilir. GitHub güncellemesi `dist/fieldwatch-signatures-v2.json` kullanır; 1.1.11 hâlâ v1 paketini okur (katalog 77).
+- Katalog 77 (1.1.11 için zaten GitHub'da): Flock/FS Ext, Espressif ve Silicon Labs OUI'lerini bırakır; Axon TASER/Axon UUID'leri; Meta FEB7/FEB8, Snap FE45, Vuzix; Remote ID Wi-Fi FA:0B:BC ve BLE v0–v2 konum ekleri.
+
+## 1.1.11 — 26 Eylül 2026
+
+- Ayrıntı / paylaşım: RSSI 127, Bluetooth "mevcut değil" demektir, iletim gücü değil. Mevcut, min/maks, kıvılcım çizgisi, Av ve paylaşım metninden çıkarılır.
+
+## 1.1.10 — 26 Eylül 2026
+
+- Yol: Ekstra dikkat ve yer imli radyolar, en güçlü RSSI'de numaralı noktalar olarak. Gözlemci notları yalnızca o radyo yer imliyse Yol üzerinde. Tüm rota boyunca mevcut kaldırıldı. GPS izleri, yalnızca son 40 yerine oturum boyunca yayılmış örnekleri tutar. Yol, GPS sıçramalarını bırakır (gidip dönme sıçramaları veya yaklaşık 150 km/s'den hızlı atlamalar).
+- Stok katalog: BLE TPMS. Pazar sonrası sibop kapağı sensörleri (TPMS* / FBB0 / üretici verisi 80–83) basınç, sıcaklık, pil ve alarmı çözer. SYTPMS / BR (ad BR veya UUID 27A5) gösterge basıncı, sıcaklık, pil ve hareketi çözer. Tesla tsTPMS, sensör uyanıkken basınç / sıcaklık / pili çözer. Yeni satırlar: TireCheck, Bluetooth TPMS hizmeti. FOBO ayrıca 00EE hizmetiyle eşleşir. Yalnızca Nokia 0x0001 eşleşmesi değil. Katalog 76.
+
+## 1.1.9 — 25 Eylül 2026
+
+- Yol: çizgi üzerinde kalın yeşil olarak kalır, zaman işaretleri, başlık durak / tüm rota sayıları, Tüm rota boyunca mevcut üzerinde RSSI min–maks. Her Ekstra dikkat / Adlandırılmış radyo en güçlü RSSI'de bir kez çizilir. Tüm rota, ilk/son duyulmayı oturum penceresine göre kullanır (40 örnekli GPS izine göre değil).
+- Ayarlar → Çevrimiçi yer adları ve haritalar (varsayılan açık) ayrıca Yol altına OSM döşemeleri yükler. Döşemeler çizim kutusunu doldurur sonra kırpılır, rota çevresinde fazladan harita bulunur. Çevrimdışı, döşeme yok veya Gizlilik modu: yalnızca kuzey yukarı iz, hata yok. Kullanıcı kılavuzu güncellendi.
+
+## 1.1.8 — 25 Eylül 2026
+
+- Raporlar → Oturum dışa aktarma: Oturum raporunun altında kendi kartı, Günlük dışa aktarma ile aynı Biçim ve radyolar çipleri (CSV, JSON satırları, GPX, KML, WiGLE). Dönen günlük değil, seçili oturumdaki (veya son 15 dakikadaki) her benzersiz radyo için bir satır. GPX / KML, bu telefonun yolunu bir iz artı duyum noktaları olarak içerir. Gizlilik modu dosyayı maskelemez. Günlük kartının başlığı Günlük dışa aktarma'dır. Kullanıcı kılavuzu §5.6.2 / §11.6 oturum ile günlüğü açıklar.
+- Yol açıklaması: Çizgi = bu telefon kendi satırında; Mavi = Adlandırılmış camgöbeği renginde (Adlandırılmış noktalarla aynı).
+
+## 1.1.7 — 25 Eylül 2026
+
+- Adlandırılmış radyolar: özel adla aynı TÜR+MAC üzerinde Gözlemci notları (en fazla 280 karakter). Ayrıntıda adın altında camgöbeği blok; kaydedilmiş bir özel ad büyük başlıktır, reklamı yapılan ad daha küçüktür. Ayrıntıda veya Ayarlar → Adlandırılmış radyolar üzerinden düzenle. Ad olmadan not kaydetmek yine Adlandırılmış radyo satırı oluşturur (önerilen etiket, Uyarı kapalı). Canlı liste, Ekstra dikkat "!" işaretinin yanında camgöbeği not çipi gösterir. Özet, Nerede olduğunuzdan sonra Gözlemci notlarını listeler; Karşılaştır Pencerelerden sonra. Yol ve AI Dışa Aktarımı duyulan radyoları ve notu listeler. Ekstra dikkat altın renginde kalır. BLE gizlilik adresleri kalemi hâlâ gizler. Ayarlar yedeği notu içerir.
+- Özet / Karşılaştır PDF: kalış/geçiş satırları, Kanal doluluğu / En yüksek AP'ler ve diğer "Etiket:" başlıkları kalındır; madde işaretleri ve Yol anahtarı numaraları yapılandırılmıştır.
+- Raporlar, Özet, Karşılaştır, Yol, AI Dışa Aktarımı ve GPX/KML'de Adlandırılmış radyolardan gelen özel adı kullanır (reklamı yapılan SSID/LE adı değil). WiGLE CSV hâlâ reklamı yapılan SSID'yi yazar.
+- Raporlar → Yol: bu oturumun (veya son 15 dakikanın) kuzey yukarı çizimi. Operatör GPS izi, ölçek çubuğu, Ekstra dikkat / Adlandırılmış noktalar. Yığılmış sayılar tek bir küçük pencere için dokunulur. Harita döşemesi yok. Radyo sabitlemeleri değil, duyum noktaları. Özet PDF ve Karşılaştır PDF, mektup boyutunda operatör yolu şekli içerir (karşılaştırma iki yürüyüşü üst üste bindirir).
+- Raporlar → Günlük: Biçim (Günlük dosyası — CSV, Günlük dosyası — JSON satırları, GPX — GPS Exchange, KML — Google Earth, WiGLE CSV — wigle.net) ve radyolar (Her ikisi / Yalnızca Wi-Fi / Yalnızca BLE). Dönen dosya JSON satırlarıdır. CSV / haritalar Paylaş/Kaydet projeksiyonlarıdır. Duyum noktası pinleri bu telefondur. Fieldwatch yükleme yapmaz. Ayarlar CSV/JSON çipleri kaldırıldı.
+- Kullanıcı kılavuzu Yol, Karşılaştır, Günlük dışa aktarma, Gözlemci notları, özel adlar ve Canlı not çipi için yeniden yazıldı. Ekran görüntüleri Gizlilik modunda yeniden alındı.
+
+## 1.1.6 — 24 Eylül 2026
+
+- Çözüm alanı sayıları ve radar yakınlaştırması `Locale.US` kullanır; böylece Fransız/Alman telefonlar nokta tutar (`26.48 °C`, `×1.5`). Ayrıştırıcı birim testleri ve push/PR üzerinde GitHub Actions (`testDebugUnitTest` + debug APK).
+- Raporlar → Oturumları karşılaştır: bu oturum (açık, seçili veya son 15 dakika) ile ikinci bir kaydedilmiş oturum. Karşılaştır (metin) ve Karşılaştır (PDF) — Özet ile aynı mektup düzeni. Karşılaştır AI Dışa Aktarımı bir ektir (örtüşme, yalnızca bu oturumdaki Ekstra dikkat / Adlandırılmış radyolar), listelerin yeniden yazımı değil. Varlık: yalnızca bu oturumda, yalnızca ikincisinde, ikisinde de. Tür + MAC. Ekstra dikkat ve Adlandırılmış radyolar işaretli. Paylaşım metninde Gizlilik modu.
+- Oturum raporu AI Dışa Aktarımı aynı ek biçimindedir: yerleşik Özet olduğu gibi, ardından 5/15 dakikalık oranlar, RSSI bantları, izleme stres testi için Ekstra dikkat ve bulucu etiketi kimlikleri — ikinci bir Wi-Fi/BLE listesi değil.
+
+## 1.1.5 — 24 Eylül 2026
+
+- Ayrıntı "Bu nasıl görünür", genel bir SSID tahmini yerine eşleşen bir katalog ailesini kullanır. Bir `DIRECT-rR-Raven-*` AP'si, Wi-Fi Direct üzerindeki bir telefon veya TV değil, Raven / ShotSpotter sensörüdür.
+- Stok **Unknown Signature** yakalayıcısı (`ESP_*`, `ANDROID-`, `DIRECT-`, `UNIT-`) kaldırıldı. Bu adlar bir ürün ailesi değildi ve gerçek satırları (Raven, Roku, Epson) çift etiketliyordu. Genel `DIRECT-` SSID'leri eşleşmeden kalır; tahmin hâlâ Wi-Fi Direct diyebilir.
+- Ayrıntıdaki özel ad, yerel olarak yönetilen BSSID'ler (araç / mesh / misafir AP'leri) dahil Wi-Fi için her zaman kullanılabilir. BLE gizlilik adresleri kalemi hâlâ gizler. Kimlik kopyası artık bir Wi-Fi yerel-bit BSSID'sini dönen gizlilik MAC'i olarak adlandırmaz.
+- Stok Ekstra dikkat: Digital Ally vücut/araç içi (IEEE 00:23:BD); Limitless, Bee, Omi ve Friend giyilebilir kaydediciler (benzersiz BLE hizmetleri / adları); Brilliant Frame ve Even G1 gözlükler; Reveal Media ve Wolfcom vücut kameraları; Panasonic i-PRO / Arbitrator; Hayden AI, Miovision, Tattile ve LVT LiveView (yalnızca ad — hücresel birimler sessiz kalır).
+- Stok filtre çipleri: Tüm trafik, Yalnızca Wi-Fi, Yalnızca BLE, Güçlü sinyal, Sizinle hareket ediyor, Yalnızca izlenenler. İzleyiciler / İzleyicileri gizle / Telefonları gizle stok setinden çıktı (sınıf çipleri + Geçerli olanı kaydet... hâlâ bu oturumları oluşturur). Bir stok adı veya filtreyi yineleyen mevcut özel çipler yükseltmede katlanır.
+- Kullanıcı kılavuzu Bölüm 14 Teknik özellikler / Nasıl çalışır (Şek. 20).
+
+## 1.1.4 — 21 Eylül 2026
+
+- Biraz daha küçük anahtarlar. Çerçeveli alanlar ve açılır listeler aynı sıkı iç dolguyu paylaşır (Görüntüle, imza düzenleyici, Çöz, Filtreler, Ayarlar TAK, oturum/ad iletişim kutuları). Kural Tür/Değer ve Üretici verisi alanları artık üst üste binmez.
+- Görüntüle'yi açmak Canlı'yı soldurur ve arkasındaki radyolara dokunmayı engeller. Kapatmak için soluk alana dokunun.
+
+## 1.1.3 — 21 Eylül 2026
+
+- Canlı Ayar (Görüntüle), radar/listeyi aşağı itmek yerine üzerine yerleşir. Panel başlangıçta daraltılmış kalır. Dikeyde sekme çubuğunun üzerindeki yüksekliği kullanır; yatayda kaydırılır, aşağıda daha fazla seçenek varsa bir solma ve aşağı ok gösterir.
+- Daha sıkı FIELDWATCH başlığı, Filtreler/İmzalar alt başlık çubuğu ve alt sekme çubuğu.
+- Gece modu Görünüm altındadır. Koyu tema artık bir anahtar değildir — ekran her zaman koyudur. Koyu tema kapalıyken yapılan bir yükseltme veya ayar içe aktarma zorla açılır.
+
+## 1.1.2 — 21 Eylül 2026
+
+- Stok imza: BlueTOAD Spectra (Iteris Vantage Velocity / Spectra CV yol kenarı Bluetooth seyahat süresi okuyucu). Gözetim sınıfı. BlueTOAD / Vantage Velocity / Spectra CV adında veya Iteris OUI `00:14:7B` üzerinde etiketler. Ekstra dikkat yok ve stok yer imi değil — sessiz kabinler ve 5.9 GHz C-V2X görünmez.
+- Stok imzalar: BlipTrack (seyahat süresi, bip yok); Hanwha Wisenet, Uniview, Rhombus (kameralar, Ekstra dikkat); MeshCore, goTenna, SenseCAP, RAK WisGate (mesh, bip yok); GhostESP ve Bruce (pentest Ekstra dikkat, yalnızca GhostNet / BruceNet). Mevcut telefonlar artık Geri Yükle olmadan yeni Ekstra dikkat yer imlerini alır (GhostESP, Bruce, Hanwha, Uniview, Rhombus).
+- Kilitler sınıfı artık Erişim kontrolü olarak etiketlenir. ASSA ABLOY, SALTO, dormakaba ve Paxton, Gözetim'den (kapı okuyucular, kamera değil) oraya taşınır. Saklanan sınıf değeri hâlâ LOCK'tur.
+- Ayarlar alt bilgisi Katalog N gösterir. GitHub'dan stok kataloğunu güncelle, depo JSON'undan stok satırlarını (Ekstra dikkat dahil) değiştirir; yer imleri ve Ayarlar kalır. İnternet gerekir. Çevrimdışı: İmzaları içe aktar.
+
+## 1.1.1 — 20 Eylül 2026
+
+- Raporlar → Oturumlar: oturumun ne olduğuna ve Oturum raporunun açık oturumu, seçili kaydedilmiş oturumu veya son 15 dakikayı kullandığına dair kısa bir not.
+
+## 1.1.0 — 19 Eylül 2026
+
+- Adlandırılmış oturumlar. İsteğe bağlı: Raporlar → Oturum başlat. Özet ve AI Dışa Aktarımı, RAM'deki son 15 dakika yerine o pencereyi kullanır. Hiç başlatmazsanız Canlı liste, Filtreler, Av ve TAK değişmez.
+
+## 1.0.8 — 19 Eylül 2026
+
+- TAK açıklamaları, bir işaretçiyi incelediğinizde kısa bir karttır: çağrı işareti, radyo türü, MAC, RSSI, burada duyuldu / reklamı yapıldı / pilot, imzalar, Ekstra dikkat. Harita etiketi hâlâ 32 karakterlik çağrı işaretidir.
+
+## 1.0.7 — 19 Eylül 2026
+
+- TAK burada duyuldu pinleri, operatörü izlemek yerine en yüksek duyumu (en yakın yaklaşım) tutar. Daha zayıf bir duyum, ATAK işaretçiyi düşürmesin diye aynı enlem/boylamı yaklaşık her 10 saniyede bir yine yeniler. Reklamı yapılan Remote ID / pilot pinleri hâlâ yükü izler. Yön bulma değildir.
+
+## 1.0.6 — 19 Eylül 2026
+
+- Radar taraması ekran yenilemesinden bağımsız çalışır; böylece Geliştirici seçeneklerinde Animatör süre ölçeği kapalıyken bile döner. İz, ışından uzaklaşarak solar; temaslar tarama onları boyadığında parlar.
+- Yeni kurulumlar / Geri Yükle: Canlı görüntü Sınıfa göre olur. RSSI çubukları, İmza adları, Frekans ve İlk / son görülme açıktır. Mevcut telefonlar zaten seçtikleri görünümü korur.
+
+## 1.0.5 — 18 Eylül 2026
+
+- Yan yükleme APK'sı Android debug sertifikasıyla değil, Off Grid Pete LLC sürüm sertifikasıyla imzalanır. Sertifika SHA-256 `instruction.txt` içindedir. 1.0.4 veya daha eski sürümü zaten kurulu olan telefonlar önce kaldırmalıdır; Android farklı imzalayan üzerinden güncellemez.
+
+## 1.0.4 — 18 Eylül 2026
+
+- Kullanılmayan `RECEIVE_BOOT_COMPLETED` kaldırıldı. Fieldwatch hiç açılışta başlamıyordu; tarayıcılar alıcısı olmayan bir izni işaretliyordu.
+
+## 1.0.3 — 17 Eylül 2026
+
+- TAK / CoT: Remote ID, hareket eden tek bir hava aracı işaretçisini tutar (dönen BLE MAC'i değil, yapışkan UAS ID). Çözülmüş pilot enlem/boylamı, hava aracına bağlı ikinci bir pindir.
+- Burada duyuldu çağrı işaretleri (here) ile biter; Ekstra dikkat Bordo, reklamı yapılan drone'lar Sarı, pilot Turuncu kullanır. Ayrılan radyolar yaklaşık 120 saniye beklemek yerine ATAK'tan düşürülür.
+- Ayarlar Besleme durumu, akıştaki pinleri ve bu tikteki gönderimleri, artı hedef, hata ve zamanı gösterir. Hedef çipleri: Bu telefon (`127.0.0.1:10011`), LAN multicast (`239.2.3.1:6969`), Özel. Yalnızca UDP — bir TAK sunucusunun TCP 8087'si bu besleme değildir.
+- Yeni kurulumlar / Geri Yükle: İzlenen imzada ses açık; Ne söylenecek Sınıf + imzadır. Koyu tema, Ekranı açık tut, Yeni izlenen algılamaya atla ve Bip zaten açıktı.
+- Stok yer imleri Ekstra dikkat içerir (Ekstra dikkat metni olan her Gözetim satırı dahil) artı yerleşik her Drone sınıfı satırı (DJI, Remote ID, Skydio, Autel, Parrot, HOVERAir). Mevcut telefonlar, Varsayılanları geri yükle yapmadığınız sürece mevcut Ayarlarını ve izleme listesini korur.
+
+## 1.0.2 — 16 Eylül 2026
+
+- Ayarlar yedeği: Ayarları dışa aktar / Ayarları kaydet / Ayarları içe aktar. Adlandırılmış radyolar, filtre ön ayarları ve Ayarlar anahtarları; katalog, günlükler veya GPS değil. Tamamlandı ve hata bir Tamam iletişim kutusu gösterir.
+- İmzaları içe aktar aynı Tamam / hata iletişim kutularını kullanır.
+- Alt sekmeler hemen keser (700 ms solma yok).
+
+## 1.0.1 — 15 Eylül 2026
+
+- Sizinle hareket ediyor yalnızca BLE'dir. Wi-Fi erişim noktaları dışarıda kalır (yanından geçtiğiniz yüksek sesli bir AP yolunuzu boyar). Filtreler, bu anahtar açıkken Yalnızca BLE gösterir.
+
+## 1.0.0 — 15 Eylül 2026
+
+- Yeni uygulama: Fieldwatch (`app.fieldwatch`). Spectre'ın yanına yan yüklenir; veriler taşınmaz.
+- Fieldwatch kaynak kodu için MIT Lisansı. Apache-2.0 kütüphaneleri ve IEEE / Bluetooth SIG arama tabloları: NOTICE dosyasına bakın.
+- Operatörün gördüğü ad Fieldwatch'tur (başlatıcı, bildirim, Özet, TAK, ilk çalıştırma).
+- İmza dışa aktarma `fieldwatch-signatures` kullanır. Spectre paketleri (`spectre-signatures`) hâlâ içe aktarılır.
+- Spectre 1.2.14'ü içerir: Android 12–14 ilk BLE reklamında artık çökmez; Android 15 hâlâ yığından Public / Random gösterir. Yan yükleme APK'sı debug derlemesi değildir. BLE taraması başlangıçta Wi-Fi'den yaklaşık yarım saniye sonra başlar.
