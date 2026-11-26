@@ -10,13 +10,13 @@ Bir süredir kullanıp üzerinde geliştiriyorum ve yeterince faydalı olduğu i
 
 Bu bir hobi projesi — boş zamanlarımda eğlencesine yaptığım bir şey. Fieldwatch arka ucu yok. Reklam yok. Her şey telefonda kalır. Kaynak ve yan yükleme dosyaları bu depodadır (`dist/` içinde APK, talimat kartı ve kılavuz).
 
-Bir hata, saçma bir şey fark ederseniz ya da bir özellik fikriniz varsa — uygulamada ya da belgelerde — lütfen [bu depoda bir issue açın](https://github.com/OffGridPete/Fieldwatch/issues). Daha iyisini böyle yapıyoruz. Umarım sizin için de benim kadar faydalı olur. Nasıl gittiğini duymak isterim.
+Bir hata, saçma bir şey fark ederseniz ya da bir özellik fikriniz varsa — uygulamada ya da belgelerde — lütfen [bu depoda bir issue açın](https://github.com/ptmy53/Fieldwatch/issues). Daha iyisini böyle yapıyoruz. Umarım sizin için de benim kadar faydalı olur. Nasıl gittiğini duymak isterim.
 
-**Sadece kurmak mı istiyorsunuz?** [Fieldwatch.apk](https://github.com/OffGridPete/Fieldwatch/raw/main/dist/Fieldwatch.apk) dosyasını indirin. Talimat kartı ve kılavuz: [instruction.txt](https://github.com/OffGridPete/Fieldwatch/raw/main/dist/instruction.txt), [Fieldwatch_User_Manual.pdf](https://github.com/OffGridPete/Fieldwatch/raw/main/dist/Fieldwatch_User_Manual.pdf). [Yenilikler](CHANGELOG.md), her derleme için değişiklik günlüğüdür. APK adını `Fieldwatch.apk` olarak bırakın. GitHub dosyanın önizleme için çok büyük olduğunu söyleyebilir — bu onların görüntüleyicisidir; İndir'i kullanın.
+**Sadece kurmak mı istiyorsunuz?** [Fieldwatch.apk](https://github.com/ptmy53/Fieldwatch/raw/main/dist/Fieldwatch.apk) dosyasını indirin. Talimat kartı ve kılavuz: [instruction.txt](https://github.com/ptmy53/Fieldwatch/raw/main/dist/instruction.txt), [Fieldwatch_User_Manual.pdf](https://github.com/ptmy53/Fieldwatch/raw/main/dist/Fieldwatch_User_Manual.pdf). [Yenilikler](CHANGELOG.md), her derleme için değişiklik günlüğüdür. APK adını `Fieldwatch.apk` olarak bırakın. GitHub dosyanın önizleme için çok büyük olduğunu söyleyebilir — bu onların görüntüleyicisidir; İndir'i kullanın.
 
-Fieldwatch'ta çok fazla özellik var. Kapsamlı bir kullanıcı kılavuzu yazdım; uygulamadan en iyi şekilde yararlanmak için [indirmenizi](https://github.com/OffGridPete/Fieldwatch/raw/main/dist/Fieldwatch_User_Manual.pdf) öneririm.
+Fieldwatch'ta çok fazla özellik var. Kapsamlı bir kullanıcı kılavuzu yazdım; uygulamadan en iyi şekilde yararlanmak için [indirmenizi](https://github.com/ptmy53/Fieldwatch/raw/main/dist/Fieldwatch_User_Manual.pdf) öneririm.
 
-**Güncel kalın.** Fieldwatch Play Store'da değil. Kurulduktan sonra, telefon çevrimiçiyken uygulamayı açmak GitHub'da daha yeni bir derleme olup olmadığını kontrol eder. Varsa Fieldwatch sürüm notlarını gösterir. Şimdi güncelle onu indirir. Android yine de kurulumu onaylamanızı ister. Sonra, o derlemeyi daha yenisi yayınlanana kadar bir kenara koyar. Kendiniz bakmak isterseniz Ayarlar'da Güncelleme denetle vardır. [Obtainium](https://github.com/ImranR98/Obtainium) hâlâ https://github.com/OffGridPete/Fieldwatch adresini izleyebilir.
+**Güncel kalın.** Fieldwatch Play Store'da değil. Kurulduktan sonra, telefon çevrimiçiyken uygulamayı açmak GitHub'da daha yeni bir derleme olup olmadığını kontrol eder. Varsa Fieldwatch sürüm notlarını gösterir. Şimdi güncelle onu indirir. Android yine de kurulumu onaylamanızı ister. Sonra, o derlemeyi daha yenisi yayınlanana kadar bir kenara koyar. Kendiniz bakmak isterseniz Ayarlar'da Güncelleme denetle vardır. [Obtainium](https://github.com/ImranR98/Obtainium) hâlâ https://github.com/ptmy53/Fieldwatch adresini izleyebilir.
 
 **Resmi derlemeler.** Tek resmi Fieldwatch derlemeleri bu depodaki sürümlerdir. Diğer derlemeler ve çeviriler Off Grid Pete LLC tarafından yapılmaz veya incelenmez.
 
@@ -117,11 +117,11 @@ Bu bir hobi projesidir, MIT Lisansı altında olduğu gibi sunulur. Yapmadan ön
 
 ## Telefona kurun
 
-Telefonda kurulum dosyaları deponun kökünde değil [`dist/`](https://github.com/OffGridPete/Fieldwatch/tree/main/dist) içindedir:
+Telefonda kurulum dosyaları deponun kökünde değil [`dist/`](https://github.com/ptmy53/Fieldwatch/tree/main/dist) içindedir:
 
-- [Fieldwatch.apk](https://github.com/OffGridPete/Fieldwatch/raw/main/dist/Fieldwatch.apk)
-- [instruction.txt](https://github.com/OffGridPete/Fieldwatch/raw/main/dist/instruction.txt)
-- [Fieldwatch_User_Manual.pdf](https://github.com/OffGridPete/Fieldwatch/raw/main/dist/Fieldwatch_User_Manual.pdf)
+- [Fieldwatch.apk](https://github.com/ptmy53/Fieldwatch/raw/main/dist/Fieldwatch.apk)
+- [instruction.txt](https://github.com/ptmy53/Fieldwatch/raw/main/dist/instruction.txt)
+- [Fieldwatch_User_Manual.pdf](https://github.com/ptmy53/Fieldwatch/raw/main/dist/Fieldwatch_User_Manual.pdf)
 
 APK adını değiştirmeyin. `Fieldwatch.apk` dosyasını Dosyalar'dan (veya Dosyalarım) açın. Android isterse o uygulamadan kuruluma izin verin.
 
