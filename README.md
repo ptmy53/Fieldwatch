@@ -1,172 +1,172 @@
 # Fieldwatch
 
-[![RSI-1 signatures supported](https://raw.githubusercontent.com/OffGridPete/radio-signature-interchange/main/badges/RSI.svg)](https://github.com/OffGridPete/radio-signature-interchange)
+[![RSI-1 imzaları desteklenir](https://raw.githubusercontent.com/OffGridPete/radio-signature-interchange/main/badges/RSI.svg)](https://github.com/OffGridPete/radio-signature-interchange)
 
-I built Fieldwatch as a personal tool to see which Wi-Fi access points and Bluetooth LE devices my phone could detect, so I could better understand what was operating around me. It is entirely passive and only listens. There is no dongle, no account, and no backend server. It works offline in the field.
+Fieldwatch'u, telefonumun algılayabildiği Wi-Fi erişim noktalarını ve Bluetooth LE cihazlarını görmek için kişisel bir araç olarak geliştirdim; böylece çevremde nelerin çalıştığını daha iyi anlayabildim. Tamamen pasiftir ve yalnızca dinler. Dongle yok, hesap yok, arka uç sunucu yok. Sahada çevrimdışı çalışır.
 
-My goals were a modern, easy-to-use interface; flexible, customizable views; a filtering engine so I only see what matters; an extensible signature library so I can identify as many radio sources as possible and add new ones on the fly; and the ability to generate reports of what was observed.
+Hedeflerim şunlardı: modern ve kullanımı kolay bir arayüz; esnek, özelleştirilebilir görünümler; yalnızca önemli olanı görmemi sağlayan bir filtreleme motoru; mümkün olduğunca çok radyo kaynağını tanıyabilmem ve anında yenilerini ekleyebilmem için genişletilebilir bir imza kütüphanesi; ve gözlemlenenlerin raporlarını üretebilme.
 
-I have been using it and iterating on it for a while now, and it has been useful enough that I thought I would share it.
+Bir süredir kullanıp üzerinde geliştiriyorum ve yeterince faydalı olduğu için paylaşmak istedim.
 
-This is a hobby — something I do for fun in my spare time. There is no Fieldwatch backend. There are no ads. Everything lives on the phone. Source and sideload files are in this repository (`dist/` for the APK, instruction card, and manual).
+Bu bir hobi projesi — boş zamanlarımda eğlencesine yaptığım bir şey. Fieldwatch arka ucu yok. Reklam yok. Her şey telefonda kalır. Kaynak ve yan yükleme dosyaları bu depodadır (`dist/` içinde APK, talimat kartı ve kılavuz).
 
-If you spot an error, something stupid, or have a feature idea — in the app or the documentation — please [open an issue on this repository](https://github.com/OffGridPete/Fieldwatch/issues). This is how we make it better. I hope you find it as useful as I have. I look forward to hearing how it goes.
+Bir hata, saçma bir şey fark ederseniz ya da bir özellik fikriniz varsa — uygulamada ya da belgelerde — lütfen [bu depoda bir issue açın](https://github.com/OffGridPete/Fieldwatch/issues). Daha iyisini böyle yapıyoruz. Umarım sizin için de benim kadar faydalı olur. Nasıl gittiğini duymak isterim.
 
-**Just want to install it?** Download [Fieldwatch.apk](https://github.com/OffGridPete/Fieldwatch/raw/main/dist/Fieldwatch.apk). Instruction card and manual: [instruction.txt](https://github.com/OffGridPete/Fieldwatch/raw/main/dist/instruction.txt), [Fieldwatch_User_Manual.pdf](https://github.com/OffGridPete/Fieldwatch/raw/main/dist/Fieldwatch_User_Manual.pdf). [What’s new](CHANGELOG.md) is the changelog for each build. Leave the APK named `Fieldwatch.apk`. GitHub may say the file is too big to preview — that is their viewer; use Download.
+**Sadece kurmak mı istiyorsunuz?** [Fieldwatch.apk](https://github.com/OffGridPete/Fieldwatch/raw/main/dist/Fieldwatch.apk) dosyasını indirin. Talimat kartı ve kılavuz: [instruction.txt](https://github.com/OffGridPete/Fieldwatch/raw/main/dist/instruction.txt), [Fieldwatch_User_Manual.pdf](https://github.com/OffGridPete/Fieldwatch/raw/main/dist/Fieldwatch_User_Manual.pdf). [Yenilikler](CHANGELOG.md), her derleme için değişiklik günlüğüdür. APK adını `Fieldwatch.apk` olarak bırakın. GitHub dosyanın önizleme için çok büyük olduğunu söyleyebilir — bu onların görüntüleyicisidir; İndir'i kullanın.
 
-There is a lot of functionality in Fieldwatch. I wrote a comprehensive user guide, and I encourage you to [download it](https://github.com/OffGridPete/Fieldwatch/raw/main/dist/Fieldwatch_User_Manual.pdf) so you can get the most out of the app.
+Fieldwatch'ta çok fazla özellik var. Kapsamlı bir kullanıcı kılavuzu yazdım; uygulamadan en iyi şekilde yararlanmak için [indirmenizi](https://github.com/OffGridPete/Fieldwatch/raw/main/dist/Fieldwatch_User_Manual.pdf) öneririm.
 
-**Stay updated.** Fieldwatch isn't on the Play Store. Once it is installed, opening the app while the phone is online checks GitHub for a newer build. If there is one, Fieldwatch shows the release notes. Update now downloads it. Android still asks you to confirm the install. Later sets that build aside until a newer one is published. Settings has Check for an update if you want to look yourself. [Obtainium](https://github.com/ImranR98/Obtainium) can still watch https://github.com/OffGridPete/Fieldwatch.
+**Güncel kalın.** Fieldwatch Play Store'da değil. Kurulduktan sonra, telefon çevrimiçiyken uygulamayı açmak GitHub'da daha yeni bir derleme olup olmadığını kontrol eder. Varsa Fieldwatch sürüm notlarını gösterir. Şimdi güncelle onu indirir. Android yine de kurulumu onaylamanızı ister. Sonra, o derlemeyi daha yenisi yayınlanana kadar bir kenara koyar. Kendiniz bakmak isterseniz Ayarlar'da Güncelleme denetle vardır. [Obtainium](https://github.com/ImranR98/Obtainium) hâlâ https://github.com/OffGridPete/Fieldwatch adresini izleyebilir.
 
-**Official builds.** The only official Fieldwatch builds are the releases in this repo. Other builds and translations are not made or reviewed by Off Grid Pete LLC.
+**Resmi derlemeler.** Tek resmi Fieldwatch derlemeleri bu depodaki sürümlerdir. Diğer derlemeler ve çeviriler Off Grid Pete LLC tarafından yapılmaz veya incelenmez.
 
-## On the phone
+## Telefonda
 
 <table>
   <tr>
     <td align="center" valign="top" width="33%">
-      <img src="docs/readme/signatures.png" width="200" alt="Signature library grouped by class">
-      <br><strong>Signatures</strong>
-      <br>More than 250 signatures, in classes. Bookmark one to alert, or add your own.
+      <img src="docs/readme/signatures.png" width="200" alt="Sınıfa göre gruplandırılmış imza kütüphanesi">
+      <br><strong>İmzalar</strong>
+      <br>250'den fazla imza, sınıflara ayrılmış. Uyarı almak için birini işaretleyin ya da kendinizinkini ekleyin.
     </td>
     <td align="center" valign="top" width="33%">
-      <img src="docs/readme/floods.png" width="200" alt="Pairing flood warning">
-      <br><strong>Bluetooth floods</strong>
-      <br>A burst of new pairing addresses at the same loudness. The advertisement does not name the tool.
+      <img src="docs/readme/floods.png" width="200" alt="Eşleştirme taşkını uyarısı">
+      <br><strong>Bluetooth taşkınları</strong>
+      <br>Aynı ses yüksekliğinde yeni eşleştirme adreslerinden oluşan bir patlama. Duyuru aracı adlandırmaz.
     </td>
     <td align="center" valign="top" width="33%">
-      <img src="docs/readme/gnss-warning.png" width="200" alt="Possible GPS interference warning">
+      <img src="docs/readme/gnss-warning.png" width="200" alt="Olası GPS paraziti uyarısı">
       <br><strong>GPS</strong>
-      <br>A warning when this phone's GPS changes in a way that can mean interference. It does not say where that came from.
+      <br>Bu telefonun GPS'i parazit anlamına gelebilecek şekilde değiştiğinde uyarı. Bunun nereden geldiğini söylemez.
     </td>
   </tr>
   <tr>
     <td align="center" valign="top">
-      <img src="docs/readme/trusted.png" width="200" alt="Trusted networks warning switches">
-      <br><strong>Trusted networks</strong>
-      <br>A Wi-Fi name you marked can warn if it comes back weaker, from a new maker, or far from its usual places.
+      <img src="docs/readme/trusted.png" width="200" alt="Güvenilir ağlar uyarı anahtarları">
+      <br><strong>Güvenilir ağlar</strong>
+      <br>İşaretlediğiniz bir Wi-Fi adı daha zayıf, yeni bir üreticiden ya da alışılmış yerlerinden uzakta geri dönerse uyarabilir.
     </td>
     <td align="center" valign="top">
-      <img src="docs/readme/cameras.png" width="200" alt="Known camera lists">
-      <br><strong>Known cameras</strong>
-      <br>Saved lists of plate readers and other sensors. Those marks sit on the map with the radios the phone hears.
+      <img src="docs/readme/cameras.png" width="200" alt="Bilinen kamera listeleri">
+      <br><strong>Bilinen kameralar</strong>
+      <br>Plaka okuyucular ve diğer sensörlerin kayıtlı listeleri. Bu işaretler, telefonun duyduğu radyolarla birlikte haritada durur.
     </td>
     <td align="center" valign="top">
-      <img src="docs/readme/map.png" width="200" alt="Live path with radios on the map">
-      <br><strong>Live map</strong>
-      <br>What the phone hears, on the path you walked.
+      <img src="docs/readme/map.png" width="200" alt="Haritada radyolarla canlı yol">
+      <br><strong>Canlı harita</strong>
+      <br>Telefonun duydukları, yürüdüğünüz yol üzerinde.
     </td>
   </tr>
   <tr>
     <td align="center" valign="top">
-      <img src="docs/readme/hunt.png" width="200" alt="Hunt screen with loudness and a heat cloud">
+      <img src="docs/readme/hunt.png" width="200" alt="Ses yüksekliği ve ısı bulutuyla Hunt ekranı">
       <br><strong>Hunt</strong>
-      <br>Walk a Bluetooth radio down by loudness. Warmer color is where this phone heard it stronger.
+      <br>Bir Bluetooth radyoyu ses yüksekliğine göre yürüyerek bulun. Daha sıcak renk, bu telefonun onu daha güçlü duyduğu yerdir.
     </td>
     <td align="center" valign="top">
-      <img src="docs/readme/filters.png" width="200" alt="Filter presets">
-      <br><strong>Filters</strong>
-      <br>Cut the list to Wi-Fi or Bluetooth, a strong signal, what moves with you, or what is new.
+      <img src="docs/readme/filters.png" width="200" alt="Filtre ön ayarları">
+      <br><strong>Filtreler</strong>
+      <br>Listeyi Wi-Fi veya Bluetooth'a, güçlü sinyale, sizinle hareket edene ya da yeni olana daraltın.
     </td>
     <td align="center" valign="top">
-      <img src="docs/readme/reports.png" width="200" alt="Reports for a sit">
-      <br><strong>Reports</strong>
-      <br>A sit keeps a debrief, a path, an export, and a compare against another sit.
+      <img src="docs/readme/reports.png" width="200" alt="Bir oturum için raporlar">
+      <br><strong>Raporlar</strong>
+      <br>Bir oturum; brifing, yol, dışa aktarım ve başka bir oturumla karşılaştırma tutar.
     </td>
   </tr>
   <tr>
     <td align="center" valign="top">
-      <img src="docs/readme/cell-warning.png" width="200" alt="Warning that this phone connected to a cell it has not used in this location">
-      <br><strong>Cell connection</strong>
-      <br>A warning when this phone connects to a cell it has not used in this location. It does not name a cause. The numbers in the shot are an example.
+      <img src="docs/readme/cell-warning.png" width="200" alt="Bu telefonun bu konumda daha önce kullanmadığı bir hücreye bağlandığı uyarısı">
+      <br><strong>Hücre bağlantısı</strong>
+      <br>Bu telefon bu konumda daha önce kullanmadığı bir hücreye bağlandığında uyarı. Bir neden söylemez. Görseldeki sayılar örnektir.
     </td>
     <td align="center" valign="top">
-      <img src="docs/readme/drone-swarm.png" width="200" alt="Drone swarm detected warning">
-      <br><strong>Drone swarm detection</strong>
-      <br>Warns when Remote ID detects new drones in the time window you set. Drone perimeter detection warns when a drone using Remote ID is inside the distance you pick: 100 m, 250 m, 500 m, or 1 km.
+      <img src="docs/readme/drone-swarm.png" width="200" alt="Drone sürüsü algılandı uyarısı">
+      <br><strong>Drone sürüsü algılama</strong>
+      <br>Remote ID, belirlediğiniz zaman penceresinde yeni dronlar algıladığında uyarır. Drone çevre algılama, Remote ID kullanan bir drone seçtiğiniz mesafenin içindeyken uyarır: 100 m, 250 m, 500 m veya 1 km.
     </td>
     <td align="center" valign="top">
-      <img src="docs/readme/tracker.png" width="200" alt="Separated tag with you warning">
-      <br><strong>Tracker monitoring</strong>
-      <br>Warns when a tag says it's away from its owner, your phone has heard it for 30 minutes with no gap over 20 minutes, and hears it at three places at least 100m apart.
+      <img src="docs/readme/tracker.png" width="200" alt="Sizinle ayrılmış etiket uyarısı">
+      <br><strong>Takipçi izleme</strong>
+      <br>Bir etiket sahibinden uzakta olduğunu söylediğinde, telefonunuz onu 30 dakika boyunca 20 dakikadan uzun boşluk olmadan duyduğunda ve en az 100 m arayla üç yerde duyduğunda uyarır.
     </td>
   </tr>
 </table>
 
-One phone. Wi-Fi, Bluetooth LE, this phone's GPS, and this phone's cell connection. The map and the sit stay on the device.
+Tek telefon. Wi-Fi, Bluetooth LE, bu telefonun GPS'i ve bu telefonun hücre bağlantısı. Harita ve oturum cihazda kalır.
 
-## Technical papers
+## Teknik makaleler
 
-These are the longer write-ups of Fieldwatch, what each one measures, and what a warning is allowed to mean. The signature file has its own repository. The user guide stays the how-to. Each paper stands alone.
+Bunlar Fieldwatch'un daha uzun yazılarıdır: her birinin ne ölçtüğü ve bir uyarının ne anlama gelmesine izin verildiği. İmza dosyasının kendi deposu vardır. Kullanıcı kılavuzu nasıl yapılır rehberi olarak kalır. Her makale kendi başına okunabilir.
 
-- [Radio signature interchange](https://github.com/OffGridPete/radio-signature-interchange). Fieldwatch uses this proposal so apps can share libraries of known radios.
-- [Scanning Wi-Fi and Bluetooth for known radios](docs/papers/Fieldwatch_Scanning_and_Signatures.pdf). A place full of radios, and a list that still has to be readable.
-- [Flood monitoring](docs/papers/Fieldwatch_Flood_Monitoring.pdf). When the list of radios stops being a list a person can read.
-- [GNSS monitoring on the phone in your hand](docs/papers/Fieldwatch_GNSS_Monitoring.pdf). When the position gets worse, and what a phone is allowed to say about it.
-- [Trusted networks](docs/papers/Fieldwatch_Trusted_Networks.pdf). A familiar name on the Wi-Fi list, and what a scan can say before anyone joins.
-- [Cell connection monitoring](docs/papers/Fieldwatch_Cell_Connection_Monitoring.pdf). Bars on the phone, and no record of the cell behind them.
+- [Radio signature interchange](https://github.com/OffGridPete/radio-signature-interchange). Fieldwatch, uygulamaların bilinen radyo kütüphanelerini paylaşabilmesi için bu öneriyi kullanır.
+- [Wi-Fi ve Bluetooth'u bilinen radyolar için taramak](docs/papers/Fieldwatch_Scanning_and_Signatures.pdf). Radyolarla dolu bir yer ve hâlâ okunabilir kalması gereken bir liste.
+- [Taşkın izleme](docs/papers/Fieldwatch_Flood_Monitoring.pdf). Radyo listesi, bir kişinin okuyabileceği liste olmaktan çıktığında.
+- [Elinizdeki telefonda GNSS izleme](docs/papers/Fieldwatch_GNSS_Monitoring.pdf). Konum kötüleştiğinde ve bir telefonun bunun hakkında ne söylemesine izin verildiği.
+- [Güvenilir ağlar](docs/papers/Fieldwatch_Trusted_Networks.pdf). Wi-Fi listesindeki tanıdık bir ad ve kimse bağlanmadan önce bir taramanın ne söyleyebileceği.
+- [Hücre bağlantısı izleme](docs/papers/Fieldwatch_Cell_Connection_Monitoring.pdf). Telefondaki çubuklar ve arkalarındaki hücrenin kaydı yok.
 
-## Safety & disclaimer
+## Güvenlik ve sorumluluk reddi
 
-This is a hobby project, provided as-is under the MIT License. A few things to know before you do:
+Bu bir hobi projesidir, MIT Lisansı altında olduğu gibi sunulur. Yapmadan önce bilmeniz gereken birkaç şey:
 
-- Use at your own risk. Using Fieldwatch is your responsibility. To the maximum extent permitted by law, Off Grid Pete LLC is not liable for indirect, incidental, special, consequential, or punitive damages arising from its use.
-- There is no guarantee that trackers, cameras, tags, access points, or any other device will be found, named, or reported. Radios that are off, cellular-only, asleep, randomized, quiet, or outside what this handset’s OS exposes will not appear. Each phone has its own radios, firmware, scan quotas, and OEM battery policies. Software cannot address those limits.
-- Pattern matches, GPS co-travel (“Moving with you” / “possible tail”), Debrief language, and AI Export output are hypotheses — not identity, not a legal finding, and not a complete RF capture. You are solely responsible for how you use this app and this document, and for complying with local law. By using the software or this manual you accept these terms and the MIT License.
-- Location data, if tagging is on, is this phone at hear-time — not the other radio. There is no Fieldwatch server. Stamps stay on the handset until you share them. Logs keep full coordinates even when Privacy mode masks the screen and sit reports. Debrief, Share log, AI Export (sit or one radio), and radio-detail Share as text can take that path off the phone. Online place names use the system geocoder (often the OEM / Google network), not a Fieldwatch cloud. How you store, share, or publish those files is your responsibility.
+- Kullanım riski size aittir. Fieldwatch'u kullanmak sizin sorumluluğunuzdadır. Yasaların izin verdiği azami ölçüde Off Grid Pete LLC, kullanımından doğan dolaylı, arızi, özel, sonuçsal veya cezai zararlardan sorumlu değildir.
+- Takipçilerin, kameraların, etiketlerin, erişim noktalarının veya başka herhangi bir cihazın bulunacağı, adlandırılacağı veya bildirileceği garantisi yoktur. Kapalı, yalnızca hücresel, uykuda, rastgeleleştirilmiş, sessiz olan ya da bu cihazın işletim sisteminin açığa çıkardığı alanın dışındaki radyolar görünmez. Her telefonun kendi radyoları, bellenimi, tarama kotaları ve OEM pil politikaları vardır. Yazılım bu sınırları aşamaz.
+- Desen eşleşmeleri, GPS birlikte hareket ("Sizinle hareket ediyor" / "olası takip"), Debrief dili ve AI Export çıktısı hipotezdir — kimlik, hukuki bulgu veya eksiksiz bir RF yakalaması değildir. Bu uygulamayı ve bu belgeyi nasıl kullandığınızdan ve yerel yasaya uymanızdan yalnızca siz sorumlusunuz. Yazılımı veya bu kılavuzu kullanarak bu şartları ve MIT Lisansı'nı kabul etmiş olursunuz.
+- Etiketleme açıksa konum verisi, duyulma anındaki bu telefondur — diğer radyo değil. Fieldwatch sunucusu yoktur. Damgalar siz paylaşana kadar cihazda kalır. Günlükler, Gizlilik modu ekranı ve oturum raporlarını maskeleyse bile tam koordinatları tutar. Debrief, Günlüğü paylaş, AI Export (oturum veya tek radyo) ve radyo detayı Metin olarak paylaş bu yolu telefondan çıkarabilir. Çevrimiçi yer adları, Fieldwatch bulutu değil, sistem coğrafi kodlayıcısını (çoğunlukla OEM / Google ağı) kullanır. Bu dosyaları nasıl sakladığınız, paylaştığınız veya yayımladığınız sizin sorumluluğunuzdadır.
 
-## Put it on a phone
+## Telefona kurun
 
-On a phone, the install files are in [`dist/`](https://github.com/OffGridPete/Fieldwatch/tree/main/dist), not the root of the repo:
+Telefonda kurulum dosyaları deponun kökünde değil [`dist/`](https://github.com/OffGridPete/Fieldwatch/tree/main/dist) içindedir:
 
 - [Fieldwatch.apk](https://github.com/OffGridPete/Fieldwatch/raw/main/dist/Fieldwatch.apk)
 - [instruction.txt](https://github.com/OffGridPete/Fieldwatch/raw/main/dist/instruction.txt)
 - [Fieldwatch_User_Manual.pdf](https://github.com/OffGridPete/Fieldwatch/raw/main/dist/Fieldwatch_User_Manual.pdf)
 
-Do not rename the APK. Open `Fieldwatch.apk` from Files (or My Files). Allow install from that app if Android asks.
+APK adını değiştirmeyin. `Fieldwatch.apk` dosyasını Dosyalar'dan (veya Dosyalarım) açın. Android isterse o uygulamadan kuruluma izin verin.
 
-| File | What it is |
+| Dosya | Ne olduğu |
 |---|---|
-| `dist/Fieldwatch.apk` | Sideload APK |
-| `dist/fieldwatch-signatures.json` | Stock catalog for 1.1.11 GitHub update (catalog 77) |
-| `dist/fieldwatch-signatures-v2.json` | Stock catalog for the 1.1.12 through 1.1.44 GitHub update |
-| `dist/fieldwatch-signatures.rsi` | Stock catalog for the 1.2.0 GitHub update |
-| `dist/fieldwatch-sensors.geojson.gz` | Other sensors list. OpenStreetMap contributors, ODbL 1.0. See `dist/fieldwatch-sensors.txt` |
-| `dist/instruction.txt` | Permissions, first launch |
-| `dist/Fieldwatch_User_Manual.pdf` | User manual |
-| [`CHANGELOG.md`](CHANGELOG.md) | What’s new in each build |
-| `LICENSE` | MIT License |
-| `NOTICE` | Third-party attribution |
+| `dist/Fieldwatch.apk` | Yan yükleme APK'sı |
+| `dist/fieldwatch-signatures.json` | 1.1.11 GitHub güncellemesi için stok katalog (katalog 77) |
+| `dist/fieldwatch-signatures-v2.json` | 1.1.12 - 1.1.44 GitHub güncellemesi için stok katalog |
+| `dist/fieldwatch-signatures.rsi` | 1.2.0 GitHub güncellemesi için stok katalog |
+| `dist/fieldwatch-sensors.geojson.gz` | Diğer sensörler listesi. OpenStreetMap katkıda bulunanlar, ODbL 1.0. Bkz. `dist/fieldwatch-sensors.txt` |
+| `dist/instruction.txt` | İzinler, ilk açılış |
+| `dist/Fieldwatch_User_Manual.pdf` | Kullanıcı kılavuzu |
+| [`CHANGELOG.md`](CHANGELOG.md) | Her derlemedeki yenilikler |
+| `LICENSE` | MIT Lisansı |
+| `NOTICE` | Üçüncü taraf atıfları |
 
-Android 10+. Allow install from the app you used to open the APK. Play Protect may warn that it is not from Play — expected. Full steps are in `instruction.txt`. Android shows a notification while Fieldwatch is scanning, so the scan can keep running with the screen off. You can decline alert notifications and still use the app.
+Android 10+. APK'yı açmak için kullandığınız uygulamadan kuruluma izin verin. Play Protect, Play'den gelmediği için uyarabilir — beklenen durumdur. Tam adımlar `instruction.txt` içindedir. Android, Fieldwatch tarama yaparken bir bildirim gösterir; böylece ekran kapalıyken tarama sürdürülebilir. Uyarı bildirimlerini reddedip uygulamayı yine de kullanabilirsiniz.
 
 ```bash
 adb install -r dist/Fieldwatch.apk
 ```
 
-### Upgrading from 1.0.4 or earlier — Fieldwatch now has a real publisher certificate (one-time reinstall)
+### 1.0.4 veya öncesinden yükseltme — Fieldwatch artık gerçek bir yayıncı sertifikasına sahip (tek seferlik yeniden kurulum)
 
-This release is a little more professional about how the APK is signed. Android attaches a certificate to every app so the phone can tell “this update is from the same publisher as the app I already have.” Through 1.0.4, Fieldwatch used the generic Android developer certificate that the build tools ship with. That is normal while you are iterating, but people who scan a sideload APK (and some scanners) flag it: a public build should not look like a debug leftover. 1.0.5 is signed with an Off Grid Pete LLC certificate instead. Same hobby app; the file now has a publisher name scanners can check. The fingerprint is in `instruction.txt` if you want to compare.
+Bu sürüm, APK'nın nasıl imzalandığı konusunda biraz daha profesyonel. Android, telefonun "bu güncelleme zaten sahip olduğum uygulamayla aynı yayıncıdan mı?" diyebilmesi için her uygulamaya bir sertifika ekler. 1.0.4'e kadar Fieldwatch, derleme araçlarının sunduğu genel Android geliştirici sertifikasını kullanıyordu. Üzerinde çalışırken bu normaldir; ancak yan yüklenen bir APK'yı tarayan kişiler (ve bazı tarayıcılar) bunu işaretler: herkese açık bir derleme hata ayıklama artığı gibi görünmemelidir. 1.0.5 bunun yerine Off Grid Pete LLC sertifikasıyla imzalanmıştır. Aynı hobi uygulaması; dosyada artık tarayıcıların kontrol edebileceği bir yayıncı adı var. Parmak izini karşılaştırmak isterseniz `instruction.txt` içindedir.
 
-The catch is one-time. The phone treats a new certificate as a different publisher, so it will not install 1.0.5 on top of 1.0.4 or earlier. You uninstall the old Fieldwatch, then install this APK. After that, later versions use the same certificate, so ordinary updates work again. You will not have to uninstall for 1.2.2.
+Tek seferlik sorun şudur: Telefon yeni sertifikayı farklı bir yayıncı olarak görür, bu yüzden 1.0.5'i 1.0.4 veya öncesinin üzerine kurmaz. Eski Fieldwatch'u kaldırır, sonra bu APK'yı kurarsınız. Bundan sonra sonraki sürümler aynı sertifikayı kullanır, yani normal güncellemeler yine çalışır. 1.2.2 için kaldırmanız gerekmeyecek.
 
-Uninstall wipes what is on the phone. If you added signatures, changed Settings, named radios, or saved filter presets, do this first: Settings → **Export signatures** and **Export settings**. Share or save those two files somewhere you can get them after. They are not the log and not GPS. Then uninstall (long-press the Fieldwatch icon, or `adb uninstall app.fieldwatch`), install 1.0.5, open it, tap through the disclaimer, and use **Import signatures** and **Import settings**. If you never customized, skip the export and just uninstall, then install.
+Kaldırma, telefondaki verileri siler. İmza eklediyseniz, Ayarları değiştirdiyseniz, radyoları adlandırdıysanız veya filtre ön ayarları kaydettiyseniz önce şunu yapın: Ayarlar → **İmzaları dışa aktar** ve **Ayarları dışa aktar**. Bu iki dosyayı sonradan ulaşabileceğiniz bir yere kaydedin/paylaşın. Bunlar günlük değildir ve GPS değildir. Sonra kaldırın (Fieldwatch simgesine uzun basın ya da `adb uninstall app.fieldwatch`), 1.0.5'i kurun, açın, sorumluluk reddinden geçin ve **İmzaları içe aktar** ile **Ayarları içe aktar** kullanın. Hiç özelleştirmediyseniz dışa aktarmayı atlayıp sadece kaldırıp kurabilirsiniz.
 
-## What Fieldwatch is not
+## Fieldwatch ne değildir
 
-- Not Wi-Fi clients, probe-only stations, or 802.11 monitor mode
-- Not Bluetooth Classic inquiry (HC-05 / HC-06 will not appear)
-- Not cellular
-- Not direction finding
+- Wi-Fi istemcileri, yalnızca probe istasyonları veya 802.11 monitor modu değil
+- Bluetooth Classic sorgulaması değil (HC-05 / HC-06 görünmez)
+- Hücresel değil
+- Yön bulma değil
 
 ---
 
-It was Spectre through 1.2.14. I later learned that name was already in use by another app, so I renamed this one Fieldwatch to keep the two from being mixed up. Same field tool, new application id (`app.fieldwatch`), MIT License. Installing Fieldwatch does not replace Spectre on a phone; it is a separate app.
+1.2.14'e kadar adı Spectre idi. Daha sonra bu adın başka bir uygulama tarafından kullanıldığını öğrendim, bu yüzden ikisinin karışmaması için adını Fieldwatch olarak değiştirdim. Aynı saha aracı, yeni uygulama kimliği (`app.fieldwatch`), MIT Lisansı. Fieldwatch'u kurmak telefondaki Spectre'u değiştirmez; ayrı bir uygulamadır.
 
-## Copyright and license
+## Telif hakkı ve lisans
 
-Copyright (c) 2026 Off Grid Pete LLC.
+Telif hakkı (c) 2026 Off Grid Pete LLC.
 
-Fieldwatch™ is a trademark of Off Grid Pete LLC. Registration pending.
+Fieldwatch™ Off Grid Pete LLC'nin ticari markasıdır. Tescil beklemededir.
 
-Fieldwatch source is licensed under the [MIT License](LICENSE). AndroidX, Kotlin, and related libraries remain Apache-2.0. IEEE and Bluetooth SIG assigned-number tables in `radiodb.bin` are subject to those organizations’ terms. See [NOTICE](NOTICE).
+Fieldwatch kaynak kodu [MIT Lisansı](LICENSE) altında lisanslanmıştır. AndroidX, Kotlin ve ilgili kütüphaneler Apache-2.0 olarak kalır. `radiodb.bin` içindeki IEEE ve Bluetooth SIG atanmış numara tabloları bu kuruluşların koşullarına tabidir. Bkz. [NOTICE](NOTICE).
